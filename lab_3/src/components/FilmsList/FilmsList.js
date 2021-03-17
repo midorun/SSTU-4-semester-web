@@ -2,7 +2,7 @@ import DATA from '../../constants/DATA';
 import { FILMS } from '../../constants/root';
 import nextId from '../../services/nextId';
 import FilmsItem from '../FilmsItem';
-import Form from '../Form';
+import Modal from '../Modal';
 
 class FilmsList {
     constructor(DATA) {
@@ -88,7 +88,7 @@ class FilmsList {
     }
 
     addEventListeners() {
-        document.querySelectorAll('.film-item-delete')
+        document.querySelectorAll('.films-item-delete')
             .forEach(element => {
                 element.addEventListener('click', () => {
                     let id = +element.getAttribute('data-film-item-id');
@@ -96,7 +96,7 @@ class FilmsList {
                 })
             })
         document.querySelector('.films-controls-add')
-            .addEventListener('click', () => Form.enable());
+            .addEventListener('click', () => Modal.enable());
     }
 }
 

@@ -1,18 +1,16 @@
-
-import FilmsItem from '../FilmsItem';
 import FilmsList from '../FilmsList';
-import Form from '../Form';
+import Modal from '../Modal';
 
 // styles
 import './App.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
-import '../Form/Form.css';
+import '../Modal/Modal.css';
 
 class App {
     render() {
         FilmsList.render();
-        Form.render();
+        Modal.render();
     }
 }
 

@@ -1,8 +1,8 @@
 import App from './components/App';
 import FilmsList from './components/FilmsList';
-import Form from './components/Form';
+import Modal from './components/Modal';
 
 App.render();
 FilmsList.addEventListeners();
-Form.addEventListeners();
+Modal.addEventListeners();
 
