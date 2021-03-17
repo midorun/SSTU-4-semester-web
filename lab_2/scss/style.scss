@@ -1,0 +1,47 @@
+body {
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+input,
+button {
+    border: 1px solid;
+    font-size: 1.5rem;
+}
+
+.container {
+    max-width: 726px;
+    margin: 40px auto;
+    font-size: 1.5rem;
+}
+
+.data-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    input {
+        width: 526px;
+    }
+
+    button {
+        width: 200px;
+        text-transform: uppercase;
+    }
+}
+
+.task1,
+.task2,
+.task3,
+.task4 {
+    margin-top: 40px;
+
+    button,
+    input {
+        margin-top: 20px;
+    }
+
+
+}
