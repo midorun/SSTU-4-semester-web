@@ -1,0 +1,67 @@
+.header {
+    height: 50px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: $color-dark;
+    z-index: 1;
+    // border-bottom: 1px solid #16191d;
+
+    .row {
+        grid-template-columns: 2fr 8fr 2fr;
+    }
+
+    &__logo {
+        height: 50px;
+        font-size: 24px;
+        font-weight: 400;
+        color: $color-dark;
+        background-color: $color-yellow;
+
+        span {
+            font-weight: 900;
+        }
+    }
+
+    .menu {
+        &__list {
+            margin: 0;
+            width: 100%;
+            padding-inline-start: 20px;
+            list-style: none;
+        }
+
+        &__link {
+            font-size: 18px;
+            font-weight: 900;
+            text-decoration: none;
+            transition: .3s all;
+            color: #F2F5F2;
+            cursor: pointer;
+
+            &:hover {
+                color: $color-yellow;
+            }
+        }
+    }
+
+    .profile {
+
+        &__username {
+            margin-right: 10px;
+            font-weight: 900;
+            font-size: 18px;
+            text-align: center;
+            color: $color-white;
+        }
+
+        &__icon {
+            margin-right: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: $color-white;
+        }
+    }
+}

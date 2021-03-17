@@ -1,0 +1,24 @@
+{
+  "name": "js_academy",
+  "version": "1.0.0",
+  "description": "https://midorun.github.io/JS-Academy/",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  },
+  "scripts": {
+    "start": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midorun/JS-Academy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midorun/JS-Academy/issues"
+  },
+  "homepage": "https://github.com/midorun/JS-Academy#readme"
+}

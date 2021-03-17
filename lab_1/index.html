@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/style.min.css">
+    <title>JS Academy</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="header__logo flex flex-jcc flex-aic">
+                    <span>JS&nbsp;</span> Academy
+                </div>
+                <nav class="header__menu menu flex flex-aic">
+                    <ul class="menu__list flex flex-jcsb">
+                        <li><a href="#" class="menu__link">Приветствие</a></li>
+                        <li><a href="#triangle" class="menu__link">Треугольник</a></li>
+                        <li><a href="#strings" class="menu__link">Строки</a></li>
+                        <li><a href="#array" class="menu__link">Мин/Макс</a></li>
+                        <li><a href="#timer" class="menu__link">Таймер</a></li>
+                        <li><a href="#test" class="menu__link">Тест</a></li>
+                        <li><a href="#screensaver" class="menu__link">Заставка</a></li>
+                    </ul>
+                </nav>
+                <div class="header__profile profile flex flex-jcfe flex-aic">
+                    <div class="profile__username"></div>
+                    <!-- <div class="profile__icon"></div> -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="introduction">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="title">
+                            Приветствую тебя на сайте <span class="yellow">JS Academy</span> !
+                        </h1>
+
+                        <div class="introduction__descr descr">
+                            Данная страница была создана специально для того, чтобы познакомить тебя с основами
+                            такого языка как JavaScript и сподвигнуть тебя на его изучение!
+                            <br><br>
+                            Мы постараемся кратко показать тебе часть возможностей данной технологии, сделать это
+                            интересно
+                            и увлекательно!
+                            <br><br>
+                            <span class="auth__info">
+                                Для того чтобы начать наше знакомство просто впиши свое имя в форму
+                                и мы сможем приступать!
+                            </span>
+                        </div>
+                        <div class="introduction__auth auth flex">
+                            <input type="text" placeholder="Введи своё имя здесь" class="auth__input">
+                            <button class="auth__btn btn">подтвердить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="theory">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title title_white">Что такое <span class="yellow">JavaScript?</span>
+                        </h2>
+                        <div class="descr descr_white">
+                            Изначально язык был создан, чтобы «сделать веб-страницы
+                            живыми».
+                            <br><br>
+                            Программы на этом языке называются <span class="bold italic">скриптами</span>. Они могут
+                            встраиваться в HTML и выполняться
+                            автоматически при загрузке веб-страницы.
+                            <br><br>
+                            Скрипты распространяются и выполняются, как простой текст. Им не нужна специальная
+                            подготовка или компиляция для запуска.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="title title_white">Почему <span class="yellow">JavaScript?</span>
+                        </h2>
+                        <div class="descr descr_white">
+                            Когда JavaScript создавался, у него было другое имя – « <span
+                                class="bold italic">LiveScript</span> ». Однако, язык Java был
+                            очень популярен в то время, и было решено, что позиционирование JavaScript как «младшего
+                            брата» Java будет полезно.
+                            <br><br>
+                            Со временем JavaScript стал полностью независимым языком со своей собственной спецификацией,
+                            называющейся <span class="bold italic">ECMAScript</span>, и сейчас не имеет никакого
+                            отношения к Java.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="theory theory_white">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="title">Для чего нужен JavaScript</h2>
+                        <div class="descr">
+                            Возможности JavaScript сильно зависят от окружения, в котором он работает. Например,
+                            <span class="bold italic">NodeJS</span>
+                            поддерживает функции чтения/записи произвольных файлов, выполнения сетевых запросов и т.д.
+                            <br><br>
+                            В браузере для JavaScript доступно всё, что связано с манипулированием веб-страницами,
+                            взаимодействием с пользователем и веб-сервером.
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h2 class="title">JavaScript может:</h2>
+                        <div class="descr">
+                            <ul>
+                                <li>Добавлять новый HTML-код на страницу, изменять существующее содержимое,
+                                    модифицировать стили.</li>
+                                <li>Реагировать на действия пользователя, щелчки мыши, перемещения указателя, нажатия
+                                    клавиш.</li>
+                                <li>Отправлять сетевые запросы на удалённые сервера, скачивать и загружать файлы
+                                    (технологии AJAX и COMET).</li>
+                                <li>Получать и устанавливать куки, задавать вопросы посетителю, показывать сообщения.
+                                </li>
+                                <li>Запоминать данные на стороне клиента («local storage»).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="triangle" class="triangle">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <!-- <canvas class="triangle__picture"></canvas> -->
+                    </div>
+                    <div class="col">
+                        <h2 class="triangle__title title title_white">Треугольник</h2>
+                        <div class="triangle__descr descr descr_white">
+                            С помощью <span class="yellow">JavaScript</span> ты можешь посчитать
+                            площадь треугольника по заданным параметрам! Достаточно лишь знать нужную формулу для
+                            подсчета площади.
+                            <br><br>
+                            Для того чтобы вычислить площадь, укажи ниже высоту и основание будущего треугольника.
+                        </div>
+                        <div class="triangle__data data flex flex-fdc">
+                            <input type="text" placeholder="Высота" id="height" class="data__value">
+                            <input type="text" placeholder="Основание" id="base" class="data__value">
+                        </div>
+                        <button class="triangle__btn btn btn_white">Вычислить</button>
+                        <div class="triangle__result result result_white">
+                            <div class="result__text">Площадь:</div>
+                            <div class="result__value result__value_white"></div>
+                        </div>
+
+                        <div class="triangle__error error">
+                            <div class="error__message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strings" class="strings">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="strings__title title">Строки</h2>
+                        <div class="strings__descr descr">
+                            Так же с помощью возможностей данного языка, ты можешь сравнивать строки, например
+                            их длину. Для этого нам нужно сравнить свойства <span class="bold italic">length</span> этих
+                            строк с помощью оператора
+                            сравнивания "==".
+                            <br><br>
+                            Попробуй вписать различные пары слов и убедись сам!
+                        </div>
+                        <div class="strings__data data flex flex-fdc">
+                            <input type="text" placeholder="Первая строка" id="first" class="data__value">
+                            <input type="text" placeholder="Вторая строка" id="second" class="data__value">
+                        </div>
+                        <button class="strings__btn btn">Сравнить</button>
+                        <div class="strings__result result">
+                            <div class="result__text">Результат:</div>
+                            <div class="result__value"></div>
+                        </div>
+                        <div class="strings__error error">
+                            <div class="error__message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="array" class="array">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <canvas class="array__picture"></canvas>
+                    </div>
+                    <div class="col">
+                        <h2 class="array__title title title_white">Мин/Макс значения</h2>
+                        <div class="array__descr descr descr_white">
+                            На сравнении строк, возможности <span class="yellow">JavaScript</span> не ограничиваются!
+                            <br><br>
+                            На равне со строками ты можешь работать и с числовыми значениями, например находить
+                            минимальные и максимальные значения в наборе
+                            чисел! Для этого нам понадобится встроенный объект <span class="bold italic">Math</span>,
+                            так же
+                            его методы <span class="bold italic">max</span> и <span class="bold italic">min</span>.
+                            <br><br>
+                            Введи любые 5 чисел и функция сама определит минимальное и максимальное значение!
+                        </div>
+                        <div class="array__data data flex flex-jcsb">
+                            <input type="text" placeholder="Число" class="array__number ">
+                            <input type="text" placeholder="Число" class="array__number">
+                            <input type="text" placeholder="Число" class="array__number">
+                            <input type="text" placeholder="Число" class="array__number">
+                            <input type="text" placeholder="Число" class="array__number">
+                        </div>
+                        <button class="array__btn btn btn_white">Вычислить</button>
+                        <div class="array__result result result_white">
+                            <div class="result__text">Мин:</div>
+                            <div id="min" class="result__value result__value_white">
+                            </div>
+                            <div class="result__text">Макс:</div>
+                            <div id="max" class="result__value result__value_white"></div>
+                        </div>
+                        <div class="array__error error">
+                            <div class="error__message"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="timer" class="timer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="timer__title title">Таймер</h2>
+                        <div class="timer__descr descr">
+                            Однако и работа с объектом <span class="bold">Math</span> далеко не предел данного языка!
+                            С помощью встоенного
+                            объекта <span class="bold">Date</span>, ты сможешь написать свой секундомер.
+                            Так же нам понадобится функция <span class="bold italic">setInterval</span>
+                        </div>
+                        <div class="timer__data data flex flex-jcsb ">
+                            <label id="hours-label" for="">
+                                <input id="hours" class="data__hours flex flex-aic" value="00">
+                                Ч
+                            </label>
+                            <span class="timer__colon">:</span>
+                            <label id="minutes-label" for="">
+                                <input id="minutes" class="data__minutes" value="00">
+                                М
+                            </label>
+                            <span class="timer__colon">:</span>
+                            <label id="seconds-label" for="">
+                                <input id="seconds" class="data__seconds" value="00">
+                                С
+                            </label>
+                        </div>
+                        <div class="timer__controls">
+                            <button id="start" class="timer__btn btn">Старт</button>
+
+                            <button id="stop" class="timer__btn btn hide">Стоп</button>
+
+                            <button id="reset" class="timer__btn btn">Сброс</button>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="test" class="test">
+            <div class="container">
+                <h2 class="test__title title title_white">Тест</h2>
+                <div class="test__descr descr descr_white">
+                    Предлагаю пройти тебе небольшой тест, чтобы закрепить полученные знания. Это займёт не
+                    больше 5 минут!
+                </div>
+                <div id="questions" class="test__questions flex flex-fdc"></div>
+                <div id="results" class="test__results  flex flex-fdc hide"></div>
+                <div class="test__controls flex ">
+                    <button id="btn_next" class="btn_next btn btn_white" disabled>Далее</button>
+                    <button id="btn_reset" class="btn_reset btn btn_white hide">С начала</button>
+                    <div id="indicator" class="test__indicator flex flex-aic">1/10</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screensaver" class="screensaver">
+            <div class="container">
+                <h2 class="screensaver__title title">Заставка</h2>
+                <div class="screensaver__descr descr">
+                    Чтобы открыть заставку нажмите на кнопку ниже
+                </div>
+
+                <div class="screensaver__controls flex flex-jcc">
+                    <button class="screensaver__btn btn "></button>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer></footer>
+
+    <div class="modal hide ">
+        <div class="modal__data flex flex-fdc flex-jcc flex-aic">
+            <div class="modal__date descr">
+            </div>
+            <div class="modal__username descr"></div>
+        </div>
+    </div>
+
+
+    <script src="js/bundle.js"></script>
+</body>
+
+</html>
