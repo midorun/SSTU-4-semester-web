@@ -1,8 +1,5 @@
-import DATA from '../../constants/DATA';
 import nextId from '../../services/nextId';
-import Films from '../Films';
 import FilmsItem from '../FilmsItem';
-import App, { App as staticApp } from '../App';
 
 
 class FilmsList {
@@ -12,40 +9,8 @@ class FilmsList {
     }
 
     render() {
-
-        const FilmsItems = this.data.map(({
-            title,
-            country,
-            genre,
-            director,
-            script,
-            producer,
-            operator,
-            composer,
-            budget,
-            income,
-            age,
-            duration,
-            release,
-            img,
-            id }) => {
-            return new FilmsItem(
-                title,
-                country,
-                genre,
-                director,
-                script,
-                producer,
-                operator,
-                composer,
-                budget,
-                income,
-                age,
-                duration,
-                release,
-                img,
-                id
-            ).render();
+        const FilmsItems = this.data.map((props) => {
+            return new FilmsItem(props).render();
         })
 
         return (
@@ -59,6 +24,7 @@ class FilmsList {
 
     removeFilmsItem(id) {
         this.data = this.data.filter(item => item.id !== id);
+        localStorage.setItem('data', JSON.stringify(this.data));
 
         this.Films.render();
         this.Films.addEventListeners();
@@ -78,9 +44,10 @@ class FilmsList {
         formDataObj['id'] = nextId();
 
         this.data.push(formDataObj);
+        localStorage.setItem('data', JSON.stringify(this.data));
 
-        Films.render();
-        Films.addEventListeners();
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
     addEventListeners() {
@@ -88,6 +55,7 @@ class FilmsList {
             .forEach(element => {
                 element.addEventListener('click', () => {
                     let id = +element.getAttribute('data-films-item-id');
+                    console.log(id);
                     this.removeFilmsItem(id);
                 })
             })

@@ -2,21 +2,22 @@ import nextId from "../../services/nextId";
 
 class FilmsItem {
     constructor(
-        title = '',
-        country = '',
-        genre = '',
-        director = '',
-        script = '',
-        producer = '',
-        operator = '',
-        composer = '',
-        budget = '',
-        income = '',
-        age = '',
-        duration = '',
-        release = '',
-        img = '',
-        id = nextId()
+        { title = '',
+            country = '',
+            genre = '',
+            director = '',
+            script = '',
+            producer = '',
+            operator = '',
+            composer = '',
+            budget = '',
+            income = '',
+            age = '',
+            duration = '',
+            release = '',
+            img = '',
+            id = nextId()
+        }
     ) {
         this.title = title
         this.country = country

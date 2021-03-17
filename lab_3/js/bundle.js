@@ -65,7 +65,8 @@ var App = /*#__PURE__*/function () {
       this.Films.FilmsList.data = this.data;
       this.Films.FilmsList.Films = this.Films;
       this.Films.FilmsControls.Modal = this.Modal;
-      this.Films.render(this.data);
+      this.Modal.FilmsList = this.Films.FilmsList;
+      this.Films.render();
       this.Modal.render();
     }
   }, {
@@ -190,22 +191,37 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var FilmsItem = /*#__PURE__*/function () {
-  function FilmsItem() {
-    var title = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-    var country = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-    var genre = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
-    var director = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
-    var script = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : '';
-    var producer = arguments.length > 5 && arguments[5] !== undefined ? arguments[5] : '';
-    var operator = arguments.length > 6 && arguments[6] !== undefined ? arguments[6] : '';
-    var composer = arguments.length > 7 && arguments[7] !== undefined ? arguments[7] : '';
-    var budget = arguments.length > 8 && arguments[8] !== undefined ? arguments[8] : '';
-    var income = arguments.length > 9 && arguments[9] !== undefined ? arguments[9] : '';
-    var age = arguments.length > 10 && arguments[10] !== undefined ? arguments[10] : '';
-    var duration = arguments.length > 11 && arguments[11] !== undefined ? arguments[11] : '';
-    var release = arguments.length > 12 && arguments[12] !== undefined ? arguments[12] : '';
-    var img = arguments.length > 13 && arguments[13] !== undefined ? arguments[13] : '';
-    var id = arguments.length > 14 && arguments[14] !== undefined ? arguments[14] : (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
+  function FilmsItem(_ref) {
+    var _ref$title = _ref.title,
+        title = _ref$title === void 0 ? '' : _ref$title,
+        _ref$country = _ref.country,
+        country = _ref$country === void 0 ? '' : _ref$country,
+        _ref$genre = _ref.genre,
+        genre = _ref$genre === void 0 ? '' : _ref$genre,
+        _ref$director = _ref.director,
+        director = _ref$director === void 0 ? '' : _ref$director,
+        _ref$script = _ref.script,
+        script = _ref$script === void 0 ? '' : _ref$script,
+        _ref$producer = _ref.producer,
+        producer = _ref$producer === void 0 ? '' : _ref$producer,
+        _ref$operator = _ref.operator,
+        operator = _ref$operator === void 0 ? '' : _ref$operator,
+        _ref$composer = _ref.composer,
+        composer = _ref$composer === void 0 ? '' : _ref$composer,
+        _ref$budget = _ref.budget,
+        budget = _ref$budget === void 0 ? '' : _ref$budget,
+        _ref$income = _ref.income,
+        income = _ref$income === void 0 ? '' : _ref$income,
+        _ref$age = _ref.age,
+        age = _ref$age === void 0 ? '' : _ref$age,
+        _ref$duration = _ref.duration,
+        duration = _ref$duration === void 0 ? '' : _ref$duration,
+        _ref$release = _ref.release,
+        release = _ref$release === void 0 ? '' : _ref$release,
+        _ref$img = _ref.img,
+        img = _ref$img === void 0 ? '' : _ref$img,
+        _ref$id = _ref.id,
+        id = _ref$id === void 0 ? (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)() : _ref$id;
 
     _classCallCheck(this, FilmsItem);
 
@@ -308,11 +324,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _constants_DATA__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/DATA */ "./constants/DATA.js");
-/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
-/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Films */ "./components/Films/index.js");
-/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../App */ "./components/App/index.js");
+/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
+/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -334,9 +347,6 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-
-
-
 var FilmsList = /*#__PURE__*/function () {
   function FilmsList(Films, data) {
     _classCallCheck(this, FilmsList);
@@ -348,23 +358,8 @@ var FilmsList = /*#__PURE__*/function () {
   _createClass(FilmsList, [{
     key: "render",
     value: function render() {
-      var FilmsItems = this.data.map(function (_ref) {
-        var title = _ref.title,
-            country = _ref.country,
-            genre = _ref.genre,
-            director = _ref.director,
-            script = _ref.script,
-            producer = _ref.producer,
-            operator = _ref.operator,
-            composer = _ref.composer,
-            budget = _ref.budget,
-            income = _ref.income,
-            age = _ref.age,
-            duration = _ref.duration,
-            release = _ref.release,
-            img = _ref.img,
-            id = _ref.id;
-        return new _FilmsItem__WEBPACK_IMPORTED_MODULE_3__.default(title, country, genre, director, script, producer, operator, composer, budget, income, age, duration, release, img, id).render();
+      var FilmsItems = this.data.map(function (props) {
+        return new _FilmsItem__WEBPACK_IMPORTED_MODULE_1__.default(props).render();
       });
       return "\n            <ul class=\"films-list\">\n                ".concat(FilmsItems.join(''), "\n            </ul>\n            ");
     }
@@ -374,6 +369,7 @@ var FilmsList = /*#__PURE__*/function () {
       this.data = this.data.filter(function (item) {
         return item.id !== id;
       });
+      localStorage.setItem('data', JSON.stringify(this.data));
       this.Films.render();
       this.Films.addEventListeners();
     }
@@ -394,10 +390,11 @@ var FilmsList = /*#__PURE__*/function () {
       formFields.forEach(function (field, i) {
         formDataObj[field] = formData[i];
       });
-      formDataObj['id'] = (0,_services_nextId__WEBPACK_IMPORTED_MODULE_1__.default)();
+      formDataObj['id'] = (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
       this.data.push(formDataObj);
-      _Films__WEBPACK_IMPORTED_MODULE_2__.default.render();
-      _Films__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
+      localStorage.setItem('data', JSON.stringify(this.data));
+      this.Films.render();
+      this.Films.addEventListeners();
     }
   }, {
     key: "addEventListeners",
@@ -407,6 +404,7 @@ var FilmsList = /*#__PURE__*/function () {
       document.querySelectorAll('.films-item-delete').forEach(function (element) {
         element.addEventListener('click', function () {
           var id = +element.getAttribute('data-films-item-id');
+          console.log(id);
 
           _this.removeFilmsItem(id);
         });
@@ -522,9 +520,10 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var Modal = /*#__PURE__*/function () {
-  function Modal(params) {
+  function Modal(FilmsList) {
     _classCallCheck(this, Modal);
 
+    this.FilmsList = FilmsList;
     this.modal = null;
     this.form = null;
   }
@@ -551,7 +550,7 @@ var Modal = /*#__PURE__*/function () {
 
         _this.toggleModal();
 
-        _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.addFilmsItem(_this.form);
+        _this.FilmsList.addFilmsItem(_this.form);
       });
       this.modal.addEventListener('click', function (e) {
         if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
@@ -596,109 +595,103 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/nextId */ "./services/nextId.js");
 
-var DATA = [// {
-  //     id: nextId(),
-  //     title: 'Батя',
-  //     country: 'Россия',
-  //     genre: 'Комедия',
-  //     director: ' Антон Зайцев, Артем Логинов',
-  //     script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-  //     producer: 'Дмитрий Ефимович',
-  //     operator: 'Александр Тананов',
-  //     composer: 'Алексей Кестнер',
-  //     budget: '',
-  //     income: '$5 015 023',
-  //     age: '16+',
-  //     duration: '75мин.',
-  //     release: '23 февраля 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450'
-  // },
-  // {
-  //     id: nextId(),
-  //     title: 'Пара из будущего',
-  //     country: 'Россия',
-  //     genre: 'комедия, фантастика, мелодрама',
-  //     director: 'Алексей Нужный',
-  //     script: 'Недалекое будущее, 2040 год. Евгений и Александра 20 лет в браке, их отношения похожи на высохший урюк. Развестись у них тоже не получается, поскольку в будущем расторжение брака – очень дорогая услуга. Но судьба дает им шанс: Евгений и Александра попадают в прошлое, в тот самый день 20 лет назад, когда влюбленный и юный Женя сделал предложение прелестной Саше. Теперь пара из будущего хочет разлучить самих себя в молодости, но это будет непросто. Молодые будут сражаться за свою любовь.',
-  //     producer: 'Леонид Верещагин, Антон Златопольский',
-  //     operator: 'Юрий Коробейников',
-  //     composer: 'Кирилл Бородулев, Евгений Бархатов',
-  //     budget: '',
-  //     income: '$2 173 864',
-  //     age: '12+',
-  //     duration: '104 мин.',
-  //     release: '4 марта 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450'
-  // },
-  // {
-  //     id: nextId(),
-  //     title: 'Никто',
-  //     country: 'США',
-  //     genre: 'боевик, триллер, криминал',
-  //     director: 'Илья Найшуллер',
-  //     script: 'Непримечательный и незаметный человек живёт обычной жизнью, пока однажды, спасая женщину от нападения бандитов, не отправляет одного из хулиганов в больницу. Лишь позже он узнаёт, что это был брат влиятельного гангстера, который теперь жаждет мести.',
-  //     producer: 'Браден Афтегуд, Келли МакКормик, Боб Оденкёрк',
-  //     operator: 'Павел Погоржельский',
-  //     composer: 'Дэвид Бакли',
-  //     budget: '',
-  //     income: '',
-  //     age: '18+',
-  //     duration: '92 мин',
-  //     release: '18 марта 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450'
-  // },
-  // {
-  //     id: nextId(),
-  //     title: 'Райя и последний дракон',
-  //     country: 'США',
-  //     genre: 'мультфильм, фэнтези, боевик, комедия, приключения, семейный',
-  //     director: 'Дон Холл, Карлос Лопес Эстрада, Пол Бриггс',
-  //     script: 'Давным-давно в волшебной стране Кумандре бок о бок с людьми жили драконы — создатели и хранители воды. Мирной жизни пришел конец, когда появились друуны. Порождения тьмы обращали людей и драконов в каменные изваяния, и только магия драконихи Сису смогла прогнать злых созданий и расколдовать людей, но на драконов не подействовала. Кумандра раскололась на государства Сердца, Клыка, Когтя, Хребта и Хвоста, а волшебный драконий камень хранился в стране Сердца, которой правил отец Райи. Он мечтал объединить земли, но из-за человеческой жадности и зависти артефакт раскололся. Правитель каждой страны заполучил по осколку, а друуны снова стали властвовать безраздельно.',
-  //     producer: 'Джаред Буш, Нэйтан Кертис, Питер Дель Вечо',
-  //     operator: 'Роб Дрессель',
-  //     composer: 'Джеймс Ньютон Ховард',
-  //     budget: '',
-  //     income: '$52 924 610',
-  //     age: '6+',
-  //     duration: '107 мин.',
-  //     release: '3 марта 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450'
-  // },
-  // {
-  //     id: nextId(),
-  //     title: 'Айнбо. Сердце Амазонии',
-  //     country: 'Перу, Нидерланды',
-  //     genre: 'мультфильм, фэнтези, комедия, приключения, семейный',
-  //     director: 'Рихард Клаус, Хосе Селада',
-  //     script: 'Бесстрашная Айнбо родилась и выросла в таинственных амазонских джунглях. Узнав, что её родному поселку грозит опасность, она тотчас отправляется за помощью в компании удивительных зверей. Их ждёт восхождение к пылающему вулкану, встреча с могущественным духом Амазонии и схватка с мифическим чудовищем.',
-  //     producer: 'Рихард Клаус, Сезар Селада, Хосе Селада',
-  //     operator: '',
-  //     composer: 'Виджай Бирепут',
-  //     budget: '10 000 000',
-  //     income: '$5 015 023',
-  //     age: '6+',
-  //     duration: '84 мин.',
-  //     release: '3 марта 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450'
-  // },
-  // {
-  //     id: nextId(),
-  //     title: 'Хребет дьявола',
-  //     country: 'США',
-  //     genre: 'ужасы',
-  //     director: 'Брэдли Паркер',
-  //     script: 'Группа молодых геологов, исследующих отдаленные от цивилизации места, находит городок в горах Аппалачи, который был заброшен в прошлом веке при загадочных обстоятельствах. Думая, что они нашли свою подземную Атлантиду, друзья пробуждают нечто древнее и жуткое. Научная экспедиция превращается в борьбу за выживание в месте, прозванном Хребтом дьявола.',
-  //     producer: 'Диего Халливис, Хулио Халливис, Эду Бодегас',
-  //     operator: 'Морган Сассер',
-  //     composer: 'Нима Фахрара',
-  //     budget: '',
-  //     income: '',
-  //     age: '18+',
-  //     duration: '100 мин.',
-  //     release: '5 марта 2021',
-  //     img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450'
-  // }
-];
+var DATA = [{
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Батя',
+  country: 'Россия',
+  genre: 'Комедия',
+  director: ' Антон Зайцев, Артем Логинов',
+  script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
+  producer: 'Дмитрий Ефимович',
+  operator: 'Александр Тананов',
+  composer: 'Алексей Кестнер',
+  budget: '',
+  income: '$5 015 023',
+  age: '16+',
+  duration: '75мин.',
+  release: '23 февраля 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Пара из будущего',
+  country: 'Россия',
+  genre: 'комедия, фантастика, мелодрама',
+  director: 'Алексей Нужный',
+  script: 'Недалекое будущее, 2040 год. Евгений и Александра 20 лет в браке, их отношения похожи на высохший урюк. Развестись у них тоже не получается, поскольку в будущем расторжение брака – очень дорогая услуга. Но судьба дает им шанс: Евгений и Александра попадают в прошлое, в тот самый день 20 лет назад, когда влюбленный и юный Женя сделал предложение прелестной Саше. Теперь пара из будущего хочет разлучить самих себя в молодости, но это будет непросто. Молодые будут сражаться за свою любовь.',
+  producer: 'Леонид Верещагин, Антон Златопольский',
+  operator: 'Юрий Коробейников',
+  composer: 'Кирилл Бородулев, Евгений Бархатов',
+  budget: '',
+  income: '$2 173 864',
+  age: '12+',
+  duration: '104 мин.',
+  release: '4 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Никто',
+  country: 'США',
+  genre: 'боевик, триллер, криминал',
+  director: 'Илья Найшуллер',
+  script: 'Непримечательный и незаметный человек живёт обычной жизнью, пока однажды, спасая женщину от нападения бандитов, не отправляет одного из хулиганов в больницу. Лишь позже он узнаёт, что это был брат влиятельного гангстера, который теперь жаждет мести.',
+  producer: 'Браден Афтегуд, Келли МакКормик, Боб Оденкёрк',
+  operator: 'Павел Погоржельский',
+  composer: 'Дэвид Бакли',
+  budget: '',
+  income: '',
+  age: '18+',
+  duration: '92 мин',
+  release: '18 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Райя и последний дракон',
+  country: 'США',
+  genre: 'мультфильм, фэнтези, боевик, комедия, приключения, семейный',
+  director: 'Дон Холл, Карлос Лопес Эстрада, Пол Бриггс',
+  script: 'Давным-давно в волшебной стране Кумандре бок о бок с людьми жили драконы — создатели и хранители воды. Мирной жизни пришел конец, когда появились друуны. Порождения тьмы обращали людей и драконов в каменные изваяния, и только магия драконихи Сису смогла прогнать злых созданий и расколдовать людей, но на драконов не подействовала. Кумандра раскололась на государства Сердца, Клыка, Когтя, Хребта и Хвоста, а волшебный драконий камень хранился в стране Сердца, которой правил отец Райи. Он мечтал объединить земли, но из-за человеческой жадности и зависти артефакт раскололся. Правитель каждой страны заполучил по осколку, а друуны снова стали властвовать безраздельно.',
+  producer: 'Джаред Буш, Нэйтан Кертис, Питер Дель Вечо',
+  operator: 'Роб Дрессель',
+  composer: 'Джеймс Ньютон Ховард',
+  budget: '',
+  income: '$52 924 610',
+  age: '6+',
+  duration: '107 мин.',
+  release: '3 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Айнбо. Сердце Амазонии',
+  country: 'Перу, Нидерланды',
+  genre: 'мультфильм, фэнтези, комедия, приключения, семейный',
+  director: 'Рихард Клаус, Хосе Селада',
+  script: 'Бесстрашная Айнбо родилась и выросла в таинственных амазонских джунглях. Узнав, что её родному поселку грозит опасность, она тотчас отправляется за помощью в компании удивительных зверей. Их ждёт восхождение к пылающему вулкану, встреча с могущественным духом Амазонии и схватка с мифическим чудовищем.',
+  producer: 'Рихард Клаус, Сезар Селада, Хосе Селада',
+  operator: '',
+  composer: 'Виджай Бирепут',
+  budget: '10 000 000',
+  income: '$5 015 023',
+  age: '6+',
+  duration: '84 мин.',
+  release: '3 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Хребет дьявола',
+  country: 'США',
+  genre: 'ужасы',
+  director: 'Брэдли Паркер',
+  script: 'Группа молодых геологов, исследующих отдаленные от цивилизации места, находит городок в горах Аппалачи, который был заброшен в прошлом веке при загадочных обстоятельствах. Думая, что они нашли свою подземную Атлантиду, друзья пробуждают нечто древнее и жуткое. Научная экспедиция превращается в борьбу за выживание в месте, прозванном Хребтом дьявола.',
+  producer: 'Диего Халливис, Хулио Халливис, Эду Бодегас',
+  operator: 'Морган Сассер',
+  composer: 'Нима Фахрара',
+  budget: '',
+  income: '',
+  age: '18+',
+  duration: '100 мин.',
+  release: '5 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450'
+}];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DATA);
 
 /***/ }),

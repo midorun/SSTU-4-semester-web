@@ -31,7 +31,8 @@ class App {
         this.Films.FilmsList.data = this.data;
         this.Films.FilmsList.Films = this.Films;
         this.Films.FilmsControls.Modal = this.Modal;
-        this.Films.render(this.data);
+        this.Modal.FilmsList = this.Films.FilmsList;
+        this.Films.render();
         this.Modal.render();
     }
 

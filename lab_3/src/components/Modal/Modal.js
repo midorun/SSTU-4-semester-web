@@ -2,7 +2,8 @@ import { MODAL } from '../../constants/root';
 import FilmsList from '../FilmsList';
 
 class Modal {
-    constructor(params) {
+    constructor(FilmsList) {
+        this.FilmsList = FilmsList;
         this.modal = null;
         this.form = null
     }
@@ -44,7 +45,7 @@ class Modal {
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.toggleModal();
-            FilmsList.addFilmsItem(this.form);
+            this.FilmsList.addFilmsItem(this.form);
         })
         this.modal.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
