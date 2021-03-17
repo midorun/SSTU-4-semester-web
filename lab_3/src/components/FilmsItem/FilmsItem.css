@@ -1,17 +1,24 @@
+.films-item hr {
+    width: 100%;
+}
+
 .films-item:not(:nth-child(3n+3)) {
     margin-right: 30px;
 }
 
 .films-item {
+    position: relative;
     margin-top: 30px;
-    padding: 20px 10px;
+    padding: 10px;
     width: 350px;
-    min-height: 450px;
+    min-height: 550px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #000000;
     border-radius: 25px;
-    border: 4px solid #6c81e7;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: #EFF2FA;
+    color: #4E5983;
 
 }
 
@@ -19,19 +26,80 @@
     margin-top: 10px;
 }
 
+.films-item-controls {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 75px;
+}
+
+.films-item-turn,
 .films-item-delete {
-    margin: 0 auto;
-    margin-top: auto;
-    height: 30px;
-    width: 200px;
+    width: 50px;
+    height: 50px;
     border: none;
-    border-radius: 15px;
-    background-color: #f44336ce;
-    color: #ffffff;
+    border-radius: 50%;
     transition: all .3s;
     cursor: pointer;
 }
 
+.films-item-turn {
+    background: #623fc2;
+    color: #ffffff;
+    outline: none;
+}
+
+.films-item-turn:hover {
+    background: #4c1bd3;
+}
+
+.films-item-delete {
+    margin-right: 100px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background-color: #f44336ce;
+    font-size: 2.3rem;
+    color: #ffffff;
+}
+
 .films-item-delete:hover {
     background-color: #f43636;
+}
+
+.films-item-img {
+    position: relative;
+    margin: 0 auto;
+    width: 330px;
+    height: 400px;
+}
+
+.films-item-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.title {
+    display: block;
+    font-size: 1.8rem;
+    text-align: center;
+
+}
+
+.age {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #ffffff;
+    border-radius: 50px;
+    color: #000000;
 }

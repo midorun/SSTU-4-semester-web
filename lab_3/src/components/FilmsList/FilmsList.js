@@ -1,8 +1,8 @@
 import DATA from '../../constants/DATA';
-import { FILMS } from '../../constants/root';
 import nextId from '../../services/nextId';
+import Films from '../Films';
 import FilmsItem from '../FilmsItem';
-import Modal from '../Modal';
+
 
 class FilmsList {
     constructor(DATA) {
@@ -25,6 +25,7 @@ class FilmsList {
             age,
             duration,
             release,
+            img,
             id }) => {
             return new FilmsItem(
                 title,
@@ -40,36 +41,29 @@ class FilmsList {
                 age,
                 duration,
                 release,
+                img,
                 id
             ).render();
         })
 
-        FILMS.innerHTML =
+        return (
             `
-            <div class="container">
-                <nav class="films-controls">
-                    <ul>
-                        <li>
-                            <button id="films-controls-add" class="films-controls-add"></ button>
-                        </li>
-                    </ul>
-                </nav>
-                <ul class="films-list">
-                    ${FilmsItems.join('')}
-                </ul>
-            </div>
-        `;
-
-
+            <ul class="films-list">
+                ${FilmsItems.join('')}
+            </ul>
+            `
+        )
     }
 
-    removeFilmItem(id) {
+    removeFilmsItem(id) {
         this.DATA = this.DATA.filter(item => item.id !== id);
-        this.render();
-        this.addEventListeners();
+
+        Films.render();
+        Films.addEventListeners();
+
     }
 
-    addFilmItem(form) {
+    addFilmsItem(form) {
         let formDataObj = {};
 
         const formFields = [...form.elements].map(input => input.id);
@@ -83,20 +77,19 @@ class FilmsList {
         formDataObj['id'] = nextId();
 
         this.DATA.push(formDataObj);
-        this.render();
-        this.addEventListeners();
+
+        Films.render();
+        Films.addEventListeners();
     }
 
     addEventListeners() {
         document.querySelectorAll('.films-item-delete')
             .forEach(element => {
                 element.addEventListener('click', () => {
-                    let id = +element.getAttribute('data-film-item-id');
-                    this.removeFilmItem(id);
+                    let id = +element.getAttribute('data-films-item-id');
+                    this.removeFilmsItem(id);
                 })
             })
-        document.querySelector('.films-controls-add')
-            .addEventListener('click', () => Modal.enable());
     }
 }
 

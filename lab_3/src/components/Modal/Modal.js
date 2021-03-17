@@ -4,7 +4,6 @@ import FilmsList from '../FilmsList';
 class Modal {
     constructor(params) {
         this.modal = null;
-        this.modalClose = null;
         this.form = null
     }
 
@@ -27,37 +26,29 @@ class Modal {
                     <input type="text" name="age" id="age" placeholder="Возрастное ограничение">
                     <input type="text" name="duration" id="duration" placeholder="Продолжительность">
                     <input type="text" name="release" id="release" placeholder="Дата выхода">
+                    <input type="text" name="img", id="img" placeholder="Ссылка на постер">
                     <button id="form-btn-submit" type="submit">Добавить</button>
                 </form>
             </div>
         </div>
         `
         this.modal = document.querySelector('.modal');
-        this.modalClose = document.querySelector('.modal-close');
         this.form = document.querySelector('#form');
     }
 
-    toggleClasses() {
+    toggleModal() {
         this.modal.classList.toggle('active');
-    }
-
-    enable() {
-        this.toggleClasses();
-    }
-
-    disable() {
-        this.toggleClasses();
     }
 
     addEventListeners() {
         this.form.addEventListener('submit', (e) => {
             e.preventDefault();
-            this.disable();
-            FilmsList.addFilmItem(this.form);
+            this.toggleModal();
+            FilmsList.addFilmsItem(this.form);
         })
         this.modal.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
-                this.disable();
+                this.toggleModal();
             }
         })
     }
