@@ -47,7 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsContols/FilmsControls.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,kBAAkB;IAClB,eAAe;AACnB;;AAEA;;IAEI,WAAW;IACX,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,mBAAmB;IACnB,kBAAkB;AACtB;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;AAChB","sourcesContent":[".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    outline: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.fa-plus {\r\n    font-size: 1.8rem;\r\n    color: #ffffff;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsContols/FilmsControls.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,kBAAkB;IAClB,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,iBAAiB;IACjB,cAAc;AAClB","sourcesContent":[".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    outline: none;\r\n    cursor: pointer;\r\n}\r\n\r\n.fa-plus {\r\n    font-size: 1.8rem;\r\n    color: #ffffff;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73,7 +73,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n\r\n}\r\n\r\n.films-item span:not(:first-child) {\r\n    margin-top: 10px;\r\n}\r\n\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.title {\r\n    display: block;\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItem/FilmsItem.css"],"names":[],"mappings":"AAAA;IACI,WAAW;AACf;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;IACnB,cAAc;;AAElB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,qBAAqB;IACrB,YAAY;AAChB;;AAEA;;IAEI,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,mBAAmB;IACnB,cAAc;IACd,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,2BAA2B;IAC3B,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,cAAc;IACd,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;;AAEtB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;IACnB,mBAAmB;IACnB,cAAc;AAClB","sourcesContent":[".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n\r\n}\r\n\r\n.films-item span:not(:first-child) {\r\n    margin-top: 10px;\r\n}\r\n\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.title {\r\n    display: block;\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n    position: relative;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n/* Properties */\r\n.title {\r\n    text-align: center;\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}\r\n\r\n/* Controls */\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItem/FilmsItem.css"],"names":[],"mappings":"AAAA;IACI,WAAW;AACf;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;IAChB,aAAa;IACb,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,yBAAyB;IACzB,kBAAkB;IAClB,mBAAmB;IACnB,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;IACnB,cAAc;AAClB;;AAEA;IACI,kBAAkB;IAClB,cAAc;IACd,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,eAAe;AACf;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;IACnB,mBAAmB;IACnB,cAAc;AAClB;;AAEA,aAAa;AACb;IACI,aAAa;IACb,uBAAuB;IACvB,qBAAqB;IACrB,YAAY;AAChB;;AAEA;;IAEI,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,mBAAmB;IACnB,cAAc;IACd,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,2BAA2B;IAC3B,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n    position: relative;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n/* Properties */\r\n.title {\r\n    text-align: center;\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}\r\n\r\n/* Controls */\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -812,9 +812,13 @@ class FilmsControls {
     render() {
         return (
             `
+ 
            <ul class="films-controls">
                 <li>
-                    <button id="films-controls-add" class="films-controls-add"></ button>
+
+                    <button id="films-controls-add" class="films-controls-add">
+                    <i class="fas fa-plus"></i>
+                    </button>
                 </li>
             </ul>
            `
@@ -900,17 +904,10 @@ class FilmsItem {
         return (
             `
             <li data-card-id='${this.id}' class="films-item">
-                <div>
-                    <span class="title">
-                        ${this.title}
-                    </span>
-                   
-                </div>
+                <span class="title">${this.title}</span>
                 <hr>
                 <div class="films-item-img">
-                    <span class="age">
-                    ${this.age}
-                    </span>
+                    <span class="age">${this.age}</span>
                     <img src="${this.img}" alt="" >
                 </div>        
                 <div class="films-item-controls">
@@ -919,7 +916,7 @@ class FilmsItem {
                     </button>
 
                     <button class="films-item-turn">
-                        <i class="fas fa-undo"></i>
+                        <i class="fas fa-info"></i>
                     </button>
                 </div>
             </li>
@@ -1285,7 +1282,7 @@ let DATA = [
         producer: 'Дмитрий Ефимович',
         operator: 'Александр Тананов',
         composer: 'Алексей Кестнер',
-        budget: '10 000 000',
+        budget: '',
         income: '$5 015 023',
         age: '16+',
         duration: '75мин.',
@@ -1311,67 +1308,71 @@ let DATA = [
     },
     {
         id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
+        title: 'Никто',
+        country: 'США',
+        genre: 'боевик, триллер, криминал',
+        director: 'Илья Найшуллер',
+        script: 'Непримечательный и незаметный человек живёт обычной жизнью, пока однажды, спасая женщину от нападения бандитов, не отправляет одного из хулиганов в больницу. Лишь позже он узнаёт, что это был брат влиятельного гангстера, который теперь жаждет мести.',
+        producer: 'Браден Афтегуд, Келли МакКормик, Боб Оденкёрк',
+        operator: 'Павел Погоржельский',
+        composer: 'Дэвид Бакли',
+        budget: '',
+        income: '',
+        age: '18+',
+        duration: '92 мин',
+        release: '18 марта 2021',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450'
     },
     {
         id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
+        title: 'Райя и последний дракон',
+        country: 'США',
+        genre: 'мультфильм, фэнтези, боевик, комедия, приключения, семейный',
+        director: 'Дон Холл, Карлос Лопес Эстрада, Пол Бриггс',
+        script: 'Давным-давно в волшебной стране Кумандре бок о бок с людьми жили драконы — создатели и хранители воды. Мирной жизни пришел конец, когда появились друуны. Порождения тьмы обращали людей и драконов в каменные изваяния, и только магия драконихи Сису смогла прогнать злых созданий и расколдовать людей, но на драконов не подействовала. Кумандра раскололась на государства Сердца, Клыка, Когтя, Хребта и Хвоста, а волшебный драконий камень хранился в стране Сердца, которой правил отец Райи. Он мечтал объединить земли, но из-за человеческой жадности и зависти артефакт раскололся. Правитель каждой страны заполучил по осколку, а друуны снова стали властвовать безраздельно.',
+        producer: 'Джаред Буш, Нэйтан Кертис, Питер Дель Вечо',
+        operator: 'Роб Дрессель',
+        composer: 'Джеймс Ньютон Ховард',
+        budget: '',
+        income: '$52 924 610',
+        age: '6+',
+        duration: '107 мин.',
+        release: '3 марта 2021',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450'
     },
     {
         id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
+        title: 'Айнбо. Сердце Амазонии',
+        country: 'Перу, Нидерланды',
+        genre: 'мультфильм, фэнтези, комедия, приключения, семейный',
+        director: 'Рихард Клаус, Хосе Селада',
+        script: 'Бесстрашная Айнбо родилась и выросла в таинственных амазонских джунглях. Узнав, что её родному поселку грозит опасность, она тотчас отправляется за помощью в компании удивительных зверей. Их ждёт восхождение к пылающему вулкану, встреча с могущественным духом Амазонии и схватка с мифическим чудовищем.',
+        producer: 'Рихард Клаус, Сезар Селада, Хосе Селада',
+        operator: '',
+        composer: 'Виджай Бирепут',
         budget: '10 000 000',
         income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
+        age: '6+',
+        duration: '84 мин.',
+        release: '3 марта 2021',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450'
     },
     {
         id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
+        title: 'Хребет дьявола',
+        country: 'США',
+        genre: 'ужасы',
+        director: 'Брэдли Паркер',
+        script: 'Группа молодых геологов, исследующих отдаленные от цивилизации места, находит городок в горах Аппалачи, который был заброшен в прошлом веке при загадочных обстоятельствах. Думая, что они нашли свою подземную Атлантиду, друзья пробуждают нечто древнее и жуткое. Научная экспедиция превращается в борьбу за выживание в месте, прозванном Хребтом дьявола.',
+        producer: 'Диего Халливис, Хулио Халливис, Эду Бодегас',
+        operator: 'Морган Сассер',
+        composer: 'Нима Фахрара',
+        budget: '',
+        income: '',
+        age: '18+',
+        duration: '100 мин.',
+        release: '5 марта 2021',
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450'
     }
 ]
 

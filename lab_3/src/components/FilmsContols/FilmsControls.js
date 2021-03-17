@@ -5,9 +5,13 @@ class FilmsControls {
     render() {
         return (
             `
+ 
            <ul class="films-controls">
                 <li>
-                    <button id="films-controls-add" class="films-controls-add"></ button>
+
+                    <button id="films-controls-add" class="films-controls-add">
+                    <i class="fas fa-plus"></i>
+                    </button>
                 </li>
             </ul>
            `

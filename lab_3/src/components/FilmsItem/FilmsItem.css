@@ -7,25 +7,57 @@
 }
 
 .films-item {
-    position: relative;
     margin-top: 30px;
     padding: 10px;
     width: 350px;
     min-height: 550px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
     border-radius: 25px;
     font-weight: 700;
     font-size: 1.1rem;
     background: #EFF2FA;
     color: #4E5983;
-
 }
 
-.films-item span:not(:first-child) {
-    margin-top: 10px;
+.films-item-img {
+    position: relative;
+    margin: 0 auto;
+    width: 330px;
+    height: 400px;
 }
 
+.films-item-img img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Properties */
+.title {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+.age {
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    background: #ffffff;
+    border-radius: 50px;
+    color: #000000;
+}
+
+/* Controls */
 .films-item-controls {
     display: flex;
     justify-content: center;
@@ -66,40 +98,4 @@
 
 .films-item-delete:hover {
     background-color: #f43636;
-}
-
-.films-item-img {
-    position: relative;
-    margin: 0 auto;
-    width: 330px;
-    height: 400px;
-}
-
-.films-item-img img {
-    width: 100%;
-    height: 100%;
-}
-
-.title {
-    display: block;
-    font-size: 1.8rem;
-    text-align: center;
-
-}
-
-.age {
-    margin: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    background: #ffffff;
-    border-radius: 50px;
-    color: #000000;
 }

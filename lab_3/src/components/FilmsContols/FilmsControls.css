@@ -11,26 +11,11 @@
     background: #30ee3ace;
     border: none;
     border-radius: 50%;
+    outline: none;
     cursor: pointer;
 }
 
-.films-controls-add:before,
-.films-controls-add::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    border-radius: 5px;
-}
-
-.films-controls-add:before {
-    width: 35px;
-    height: 4px;
-}
-
-.films-controls-add::after {
-    width: 4px;
-    height: 35px;
+.fa-plus {
+    font-size: 1.8rem;
+    color: #ffffff;
 }

@@ -39,17 +39,10 @@ class FilmsItem {
         return (
             `
             <li data-card-id='${this.id}' class="films-item">
-                <div>
-                    <span class="title">
-                        ${this.title}
-                    </span>
-                   
-                </div>
+                <span class="title">${this.title}</span>
                 <hr>
                 <div class="films-item-img">
-                    <span class="age">
-                    ${this.age}
-                    </span>
+                    <span class="age">${this.age}</span>
                     <img src="${this.img}" alt="" >
                 </div>        
                 <div class="films-item-controls">
@@ -58,7 +51,7 @@ class FilmsItem {
                     </button>
 
                     <button class="films-item-turn">
-                        <i class="fas fa-undo"></i>
+                        <i class="fas fa-info"></i>
                     </button>
                 </div>
             </li>
