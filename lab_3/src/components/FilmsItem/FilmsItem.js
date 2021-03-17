@@ -43,12 +43,13 @@ class FilmsItem {
                     <span class="title">
                         ${this.title}
                     </span>
-                    <span class="age">
-                        ${this.age}
-                    </span>
+                   
                 </div>
                 <hr>
                 <div class="films-item-img">
+                    <span class="age">
+                    ${this.age}
+                    </span>
                     <img src="${this.img}" alt="" >
                 </div>        
                 <div class="films-item-controls">
