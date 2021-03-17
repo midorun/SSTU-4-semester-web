@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Roboto;
+    background: #552ec2ec;
+    color: #ffffff;
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1110px;
+}
