@@ -73,17 +73,17 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films {\r\n    margin-top: 100px;\r\n}\r\n\r\n.films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    /* justify-content: center; */\r\n    flex-wrap: wrap;\r\n\r\n}\r\n\r\n.films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3a;\r\n    border: none;\r\n    border-radius: 50%;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsList/FilmsList.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;AACrB;;AAEA;IACI,cAAc;IACd,aAAa;IACb,6BAA6B;IAC7B,eAAe;;AAEnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,mBAAmB;IACnB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;;IAEI,WAAW;IACX,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,mBAAmB;IACnB,kBAAkB;AACtB;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;AAChB","sourcesContent":[".films {\r\n    margin-top: 100px;\r\n}\r\n\r\n.films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    /* justify-content: center; */\r\n    flex-wrap: wrap;\r\n\r\n}\r\n\r\n.films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3a;\r\n    border: none;\r\n    border-radius: 50%;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films {\r\n    margin-top: 100px;\r\n}\r\n\r\n.films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsList/FilmsList.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;AACrB;;AAEA;IACI,cAAc;IACd,aAAa;IACb,eAAe;AACnB;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,kBAAkB;IAClB,eAAe;AACnB;;AAEA;;IAEI,WAAW;IACX,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,mBAAmB;IACnB,kBAAkB;AACtB;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;AAChB","sourcesContent":[".films {\r\n    margin-top: 100px;\r\n}\r\n\r\n.films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/dist/cjs.js!./components/Form/Form.css":
-/*!*************************************************************************!*\
-  !*** ../node_modules/css-loader/dist/cjs.js!./components/Form/Form.css ***!
-  \*************************************************************************/
+/***/ "../node_modules/css-loader/dist/cjs.js!./components/Modal/Modal.css":
+/*!***************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./components/Modal/Modal.css ***!
+  \***************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".form {\r\n    margin: 0 auto;\r\n    width: 320px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    border: 1px solid;\r\n    background-color: #535151;\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n.form input {\r\n    width: 300px;\r\n    margin-top: 10px;\r\n}\r\n\r\n.form button {\r\n    margin-top: 10px;\r\n}\r\n\r\n.active {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}", "",{"version":3,"sources":["webpack://./components/Form/Form.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,iBAAiB;IACjB,yBAAyB;;;;;;AAM7B;;AAEA;IACI,YAAY;IACZ,gBAAgB;AACpB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;AACpC;;AAEA;IACI,aAAa;AACjB","sourcesContent":[".form {\r\n    margin: 0 auto;\r\n    width: 320px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n    border: 1px solid;\r\n    background-color: #535151;\r\n\r\n\r\n\r\n\r\n\r\n}\r\n\r\n.form input {\r\n    width: 300px;\r\n    margin-top: 10px;\r\n}\r\n\r\n.form button {\r\n    margin-top: 10px;\r\n}\r\n\r\n.active {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    max-width: 400px;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    background: #6d4cc9ec;\r\n    border-radius: 25px;\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 1%;\r\n    font-size: 2.3rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    width: 350px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}", "",{"version":3,"sources":["webpack://./components/Modal/Modal.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,iBAAiB;IACjB,iBAAiB;IACjB,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,OAAO;IACP,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,2BAA2B;IAC3B,cAAc;IACd,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB","sourcesContent":[".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    max-width: 400px;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    background: #6d4cc9ec;\r\n    border-radius: 25px;\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 1%;\r\n    font-size: 2.3rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    width: 350px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -309,10 +309,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./components/Form/Form.css":
-/*!**********************************!*\
-  !*** ./components/Form/Form.css ***!
-  \**********************************/
+/***/ "./components/Modal/Modal.css":
+/*!************************************!*\
+  !*** ./components/Modal/Modal.css ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -321,7 +321,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Form_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./Form.css */ "../node_modules/css-loader/dist/cjs.js!./components/Form/Form.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_Modal_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./Modal.css */ "../node_modules/css-loader/dist/cjs.js!./components/Modal/Modal.css");
 
             
 
@@ -330,11 +330,11 @@ var options = {};
 options.insert = "head";
 options.singleton = false;
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Form_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_Modal_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
 
 
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Form_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_Modal_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -626,15 +626,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
-/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
-/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Form */ "./components/Form/index.js");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
-/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
-/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
-/* harmony import */ var _Form_Form_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Form/Form.css */ "./components/Form/Form.css");
-
-
+/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Modal */ "./components/Modal/index.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
+/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
+/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
+/* harmony import */ var _Modal_Modal_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Modal/Modal.css */ "./components/Modal/Modal.css");
 
 
 
@@ -646,8 +643,8 @@ __webpack_require__.r(__webpack_exports__);
 
 class App {
     render() {
-        _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.render();
-        _Form__WEBPACK_IMPORTED_MODULE_2__.default.render();
+        _FilmsList__WEBPACK_IMPORTED_MODULE_0__.default.render();
+        _Modal__WEBPACK_IMPORTED_MODULE_1__.default.render();
     }
 }
 
@@ -828,7 +825,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
 /* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
 /* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
-/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Form */ "./components/Form/index.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Modal */ "./components/Modal/index.js");
 
 
 
@@ -919,7 +916,7 @@ class FilmsList {
     }
 
     addEventListeners() {
-        document.querySelectorAll('.film-item-delete')
+        document.querySelectorAll('.films-item-delete')
             .forEach(element => {
                 element.addEventListener('click', () => {
                     let id = +element.getAttribute('data-film-item-id');
@@ -927,7 +924,7 @@ class FilmsList {
                 })
             })
         document.querySelector('.films-controls-add')
-            .addEventListener('click', () => _Form__WEBPACK_IMPORTED_MODULE_4__.default.enable());
+            .addEventListener('click', () => _Modal__WEBPACK_IMPORTED_MODULE_4__.default.enable());
     }
 }
 
@@ -951,10 +948,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./components/Form/Form.js":
-/*!*********************************!*\
-  !*** ./components/Form/Form.js ***!
-  \*********************************/
+/***/ "./components/Modal/Modal.js":
+/*!***********************************!*\
+  !*** ./components/Modal/Modal.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -966,38 +963,44 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-class Form {
+class Modal {
     constructor(params) {
-        this.formElement = null;
-        this.submitBtn = null;
+        this.modal = null;
+        this.modalClose = null;
+        this.form = null
     }
 
     render() {
         _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL.innerHTML = `
-            <form id="form" class="form hide">
-                <input type="text" name="title" id="title" placeholder="Название">
-                <input type="text" name="country" id="country" placeholder="Страна">
-                <input type="text" name="genre" id="genre" placeholder="Жанр">
-                <input type="text" name="director" id="director" placeholder="Режисер">
-                <input type="text" name="script" id="script" placeholder="Сценарий">
-                <input type="text" name="producer" id="producer" placeholder="Продюсер">
-                <input type="text" name="operator" id="operator" placeholder="Оператор">
-                <input type="text" name="composer" id="composer" placeholder="Композитор">
-                <input type="text" name="budget" id="budget" placeholder="Бюджет">
-                <input type="text" name="income" id="income" placeholder="Сборы">
-                <input type="text" name="age" id="age" placeholder="Возрастное ограничение">
-                <input type="text" name="duration" id="duration" placeholder="Продолжительность">
-                <input type="text" name="release" id="release" placeholder="Дата выхода">
-                <button id="form-btn-submit" type="submit">Добавить</button>
-            </form>
+        <div class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <form id="form" class="form">
+                    <input type="text" name="title" id="title" placeholder="Название">
+                    <input type="text" name="country" id="country" placeholder="Страна">
+                    <input type="text" name="genre" id="genre" placeholder="Жанр">
+                    <input type="text" name="director" id="director" placeholder="Режисер">
+                    <input type="text" name="script" id="script" placeholder="Сценарий">
+                    <input type="text" name="producer" id="producer" placeholder="Продюсер">
+                    <input type="text" name="operator" id="operator" placeholder="Оператор">
+                    <input type="text" name="composer" id="composer" placeholder="Композитор">
+                    <input type="text" name="budget" id="budget" placeholder="Бюджет">
+                    <input type="text" name="income" id="income" placeholder="Сборы">
+                    <input type="text" name="age" id="age" placeholder="Возрастное ограничение">
+                    <input type="text" name="duration" id="duration" placeholder="Продолжительность">
+                    <input type="text" name="release" id="release" placeholder="Дата выхода">
+                    <button id="form-btn-submit" type="submit">Добавить</button>
+                </form>
+            </div>
+        </div>
         `
-        this.formElement = document.getElementById('form');
-        this.submitBtn = document.getElementById('form-btn-submit');
+        this.modal = document.querySelector('.modal');
+        this.modalClose = document.querySelector('.modal-close');
+        this.form = document.querySelector('#form');
     }
 
     toggleClasses() {
-        this.formElement.classList.toggle('hide');
-        this.formElement.classList.toggle('active');
+        this.modal.classList.toggle('active');
     }
 
     enable() {
@@ -1009,31 +1012,36 @@ class Form {
     }
 
     addEventListeners() {
-        this.formElement.addEventListener('submit', (e) => {
+        this.form.addEventListener('submit', (e) => {
             e.preventDefault();
             this.disable();
-            _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.addFilmItem(this.formElement);
+            _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.addFilmItem(this.form);
+        })
+        this.modal.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
+                this.disable();
+            }
         })
     }
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Form());
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Modal());
 
 /***/ }),
 
-/***/ "./components/Form/index.js":
-/*!**********************************!*\
-  !*** ./components/Form/index.js ***!
-  \**********************************/
+/***/ "./components/Modal/index.js":
+/*!***********************************!*\
+  !*** ./components/Modal/index.js ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Form__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Form */ "./components/Form/Form.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./components/Modal/Modal.js");
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Form__WEBPACK_IMPORTED_MODULE_0__.default);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Modal__WEBPACK_IMPORTED_MODULE_0__.default);
 
 /***/ }),
 
@@ -1267,14 +1275,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/App */ "./components/App/index.js");
 /* harmony import */ var _components_FilmsList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/FilmsList */ "./components/FilmsList/index.js");
-/* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Form */ "./components/Form/index.js");
+/* harmony import */ var _components_Modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Modal */ "./components/Modal/index.js");
 
 
 
 
 _components_App__WEBPACK_IMPORTED_MODULE_0__.default.render();
 _components_FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.addEventListeners();
-_components_Form__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
+_components_Modal__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
 
 
 })();
