@@ -2,16 +2,18 @@ import DATA from '../../constants/DATA';
 import nextId from '../../services/nextId';
 import Films from '../Films';
 import FilmsItem from '../FilmsItem';
+import App, { App as staticApp } from '../App';
 
 
 class FilmsList {
-    constructor(DATA) {
-        this.DATA = DATA;
+    constructor(Films, data) {
+        this.Films = Films;
+        this.data = data;
     }
 
     render() {
 
-        const FilmsItems = this.DATA.map(({
+        const FilmsItems = this.data.map(({
             title,
             country,
             genre,
@@ -56,11 +58,10 @@ class FilmsList {
     }
 
     removeFilmsItem(id) {
-        this.DATA = this.DATA.filter(item => item.id !== id);
+        this.data = this.data.filter(item => item.id !== id);
 
-        Films.render();
-        Films.addEventListeners();
-
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
     addFilmsItem(form) {
@@ -76,7 +77,7 @@ class FilmsList {
         })
         formDataObj['id'] = nextId();
 
-        this.DATA.push(formDataObj);
+        this.data.push(formDataObj);
 
         Films.render();
         Films.addEventListeners();
@@ -93,4 +94,4 @@ class FilmsList {
     }
 }
 
-export default new FilmsList(DATA);
+export default FilmsList;

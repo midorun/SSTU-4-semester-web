@@ -1,7 +1,9 @@
 import Modal from '../Modal';
 
 class FilmsControls {
-
+    constructor(Modal) {
+        this.Modal = Modal;
+    }
     render() {
         return (
             `
@@ -20,9 +22,9 @@ class FilmsControls {
 
     addEventListeners() {
         document.querySelector('.films-controls-add')
-            .addEventListener('click', () => Modal.toggleModal());
+            .addEventListener('click', () => this.Modal.toggleModal());
     }
 
 }
 
-export default new FilmsControls();
+export default FilmsControls;
