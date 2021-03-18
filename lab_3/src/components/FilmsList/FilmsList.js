@@ -1,75 +1,36 @@
-import DATA from '../../constants/DATA';
-import { FILMS } from '../../constants/root';
 import nextId from '../../services/nextId';
 import FilmsItem from '../FilmsItem';
-import Form from '../Form';
+
 
 class FilmsList {
-    constructor(DATA) {
-        this.DATA = DATA;
+    constructor(Films, data) {
+        this.Films = Films;
+        this.data = data;
     }
 
     render() {
-
-        const FilmsItems = this.DATA.map(({
-            title,
-            country,
-            genre,
-            director,
-            script,
-            producer,
-            operator,
-            composer,
-            budget,
-            income,
-            age,
-            duration,
-            release,
-            id }) => {
-            return new FilmsItem(
-                title,
-                country,
-                genre,
-                director,
-                script,
-                producer,
-                operator,
-                composer,
-                budget,
-                income,
-                age,
-                duration,
-                release,
-                id
-            ).render();
+        const FilmsItems = this.data.map((props) => {
+            return new FilmsItem(props).render();
         })
 
-        FILMS.innerHTML =
+        return (
             `
-            <div class="container">
-                <nav class="films-controls">
-                    <ul>
-                        <li>
-                            <button id="films-controls-add" class="films-controls-add"></ button>
-                        </li>
-                    </ul>
-                </nav>
-                <ul class="films-list">
-                    ${FilmsItems.join('')}
-                </ul>
-            </div>
-        `;
-
-
+            <ul class="films-list">
+                ${FilmsItems.join('')}
+            </ul>
+            `
+        )
     }
 
-    removeFilmItem(id) {
-        this.DATA = this.DATA.filter(item => item.id !== id);
-        this.render();
-        this.addEventListeners();
+    removeFilmsItem(id) {
+        this.data = this.data.filter(item => item.id !== id);
+        localStorage.setItem('data', JSON.stringify(this.data));
+
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
-    addFilmItem(form) {
+    addFilmsItem(form) {
         let formDataObj = {};
 
         const formFields = [...form.elements].map(input => input.id);
@@ -82,22 +43,23 @@ class FilmsList {
         })
         formDataObj['id'] = nextId();
 
-        this.DATA.push(formDataObj);
-        this.render();
-        this.addEventListeners();
+        this.data.push(formDataObj);
+        localStorage.setItem('data', JSON.stringify(this.data));
+
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
     addEventListeners() {
-        document.querySelectorAll('.film-item-delete')
+        document.querySelectorAll('.films-item-delete')
             .forEach(element => {
                 element.addEventListener('click', () => {
-                    let id = +element.getAttribute('data-film-item-id');
-                    this.removeFilmItem(id);
+                    let id = +element.getAttribute('data-films-item-id');
+                    console.log(id);
+                    this.removeFilmsItem(id);
                 })
             })
-        document.querySelector('.films-controls-add')
-            .addEventListener('click', () => Form.enable());
     }
 }
 
-export default new FilmsList(DATA);
+export default FilmsList;
