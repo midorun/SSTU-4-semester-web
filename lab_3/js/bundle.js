@@ -73,7 +73,6 @@ var App = /*#__PURE__*/function () {
     key: "updateState",
     value: function updateState(data) {
       localStorage.setItem('data', JSON.stringify(data));
-      App.data = JSON.parse(localStorage.getItem('data'));
     }
   }, {
     key: "addEventListeners",
@@ -135,7 +134,7 @@ var FilmsControls = /*#__PURE__*/function () {
   _createClass(FilmsControls, [{
     key: "render",
     value: function render() {
-      return "\n \n           <ul class=\"films-controls\">\n                <li>\n\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                    <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n           ";
+      return "\n \n           <ul class=\"films-controls\">\n            <li></li>\n                <li>\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n           ";
     }
   }, {
     key: "addEventListeners",
@@ -369,7 +368,7 @@ var FilmsList = /*#__PURE__*/function () {
       this.data = this.data.filter(function (item) {
         return item.id !== id;
       });
-      localStorage.setItem('data', JSON.stringify(this.data));
+      App.updateState(this.data);
       this.Films.render();
       this.Films.addEventListeners();
     }
@@ -392,7 +391,7 @@ var FilmsList = /*#__PURE__*/function () {
       });
       formDataObj['id'] = (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
       this.data.push(formDataObj);
-      localStorage.setItem('data', JSON.stringify(this.data));
+      App.updateState(this.data);
       this.Films.render();
       this.Films.addEventListeners();
     }

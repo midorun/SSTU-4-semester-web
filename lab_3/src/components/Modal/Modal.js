@@ -5,7 +5,7 @@ class Modal {
     constructor(FilmsList) {
         this.FilmsList = FilmsList;
         this.modal = null;
-        this.form = null
+        this.form = null;
     }
 
     render() {

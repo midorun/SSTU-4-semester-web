@@ -24,7 +24,8 @@ class FilmsList {
 
     removeFilmsItem(id) {
         this.data = this.data.filter(item => item.id !== id);
-        localStorage.setItem('data', JSON.stringify(this.data));
+
+        App.updateState(this.data);
 
         this.Films.render();
         this.Films.addEventListeners();
@@ -44,7 +45,8 @@ class FilmsList {
         formDataObj['id'] = nextId();
 
         this.data.push(formDataObj);
-        localStorage.setItem('data', JSON.stringify(this.data));
+
+        App.updateState(this.data);
 
         this.Films.render();
         this.Films.addEventListeners();

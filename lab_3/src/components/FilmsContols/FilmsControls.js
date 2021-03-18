@@ -9,10 +9,10 @@ class FilmsControls {
             `
  
            <ul class="films-controls">
+            <li></li>
                 <li>
-
                     <button id="films-controls-add" class="films-controls-add">
-                    <i class="fas fa-plus"></i>
+                        <i class="fas fa-plus"></i>
                     </button>
                 </li>
             </ul>

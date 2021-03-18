@@ -37,9 +37,7 @@ class App {
     }
 
     updateState(data) {
-
         localStorage.setItem('data', JSON.stringify(data));
-        App.data = JSON.parse(localStorage.getItem('data'));
     }
 
     addEventListeners() {
