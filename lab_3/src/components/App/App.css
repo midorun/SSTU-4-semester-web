@@ -8,7 +8,12 @@ body {
     color: #ffffff;
 }
 
+i {
+    font-size: 1.3rem;
+}
+
 ul {
+    margin: 0;
     list-style: none;
     padding-inline-start: 0;
 }
@@ -16,4 +21,12 @@ ul {
 .container {
     margin: 0 auto;
     max-width: 1110px;
+}
+
+.active {
+    display: block;
+}
+
+.hide {
+    display: none;
 }

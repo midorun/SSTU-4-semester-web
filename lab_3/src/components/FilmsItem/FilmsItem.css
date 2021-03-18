@@ -1,31 +1,27 @@
-.films-item hr {
-    width: 100%;
-}
-
 .films-item:not(:nth-child(3n+3)) {
     margin-right: 30px;
 }
 
 .films-item {
+    position: relative;
     margin-top: 30px;
     padding: 10px;
-    width: 350px;
-    min-height: 550px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
     border-radius: 25px;
+    background: #EFF2FA;
     font-weight: 700;
     font-size: 1.1rem;
-    background: #EFF2FA;
     color: #4E5983;
 }
 
 .films-item-img {
     position: relative;
     margin: 0 auto;
-    width: 330px;
+    margin-top: 15px;
+    width: 280px;
     height: 400px;
 }
 
@@ -36,66 +32,62 @@
 
 /* Properties */
 .title {
+    display: block;
+    border-bottom: 1px solid #552ec2ec;
     text-align: center;
     font-size: 1.8rem;
 }
 
-.age {
-    margin: 0;
+.films-item .age {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     width: 40px;
     height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 1.2rem;
-    font-weight: 700;
     background: #ffffff;
     border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
     color: #000000;
 }
 
 /* Controls */
 .films-item-controls {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 75px;
 }
 
-.films-item-turn,
-.films-item-delete {
+.films-item-controls-descr,
+.films-item-controls-delete {
+    margin: 0 40px;
     width: 50px;
     height: 50px;
     border: none;
     border-radius: 50%;
+    outline: none;
     transition: all .3s;
     cursor: pointer;
-}
-
-.films-item-turn {
-    background: #623fc2;
     color: #ffffff;
-    outline: none;
+
 }
 
-.films-item-turn:hover {
+.films-item-controls-descr {
+    background: #623fc2;
+}
+
+.films-item-controls-descr:hover {
     background: #4c1bd3;
 }
 
-.films-item-delete {
-    margin-right: 100px;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
+.films-item-controls-delete {
     background-color: #f44336ce;
-    font-size: 2.3rem;
-    color: #ffffff;
 }
 
-.films-item-delete:hover {
+.films-item-controls-delete:hover {
     background-color: #f43636;
 }

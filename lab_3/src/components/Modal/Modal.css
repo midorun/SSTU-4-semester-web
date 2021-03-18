@@ -57,11 +57,3 @@
     transition: all .3s;
     cursor: pointer;
 }
-
-.active {
-    display: block;
-}
-
-.hide {
-    display: none;
-}

@@ -1,5 +1,6 @@
-import nextId from '../../services/nextId';
+import getFormDataObj from '../../services/getFormDataObj';
 import FilmsItem from '../FilmsItem';
+import FilmsItemDescr from '../FilmsItemDescr/FilmsItemDescr';
 
 
 class FilmsList {
@@ -25,42 +26,35 @@ class FilmsList {
     removeFilmsItem(id) {
         this.data = this.data.filter(item => item.id !== id);
 
-        App.updateState(this.data);
+        localStorage.setItem('data', JSON.stringify(this.data));
 
         this.Films.render();
         this.Films.addEventListeners();
     }
 
     addFilmsItem(form) {
-        let formDataObj = {};
+        this.data.push(getFormDataObj(form));
 
-        const formFields = [...form.elements].map(input => input.id);
-        const formData = [...form.elements].map(input => input.value);
-
-        form.reset();
-
-        formFields.forEach((field, i) => {
-            formDataObj[field] = formData[i];
-        })
-        formDataObj['id'] = nextId();
-
-        this.data.push(formDataObj);
-
-        App.updateState(this.data);
+        localStorage.setItem('data', JSON.stringify(this.data));
 
         this.Films.render();
         this.Films.addEventListeners();
     }
 
     addEventListeners() {
-        document.querySelectorAll('.films-item-delete')
-            .forEach(element => {
-                element.addEventListener('click', () => {
-                    let id = +element.getAttribute('data-films-item-id');
-                    console.log(id);
-                    this.removeFilmsItem(id);
-                })
-            })
+        document.querySelectorAll('.films-item')
+            .forEach(filmsItem => {
+                const id = +filmsItem.getAttribute('data-id');
+                filmsItem.querySelector('.films-item-controls-delete')
+                    .addEventListener('click', () => {
+                        this.removeFilmsItem(id);
+                    })
+                filmsItem.querySelector('.films-item-controls-descr')
+                    .addEventListener('click', () => {
+                        const [filmsItemData] = this.data.filter(film => film.id === id);
+                        return new FilmsItemDescr(filmsItemData).render();
+                    })
+            });
     }
 }
 

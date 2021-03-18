@@ -5,12 +5,13 @@ import Modal from '../Modal';
 import DATA from '../../constants/DATA';
 
 // styles
-import './App.css';
+
 import '../Films/Films.css';
 import '../FilmsContols/FilmsControls.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
 import '../Modal/Modal.css';
+import './App.css';
 
 class App {
     constructor(Films, Modal, DATA) {
@@ -32,6 +33,7 @@ class App {
         this.Films.FilmsList.Films = this.Films;
         this.Films.FilmsControls.Modal = this.Modal;
         this.Modal.FilmsList = this.Films.FilmsList;
+
         this.Films.render();
         this.Modal.render();
     }
