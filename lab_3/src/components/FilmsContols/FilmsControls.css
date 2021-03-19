@@ -1,4 +1,5 @@
 .films-controls {
+    margin-top: 20px;
     height: 50px;
     display: flex;
     justify-content: flex-end;
@@ -10,27 +11,8 @@
     height: 50px;
     background: #30ee3ace;
     border: none;
-    border-radius: 50%;
+    border-radius: var(--border-circle);
+    outline: none;
+    color: #ffffff;
     cursor: pointer;
-}
-
-.films-controls-add:before,
-.films-controls-add::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #ffffff;
-    border-radius: 5px;
-}
-
-.films-controls-add:before {
-    width: 35px;
-    height: 4px;
-}
-
-.films-controls-add::after {
-    width: 4px;
-    height: 35px;
 }

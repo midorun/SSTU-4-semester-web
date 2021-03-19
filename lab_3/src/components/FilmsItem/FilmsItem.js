@@ -2,21 +2,22 @@ import nextId from "../../services/nextId";
 
 class FilmsItem {
     constructor(
-        title = '',
-        country = '',
-        genre = '',
-        director = '',
-        script = '',
-        producer = '',
-        operator = '',
-        composer = '',
-        budget = '',
-        income = '',
-        age = '',
-        duration = '',
-        release = '',
-        img = '',
-        id = nextId()
+        { title = '',
+            country = '',
+            genre = '',
+            director = '',
+            script = '',
+            producer = '',
+            operator = '',
+            composer = '',
+            budget = '',
+            income = '',
+            age = '',
+            duration = '',
+            release = '',
+            img = '',
+            id = nextId()
+        }
     ) {
         this.title = title
         this.country = country
@@ -38,27 +39,29 @@ class FilmsItem {
     render() {
         return (
             `
-            <li data-card-id='${this.id}' class="films-item">
-                <div>
-                    <span class="title">
-                        ${this.title}
-                    </span>
-                   
+            <li data-id='${this.id}' class="films-item">
+                <div class="films-item-content">
+                    <span class="title">${this.title}</span>
+
+                    <div class="films-item-img">
+                        <span class="age">${this.age}</span>
+                        <img src="${this.img}" alt="" >
+                    </div>   
                 </div>
-                <hr>
-                <div class="films-item-img">
-                    <span class="age">
-                    ${this.age}
-                    </span>
-                    <img src="${this.img}" alt="" >
-                </div>        
+                     
                 <div class="films-item-controls">
-                    <button class="films-item-delete" data-films-item-id="${this.id}" >
-                        &times;
+                    <button 
+                        class="films-item-controls-delete" 
+                        data-films-item-id="${this.id}" 
+                    >
+                        <i class="fas fa-times"></i>
                     </button>
 
-                    <button class="films-item-turn">
-                        <i class="fas fa-undo"></i>
+                    <button 
+                        class="films-item-controls-descr" 
+                        data-films-item-id="${this.id}"
+                    >
+                        <i class="fas fa-info"></i>
                     </button>
                 </div>
             </li>
@@ -68,46 +71,3 @@ class FilmsItem {
 
 }
 export default FilmsItem;
-
-/* <li data-card-id='${this.id}' class="films-item">
-<span class="title">
-    Название: ${this.title}
-</span>
-<span class="country">
-    Страна: ${this.country}
-</span>
-<span class="genre">
-    Жанр: ${this.genre}
-</span>
-<span class="director">
-    Режисер: ${this.director}
-</span>
-<span class="script">
-    Сценарий: ${this.script}
-</span>
-<span class="producer">
-    Продюсер: ${this.producer}
-</span>
-<span class="operator">
-    Оператор: ${this.operator}
-</span>
-<span class="composer">
-    Композитор: ${this.composer}
-</span>
-<span class="budget">
-    Бюджет: ${this.budget}
-</span>
-<span class="income">
-    Сборы: ${this.income}
-</span>
-<span class="age">
-    Возрастное ограничение: ${this.age}
-</span>
-<span class="duration">
-    Продолжительность: ${this.duration}
-</span>
-<span class="release">
-    Дата выхода: ${this.release}
-</span>
-<button class="films-item-delete" data-film-item-id="${this.id}" >Удалить</button>
-</li> */

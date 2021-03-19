@@ -1,21 +1,23 @@
 import { FILMS } from '../../constants/root';
-import FilmsControls from '../FilmsContols/FilmsControls';
-import FilmsList from '../FilmsList';
 
 class Films {
+    constructor(FilmsControls, FilmsList) {
+        this.FilmsControls = FilmsControls;
+        this.FilmsList = FilmsList;
+    }
     render() {
         FILMS.innerHTML = `
             <div class="container">
-                ${FilmsControls.render()}
-                ${FilmsList.render()}
+                ${this.FilmsControls.render()}
+                ${this.FilmsList.render()}
             </div>
         `
     }
 
     addEventListeners() {
-        FilmsControls.addEventListeners();
-        FilmsList.addEventListeners();
+        this.FilmsControls.addEventListeners();
+        this.FilmsList.addEventListeners();
     }
 }
 
-export default new Films();
+export default Films;

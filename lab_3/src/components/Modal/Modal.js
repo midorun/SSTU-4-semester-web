@@ -1,17 +1,15 @@
 import { MODAL } from '../../constants/root';
-import FilmsList from '../FilmsList';
 
 class Modal {
-    constructor(params) {
-        this.modal = null;
-        this.form = null
+    constructor(FilmsList) {
+        this.FilmsList = FilmsList;
     }
 
     render() {
         MODAL.innerHTML = `
         <div class="modal">
             <div class="modal-content">
-                <span class="modal-close">&times;</span>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
                 <form id="form" class="form">
                     <input type="text" name="title" id="title" placeholder="Название">
                     <input type="text" name="country" id="country" placeholder="Страна">
@@ -32,26 +30,25 @@ class Modal {
             </div>
         </div>
         `
-        this.modal = document.querySelector('.modal');
-        this.form = document.querySelector('#form');
     }
 
     toggleModal() {
-        this.modal.classList.toggle('active');
+        document.querySelector('.modal').classList.toggle('active');
     }
 
     addEventListeners() {
-        this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.toggleModal();
-            FilmsList.addFilmsItem(this.form);
-        })
-        this.modal.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
+        document.querySelector('#form')
+            .addEventListener('submit', (e) => {
+                console.log();
+                e.preventDefault();
                 this.toggleModal();
-            }
-        })
+                this.FilmsList.addFilmsItem(document.querySelector('#form'));
+            })
+        document.querySelector('.modal-close')
+            .addEventListener('click', (e) => {
+                this.toggleModal();
+            })
     }
 }
 
-export default new Modal();
+export default Modal;

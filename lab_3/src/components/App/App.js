@@ -2,28 +2,52 @@ import Films from '../Films';
 import FilmsControls from '../FilmsContols';
 import FilmsList from '../FilmsList';
 import Modal from '../Modal';
+import DATA from '../../constants/DATA';
 
 // styles
-import './App.css';
+
 import '../Films/Films.css';
 import '../FilmsContols/FilmsControls.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
 import '../Modal/Modal.css';
-
-
+import '../FilmsItemDescr/FilmsItemDescr.css';
+import './App.css';
 
 class App {
+    constructor(Films, Modal, DATA) {
+        this.Films = Films;
+        this.Modal = Modal;
+        this.data = DATA;
+    }
+
     render() {
-        Films.render();
-        Modal.render();
+
+        const data = localStorage.getItem('data');
+        if (data) {
+            this.data = JSON.parse(data);
+        } else {
+            localStorage.setItem('data', JSON.stringify(this.data));
+        }
+
+        this.Films.FilmsList.data = this.data;
+        this.Films.FilmsList.Films = this.Films;
+        this.Films.FilmsControls.Modal = this.Modal;
+        this.Modal.FilmsList = this.Films.FilmsList;
+
+        this.Films.render();
+        this.Modal.render();
+
+    }
+
+    updateState(data) {
+        localStorage.setItem('data', JSON.stringify(data));
     }
 
     addEventListeners() {
-        FilmsControls.addEventListeners();
-        FilmsList.addEventListeners();
-        Modal.addEventListeners();
+        this.Films.addEventListeners()
+        this.Modal.addEventListeners();
     }
 }
 
-export default new App();
+export default new App(new Films(new FilmsControls(), new FilmsList()), new Modal(), DATA);

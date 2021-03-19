@@ -2,6 +2,820 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./components/App/App.js":
+/*!*******************************!*\
+  !*** ./components/App/App.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Films */ "./components/Films/index.js");
+/* harmony import */ var _FilmsContols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsContols */ "./components/FilmsContols/index.js");
+/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Modal */ "./components/Modal/index.js");
+/* harmony import */ var _constants_DATA__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants/DATA */ "./constants/DATA.js");
+/* harmony import */ var _Films_Films_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Films/Films.css */ "./components/Films/Films.css");
+/* harmony import */ var _FilmsContols_FilmsControls_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../FilmsContols/FilmsControls.css */ "./components/FilmsContols/FilmsControls.css");
+/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
+/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
+/* harmony import */ var _Modal_Modal_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Modal/Modal.css */ "./components/Modal/Modal.css");
+/* harmony import */ var _FilmsItemDescr_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../FilmsItemDescr/FilmsItemDescr.css */ "./components/FilmsItemDescr/FilmsItemDescr.css");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+ // styles
+
+
+
+
+
+
+
+
+
+var App = /*#__PURE__*/function () {
+  function App(Films, Modal, DATA) {
+    _classCallCheck(this, App);
+
+    this.Films = Films;
+    this.Modal = Modal;
+    this.data = DATA;
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      var data = localStorage.getItem('data');
+
+      if (data) {
+        this.data = JSON.parse(data);
+      } else {
+        localStorage.setItem('data', JSON.stringify(this.data));
+      }
+
+      this.Films.FilmsList.data = this.data;
+      this.Films.FilmsList.Films = this.Films;
+      this.Films.FilmsControls.Modal = this.Modal;
+      this.Modal.FilmsList = this.Films.FilmsList;
+      this.Films.render();
+      this.Modal.render();
+    }
+  }, {
+    key: "updateState",
+    value: function updateState(data) {
+      localStorage.setItem('data', JSON.stringify(data));
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners() {
+      this.Films.addEventListeners();
+      this.Modal.addEventListeners();
+    }
+  }]);
+
+  return App;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new App(new _Films__WEBPACK_IMPORTED_MODULE_0__.default(new _FilmsContols__WEBPACK_IMPORTED_MODULE_1__.default(), new _FilmsList__WEBPACK_IMPORTED_MODULE_2__.default()), new _Modal__WEBPACK_IMPORTED_MODULE_3__.default(), _constants_DATA__WEBPACK_IMPORTED_MODULE_4__.default));
+
+/***/ }),
+
+/***/ "./components/App/index.js":
+/*!*********************************!*\
+  !*** ./components/App/index.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App */ "./components/App/App.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_App__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/FilmsContols/FilmsControls.js":
+/*!**************************************************!*\
+  !*** ./components/FilmsContols/FilmsControls.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var FilmsControls = /*#__PURE__*/function () {
+  function FilmsControls(Modal) {
+    _classCallCheck(this, FilmsControls);
+
+    this.Modal = Modal;
+  }
+
+  _createClass(FilmsControls, [{
+    key: "render",
+    value: function render() {
+      return "\n            <ul class=\"films-controls\">\n                <li class=\"films-controls-item\">\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n            ";
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners() {
+      var _this = this;
+
+      document.querySelector('#films-controls-add').addEventListener('click', function () {
+        return _this.Modal.toggleModal();
+      });
+    }
+  }]);
+
+  return FilmsControls;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsControls);
+
+/***/ }),
+
+/***/ "./components/FilmsContols/index.js":
+/*!******************************************!*\
+  !*** ./components/FilmsContols/index.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FilmsControls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsControls */ "./components/FilmsContols/FilmsControls.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/FilmsItemDescr/FilmsItemDescr.js":
+/*!*****************************************************!*\
+  !*** ./components/FilmsItemDescr/FilmsItemDescr.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
+/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var FilmsItemDescr = /*#__PURE__*/function () {
+  function FilmsItemDescr(_ref) {
+    var _ref$title = _ref.title,
+        title = _ref$title === void 0 ? '' : _ref$title,
+        _ref$country = _ref.country,
+        country = _ref$country === void 0 ? '' : _ref$country,
+        _ref$genre = _ref.genre,
+        genre = _ref$genre === void 0 ? '' : _ref$genre,
+        _ref$director = _ref.director,
+        director = _ref$director === void 0 ? '' : _ref$director,
+        _ref$script = _ref.script,
+        script = _ref$script === void 0 ? '' : _ref$script,
+        _ref$producer = _ref.producer,
+        producer = _ref$producer === void 0 ? '' : _ref$producer,
+        _ref$operator = _ref.operator,
+        operator = _ref$operator === void 0 ? '' : _ref$operator,
+        _ref$composer = _ref.composer,
+        composer = _ref$composer === void 0 ? '' : _ref$composer,
+        _ref$budget = _ref.budget,
+        budget = _ref$budget === void 0 ? '' : _ref$budget,
+        _ref$income = _ref.income,
+        income = _ref$income === void 0 ? '' : _ref$income,
+        _ref$age = _ref.age,
+        age = _ref$age === void 0 ? '' : _ref$age,
+        _ref$duration = _ref.duration,
+        duration = _ref$duration === void 0 ? '' : _ref$duration,
+        _ref$release = _ref.release,
+        release = _ref$release === void 0 ? '' : _ref$release,
+        _ref$img = _ref.img,
+        img = _ref$img === void 0 ? '' : _ref$img,
+        _ref$id = _ref.id,
+        id = _ref$id === void 0 ? (0,_services_nextId__WEBPACK_IMPORTED_MODULE_1__.default)() : _ref$id;
+
+    _classCallCheck(this, FilmsItemDescr);
+
+    this.title = title;
+    this.country = country;
+    this.genre = genre;
+    this.director = director;
+    this.script = script;
+    this.producer = producer;
+    this.operator = operator;
+    this.composer = composer;
+    this.budget = budget;
+    this.income = income;
+    this.age = age;
+    this.duration = duration;
+    this.release = release;
+    this.img = img;
+    this.id = id;
+  }
+
+  _createClass(FilmsItemDescr, [{
+    key: "render",
+    value: function render() {
+      var htmlContent = "\n        <div class=\"films-item-descr\">\n            <div class=\"films-item-descr-content\">\n                <div class=\"films-item-descr-img\">\n                    <img src=\"".concat(this.img, "\"\n                        alt=\"poster\" />\n                </div>\n                <div class=\"films-item-descr-text\">\n                    <span class=\"title\">").concat(this.title, "</span>\n                    <span class=\"country\">\u0421\u0442\u0440\u0430\u043D\u0430: ").concat(this.genre, "</span>\n                    <span class=\"genre\">\u0416\u0430\u043D\u0440: ").concat(this.genre, "</span>\n                    <span class=\"director\">\u0420\u0435\u0436\u0438\u0441\u0435\u0440: ").concat(this.director, "</span>\n                    <span class=\"producer\">\u041F\u0440\u043E\u0434\u044E\u0441\u0435\u0440: ").concat(this.producer, "</span>\n                    <span class=\"operator\">\u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440: ").concat(this.operator, "</span>\n                    <span class=\"composer\">\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440: ").concat(this.composer, "</span>\n                    <span class=\"budget\">\u0411\u044E\u0434\u0436\u0435\u0442: ").concat(this.budget, "</span>\n                    <span class=\"income\">\u0421\u0431\u043E\u0440\u044B: ").concat(this.income, "</span>\n                    <span class=\"age\">\u0412\u043E\u0437\u0440\u0430\u0441\u0442\u043D\u043E\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435: ").concat(this.age, "</span>\n                    <span class=\"duration\">\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C: ").concat(this.release, "</span>\n                    <span class=\"release\">\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430: ").concat(this.release, "</span>\n                    <span class=\"script\">\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439: ").concat(this.script, " </span>\n                </div>\n                <div class=\"films-item-descr-close\">\n                    <i class=\"fas fa-times\"></i>\n                </div>\n            </div>\n        </div>\n        ");
+      _constants_root__WEBPACK_IMPORTED_MODULE_0__.DESCR.innerHTML = htmlContent;
+      document.querySelector('.films-item-descr-close').addEventListener('click', function () {
+        return _constants_root__WEBPACK_IMPORTED_MODULE_0__.DESCR.innerHTML = '';
+      });
+    }
+  }]);
+
+  return FilmsItemDescr;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsItemDescr);
+
+/***/ }),
+
+/***/ "./components/FilmsItem/FilmsItem.js":
+/*!*******************************************!*\
+  !*** ./components/FilmsItem/FilmsItem.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var FilmsItem = /*#__PURE__*/function () {
+  function FilmsItem(_ref) {
+    var _ref$title = _ref.title,
+        title = _ref$title === void 0 ? '' : _ref$title,
+        _ref$country = _ref.country,
+        country = _ref$country === void 0 ? '' : _ref$country,
+        _ref$genre = _ref.genre,
+        genre = _ref$genre === void 0 ? '' : _ref$genre,
+        _ref$director = _ref.director,
+        director = _ref$director === void 0 ? '' : _ref$director,
+        _ref$script = _ref.script,
+        script = _ref$script === void 0 ? '' : _ref$script,
+        _ref$producer = _ref.producer,
+        producer = _ref$producer === void 0 ? '' : _ref$producer,
+        _ref$operator = _ref.operator,
+        operator = _ref$operator === void 0 ? '' : _ref$operator,
+        _ref$composer = _ref.composer,
+        composer = _ref$composer === void 0 ? '' : _ref$composer,
+        _ref$budget = _ref.budget,
+        budget = _ref$budget === void 0 ? '' : _ref$budget,
+        _ref$income = _ref.income,
+        income = _ref$income === void 0 ? '' : _ref$income,
+        _ref$age = _ref.age,
+        age = _ref$age === void 0 ? '' : _ref$age,
+        _ref$duration = _ref.duration,
+        duration = _ref$duration === void 0 ? '' : _ref$duration,
+        _ref$release = _ref.release,
+        release = _ref$release === void 0 ? '' : _ref$release,
+        _ref$img = _ref.img,
+        img = _ref$img === void 0 ? '' : _ref$img,
+        _ref$id = _ref.id,
+        id = _ref$id === void 0 ? (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)() : _ref$id;
+
+    _classCallCheck(this, FilmsItem);
+
+    this.title = title;
+    this.country = country;
+    this.genre = genre;
+    this.director = director;
+    this.script = script;
+    this.producer = producer;
+    this.operator = operator;
+    this.composer = composer;
+    this.budget = budget;
+    this.income = income;
+    this.age = age;
+    this.duration = duration;
+    this.release = release;
+    this.img = img;
+    this.id = id;
+  }
+
+  _createClass(FilmsItem, [{
+    key: "render",
+    value: function render() {
+      return "\n            <li data-id='".concat(this.id, "' class=\"films-item\">\n                <div class=\"films-item-content\">\n                    <span class=\"title\">").concat(this.title, "</span>\n\n                    <div class=\"films-item-img\">\n                        <span class=\"age\">").concat(this.age, "</span>\n                        <img src=\"").concat(this.img, "\" alt=\"\" >\n                    </div>   \n                </div>\n                     \n                <div class=\"films-item-controls\">\n                    <button \n                        class=\"films-item-controls-delete\" \n                        data-films-item-id=\"").concat(this.id, "\" \n                    >\n                        <i class=\"fas fa-times\"></i>\n                    </button>\n\n                    <button \n                        class=\"films-item-controls-descr\" \n                        data-films-item-id=\"").concat(this.id, "\"\n                    >\n                        <i class=\"fas fa-info\"></i>\n                    </button>\n                </div>\n            </li>\n            ");
+    }
+  }]);
+
+  return FilmsItem;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsItem);
+
+/***/ }),
+
+/***/ "./components/FilmsItem/index.js":
+/*!***************************************!*\
+  !*** ./components/FilmsItem/index.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsItem */ "./components/FilmsItem/FilmsItem.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsItem__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/FilmsList/FilmsList.js":
+/*!*******************************************!*\
+  !*** ./components/FilmsList/FilmsList.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _services_getFormDataObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/getFormDataObj */ "./services/getFormDataObj.js");
+/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
+/* harmony import */ var _FilmsItemDescr_FilmsItemDescr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsItemDescr/FilmsItemDescr */ "./components/FilmsItemDescr/FilmsItemDescr.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+var FilmsList = /*#__PURE__*/function () {
+  function FilmsList(Films, data) {
+    _classCallCheck(this, FilmsList);
+
+    this.Films = Films;
+    this.data = data;
+  }
+
+  _createClass(FilmsList, [{
+    key: "render",
+    value: function render() {
+      var FilmsItems = this.data.map(function (props) {
+        return new _FilmsItem__WEBPACK_IMPORTED_MODULE_1__.default(props).render();
+      });
+      return "\n            <ul class=\"films-list\">\n                ".concat(FilmsItems.join(''), "\n            </ul>\n            ");
+    }
+  }, {
+    key: "removeFilmsItem",
+    value: function removeFilmsItem(id) {
+      this.data = this.data.filter(function (item) {
+        return item.id !== id;
+      });
+      localStorage.setItem('data', JSON.stringify(this.data));
+      this.Films.render();
+      this.Films.addEventListeners();
+    }
+  }, {
+    key: "addFilmsItem",
+    value: function addFilmsItem(form) {
+      this.data.push((0,_services_getFormDataObj__WEBPACK_IMPORTED_MODULE_0__.default)(form));
+      localStorage.setItem('data', JSON.stringify(this.data));
+      this.Films.render();
+      this.Films.addEventListeners();
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners() {
+      var _this = this;
+
+      document.querySelectorAll('.films-item').forEach(function (filmsItem) {
+        var id = +filmsItem.getAttribute('data-id');
+        filmsItem.querySelector('.films-item-controls-delete').addEventListener('click', function () {
+          _this.removeFilmsItem(id);
+        });
+        filmsItem.querySelector('.films-item-controls-descr').addEventListener('click', function () {
+          var _this$data$filter = _this.data.filter(function (film) {
+            return film.id === id;
+          }),
+              _this$data$filter2 = _slicedToArray(_this$data$filter, 1),
+              filmsItemData = _this$data$filter2[0];
+
+          return new _FilmsItemDescr_FilmsItemDescr__WEBPACK_IMPORTED_MODULE_2__.default(filmsItemData).render();
+        });
+      });
+    }
+  }]);
+
+  return FilmsList;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsList);
+
+/***/ }),
+
+/***/ "./components/FilmsList/index.js":
+/*!***************************************!*\
+  !*** ./components/FilmsList/index.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsList */ "./components/FilmsList/FilmsList.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsList__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/Films/Films.js":
+/*!***********************************!*\
+  !*** ./components/Films/Films.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Films = /*#__PURE__*/function () {
+  function Films(FilmsControls, FilmsList) {
+    _classCallCheck(this, Films);
+
+    this.FilmsControls = FilmsControls;
+    this.FilmsList = FilmsList;
+  }
+
+  _createClass(Films, [{
+    key: "render",
+    value: function render() {
+      _constants_root__WEBPACK_IMPORTED_MODULE_0__.FILMS.innerHTML = "\n            <div class=\"container\">\n                ".concat(this.FilmsControls.render(), "\n                ").concat(this.FilmsList.render(), "\n            </div>\n        ");
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners() {
+      this.FilmsControls.addEventListeners();
+      this.FilmsList.addEventListeners();
+    }
+  }]);
+
+  return Films;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Films);
+
+/***/ }),
+
+/***/ "./components/Films/index.js":
+/*!***********************************!*\
+  !*** ./components/Films/index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Films */ "./components/Films/Films.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Films__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/Modal/Modal.js":
+/*!***********************************!*\
+  !*** ./components/Modal/Modal.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Modal = /*#__PURE__*/function () {
+  function Modal(FilmsList) {
+    _classCallCheck(this, Modal);
+
+    this.FilmsList = FilmsList;
+  }
+
+  _createClass(Modal, [{
+    key: "render",
+    value: function render() {
+      _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL.innerHTML = "\n        <div class=\"modal\">\n            <div class=\"modal-content\">\n                <button class=\"modal-close\"><i class=\"fas fa-times\"></i></button>\n                <form id=\"form\" class=\"form\">\n                    <input type=\"text\" name=\"title\" id=\"title\" placeholder=\"\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\">\n                    <input type=\"text\" name=\"country\" id=\"country\" placeholder=\"\u0421\u0442\u0440\u0430\u043D\u0430\">\n                    <input type=\"text\" name=\"genre\" id=\"genre\" placeholder=\"\u0416\u0430\u043D\u0440\">\n                    <input type=\"text\" name=\"director\" id=\"director\" placeholder=\"\u0420\u0435\u0436\u0438\u0441\u0435\u0440\">\n                    <input type=\"text\" name=\"script\" id=\"script\" placeholder=\"\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439\">\n                    <input type=\"text\" name=\"producer\" id=\"producer\" placeholder=\"\u041F\u0440\u043E\u0434\u044E\u0441\u0435\u0440\">\n                    <input type=\"text\" name=\"operator\" id=\"operator\" placeholder=\"\u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\">\n                    <input type=\"text\" name=\"composer\" id=\"composer\" placeholder=\"\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440\">\n                    <input type=\"text\" name=\"budget\" id=\"budget\" placeholder=\"\u0411\u044E\u0434\u0436\u0435\u0442\">\n                    <input type=\"text\" name=\"income\" id=\"income\" placeholder=\"\u0421\u0431\u043E\u0440\u044B\">\n                    <input type=\"text\" name=\"age\" id=\"age\" placeholder=\"\u0412\u043E\u0437\u0440\u0430\u0441\u0442\u043D\u043E\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435\">\n                    <input type=\"text\" name=\"duration\" id=\"duration\" placeholder=\"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C\">\n                    <input type=\"text\" name=\"release\" id=\"release\" placeholder=\"\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430\">\n                    <input type=\"text\" name=\"img\", id=\"img\" placeholder=\"\u0421\u0441\u044B\u043B\u043A\u0430 \u043D\u0430 \u043F\u043E\u0441\u0442\u0435\u0440\">\n                    <button id=\"form-btn-submit\" type=\"submit\">\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C</button>\n                </form>\n            </div>\n        </div>\n        ";
+    }
+  }, {
+    key: "toggleModal",
+    value: function toggleModal() {
+      document.querySelector('.modal').classList.toggle('active');
+    }
+  }, {
+    key: "addEventListeners",
+    value: function addEventListeners() {
+      var _this = this;
+
+      document.querySelector('#form').addEventListener('submit', function (e) {
+        console.log();
+        e.preventDefault();
+
+        _this.toggleModal();
+
+        _this.FilmsList.addFilmsItem(document.querySelector('#form'));
+      });
+      document.querySelector('.modal-close').addEventListener('click', function (e) {
+        _this.toggleModal();
+      });
+    }
+  }]);
+
+  return Modal;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
+
+/***/ }),
+
+/***/ "./components/Modal/index.js":
+/*!***********************************!*\
+  !*** ./components/Modal/index.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./components/Modal/Modal.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Modal__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./constants/DATA.js":
+/*!***************************!*\
+  !*** ./constants/DATA.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/nextId */ "./services/nextId.js");
+
+var DATA = [{
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Батя',
+  country: 'Россия',
+  genre: 'Комедия',
+  director: ' Антон Зайцев, Артем Логинов',
+  script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
+  producer: 'Дмитрий Ефимович',
+  operator: 'Александр Тананов',
+  composer: 'Алексей Кестнер',
+  budget: '',
+  income: '$5 015 023',
+  age: '16+',
+  duration: '75мин.',
+  release: '23 февраля 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Пара из будущего',
+  country: 'Россия',
+  genre: 'комедия, фантастика, мелодрама',
+  director: 'Алексей Нужный',
+  script: 'Недалекое будущее, 2040 год. Евгений и Александра 20 лет в браке, их отношения похожи на высохший урюк. Развестись у них тоже не получается, поскольку в будущем расторжение брака – очень дорогая услуга. Но судьба дает им шанс: Евгений и Александра попадают в прошлое, в тот самый день 20 лет назад, когда влюбленный и юный Женя сделал предложение прелестной Саше. Теперь пара из будущего хочет разлучить самих себя в молодости, но это будет непросто. Молодые будут сражаться за свою любовь.',
+  producer: 'Леонид Верещагин, Антон Златопольский',
+  operator: 'Юрий Коробейников',
+  composer: 'Кирилл Бородулев, Евгений Бархатов',
+  budget: '',
+  income: '$2 173 864',
+  age: '12+',
+  duration: '104 мин.',
+  release: '4 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Никто',
+  country: 'США',
+  genre: 'боевик, триллер, криминал',
+  director: 'Илья Найшуллер',
+  script: 'Непримечательный и незаметный человек живёт обычной жизнью, пока однажды, спасая женщину от нападения бандитов, не отправляет одного из хулиганов в больницу. Лишь позже он узнаёт, что это был брат влиятельного гангстера, который теперь жаждет мести.',
+  producer: 'Браден Афтегуд, Келли МакКормик, Боб Оденкёрк',
+  operator: 'Павел Погоржельский',
+  composer: 'Дэвид Бакли',
+  budget: '',
+  income: '',
+  age: '18+',
+  duration: '92 мин',
+  release: '18 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Райя и последний дракон',
+  country: 'США',
+  genre: 'мультфильм, фэнтези, боевик, комедия, приключения, семейный',
+  director: 'Дон Холл, Карлос Лопес Эстрада, Пол Бриггс',
+  script: 'Давным-давно в волшебной стране Кумандре бок о бок с людьми жили драконы — создатели и хранители воды. Мирной жизни пришел конец, когда появились друуны. Порождения тьмы обращали людей и драконов в каменные изваяния, и только магия драконихи Сису смогла прогнать злых созданий и расколдовать людей, но на драконов не подействовала. Кумандра раскололась на государства Сердца, Клыка, Когтя, Хребта и Хвоста, а волшебный драконий камень хранился в стране Сердца, которой правил отец Райи. Он мечтал объединить земли, но из-за человеческой жадности и зависти артефакт раскололся. Правитель каждой страны заполучил по осколку, а друуны снова стали властвовать безраздельно.',
+  producer: 'Джаред Буш, Нэйтан Кертис, Питер Дель Вечо',
+  operator: 'Роб Дрессель',
+  composer: 'Джеймс Ньютон Ховард',
+  budget: '',
+  income: '$52 924 610',
+  age: '6+',
+  duration: '107 мин.',
+  release: '3 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Айнбо. Сердце Амазонии',
+  country: 'Перу, Нидерланды',
+  genre: 'мультфильм, фэнтези, комедия, приключения, семейный',
+  director: 'Рихард Клаус, Хосе Селада',
+  script: 'Бесстрашная Айнбо родилась и выросла в таинственных амазонских джунглях. Узнав, что её родному поселку грозит опасность, она тотчас отправляется за помощью в компании удивительных зверей. Их ждёт восхождение к пылающему вулкану, встреча с могущественным духом Амазонии и схватка с мифическим чудовищем.',
+  producer: 'Рихард Клаус, Сезар Селада, Хосе Селада',
+  operator: '',
+  composer: 'Виджай Бирепут',
+  budget: '10 000 000',
+  income: '$5 015 023',
+  age: '6+',
+  duration: '84 мин.',
+  release: '3 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450'
+}, {
+  id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
+  title: 'Хребет дьявола',
+  country: 'США',
+  genre: 'ужасы',
+  director: 'Брэдли Паркер',
+  script: 'Группа молодых геологов, исследующих отдаленные от цивилизации места, находит городок в горах Аппалачи, который был заброшен в прошлом веке при загадочных обстоятельствах. Думая, что они нашли свою подземную Атлантиду, друзья пробуждают нечто древнее и жуткое. Научная экспедиция превращается в борьбу за выживание в месте, прозванном Хребтом дьявола.',
+  producer: 'Диего Халливис, Хулио Халливис, Эду Бодегас',
+  operator: 'Морган Сассер',
+  composer: 'Нима Фахрара',
+  budget: '',
+  income: '',
+  age: '18+',
+  duration: '100 мин.',
+  release: '5 марта 2021',
+  img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DATA);
+
+/***/ }),
+
+/***/ "./constants/root.js":
+/*!***************************!*\
+  !*** ./constants/root.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "FILMS": () => (/* binding */ FILMS),
+/* harmony export */   "MODAL": () => (/* binding */ MODAL),
+/* harmony export */   "DESCR": () => (/* binding */ DESCR)
+/* harmony export */ });
+var FILMS = document.getElementById('films');
+var MODAL = document.getElementById('modal-add');
+var DESCR = document.getElementById('modal-descr');
+
+/***/ }),
+
+/***/ "./services/getFormDataObj.js":
+/*!************************************!*\
+  !*** ./services/getFormDataObj.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./nextId */ "./services/nextId.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+
+
+var getFormDataObj = function getFormDataObj(form) {
+  var formDataObj = {};
+
+  var formFields = _toConsumableArray(form.elements).map(function (input) {
+    return input.id;
+  });
+
+  var formData = _toConsumableArray(form.elements).map(function (input) {
+    return input.value;
+  });
+
+  form.reset();
+  formFields.forEach(function (field, i) {
+    formDataObj[field] = formData[i];
+  });
+  formDataObj['id'] = (0,_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
+  return formDataObj;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getFormDataObj);
+
+/***/ }),
+
+/***/ "./services/nextId.js":
+/*!****************************!*\
+  !*** ./services/nextId.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var ID = 1;
+
+var nextId = function nextId() {
+  return ID++;
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nextId);
+
+/***/ }),
+
 /***/ "../node_modules/css-loader/dist/cjs.js!./components/App/App.css":
 /*!***********************************************************************!*\
   !*** ../node_modules/css-loader/dist/cjs.js!./components/App/App.css ***!
@@ -21,7 +835,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}", "",{"version":3,"sources":["webpack://./components/App/App.css"],"names":[],"mappings":"AAAA;IACI,sBAAsB;AAC1B;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;AAClB;;AAEA;IACI,gBAAgB;IAChB,uBAAuB;AAC3B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB","sourcesContent":["* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\nul {\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --main-color: #552ec2ec;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}", "",{"version":3,"sources":["webpack://./components/App/App.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;IACvB,oBAAoB;IACpB,mBAAmB;AACvB;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;AAClB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,SAAS;IACT,gBAAgB;IAChB,uBAAuB;AAC3B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB","sourcesContent":[":root {\r\n    --main-color: #552ec2ec;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47,7 +861,33 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsContols/FilmsControls.css"],"names":[],"mappings":"AAAA;IACI,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,kBAAkB;IAClB,eAAe;AACnB;;AAEA;;IAEI,WAAW;IACX,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,mBAAmB;IACnB,kBAAkB;AACtB;;AAEA;IACI,WAAW;IACX,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;AAChB","sourcesContent":[".films-controls {\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: 50%;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-controls-add:before,\r\n.films-controls-add::after {\r\n    content: '';\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #ffffff;\r\n    border-radius: 5px;\r\n}\r\n\r\n.films-controls-add:before {\r\n    width: 35px;\r\n    height: 4px;\r\n}\r\n\r\n.films-controls-add::after {\r\n    width: 4px;\r\n    height: 35px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films-controls {\r\n    margin-top: 20px;\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsContols/FilmsControls.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,mCAAmC;IACnC,aAAa;IACb,cAAc;IACd,eAAe;AACnB","sourcesContent":[".films-controls {\r\n    margin-top: 20px;\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css":
+/*!*********************************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css ***!
+  \*********************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".films-item-descr {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-img {}\r\n\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItemDescr/FilmsItemDescr.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,aAAa;IACb,aAAa;IACb,iCAAiC;IACjC,qBAAqB;AACzB;;AAEA,uBAAuB;;;AAGvB;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,eAAe;AACnB","sourcesContent":[".films-item-descr {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-img {}\r\n\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -73,7 +913,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n\r\n}\r\n\r\n.films-item span:not(:first-child) {\r\n    margin-top: 10px;\r\n}\r\n\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.title {\r\n    display: block;\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItem/FilmsItem.css"],"names":[],"mappings":"AAAA;IACI,WAAW;AACf;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,YAAY;IACZ,iBAAiB;IACjB,aAAa;IACb,sBAAsB;IACtB,mBAAmB;IACnB,gBAAgB;IAChB,iBAAiB;IACjB,mBAAmB;IACnB,cAAc;;AAElB;;AAEA;IACI,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,uBAAuB;IACvB,qBAAqB;IACrB,YAAY;AAChB;;AAEA;;IAEI,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,mBAAmB;IACnB,cAAc;IACd,aAAa;AACjB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,kBAAkB;IAClB,2BAA2B;IAC3B,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,cAAc;IACd,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA;IACI,cAAc;IACd,iBAAiB;IACjB,kBAAkB;;AAEtB;;AAEA;IACI,SAAS;IACT,WAAW;IACX,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,iBAAiB;IACjB,gBAAgB;IAChB,mBAAmB;IACnB,mBAAmB;IACnB,cAAc;AAClB","sourcesContent":[".films-item hr {\r\n    width: 100%;\r\n}\r\n\r\n.films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 350px;\r\n    min-height: 550px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-radius: 25px;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    background: #EFF2FA;\r\n    color: #4E5983;\r\n\r\n}\r\n\r\n.films-item span:not(:first-child) {\r\n    margin-top: 10px;\r\n}\r\n\r\n.films-item-controls {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n    height: 75px;\r\n}\r\n\r\n.films-item-turn,\r\n.films-item-delete {\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-turn {\r\n    background: #623fc2;\r\n    color: #ffffff;\r\n    outline: none;\r\n}\r\n\r\n.films-item-turn:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-delete {\r\n    margin-right: 100px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: 50%;\r\n    background-color: #f44336ce;\r\n    font-size: 2.3rem;\r\n    color: #ffffff;\r\n}\r\n\r\n.films-item-delete:hover {\r\n    background-color: #f43636;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    width: 330px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n.title {\r\n    display: block;\r\n    font-size: 1.8rem;\r\n    text-align: center;\r\n\r\n}\r\n\r\n.age {\r\n    margin: 0;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    background: #ffffff;\r\n    border-radius: 50px;\r\n    color: #000000;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 300px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n    border-radius: var(--border-soft);\r\n    background: #EFF2FA;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    color: #4E5983;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    margin-top: 15px;\r\n    width: 280px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n/* Properties */\r\n.films-item .title {\r\n    display: block;\r\n    border-bottom: 1px solid #552ec2ec;\r\n    text-align: center;\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.films-item .age {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: #ffffff;\r\n    border-radius: var(--border-circle);\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    color: #000000;\r\n}\r\n\r\n/* Controls */\r\n.films-item-controls {\r\n    margin-top: 20px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n}\r\n\r\n.films-item-controls-descr,\r\n.films-item-controls-delete {\r\n    margin: 0 40px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n    color: #ffffff;\r\n\r\n}\r\n\r\n.films-item-controls-descr {\r\n    background: #623fc2;\r\n}\r\n\r\n.films-item-controls-descr:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-controls-delete {\r\n    background-color: #f44336ce;\r\n}\r\n\r\n.films-item-controls-delete:hover {\r\n    background-color: #f43636;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItem/FilmsItem.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,yBAAyB;IACzB,iCAAiC;IACjC,mBAAmB;IACnB,gBAAgB;IAChB,iBAAiB;IACjB,cAAc;AAClB;;AAEA;IACI,kBAAkB;IAClB,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,WAAW;IACX,YAAY;AAChB;;AAEA,eAAe;AACf;IACI,cAAc;IACd,kCAAkC;IAClC,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,WAAW;IACX,YAAY;IACZ,aAAa;IACb,uBAAuB;IACvB,mBAAmB;IACnB,mBAAmB;IACnB,mCAAmC;IACnC,iBAAiB;IACjB,gBAAgB;IAChB,cAAc;AAClB;;AAEA,aAAa;AACb;IACI,gBAAgB;IAChB,aAAa;IACb,uBAAuB;IACvB,qBAAqB;AACzB;;AAEA;;IAEI,cAAc;IACd,WAAW;IACX,YAAY;IACZ,YAAY;IACZ,mCAAmC;IACnC,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,cAAc;;AAElB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,2BAA2B;AAC/B;;AAEA;IACI,yBAAyB;AAC7B","sourcesContent":[".films-item:not(:nth-child(3n+3)) {\r\n    margin-right: 30px;\r\n}\r\n\r\n.films-item {\r\n    position: relative;\r\n    margin-top: 30px;\r\n    padding: 10px;\r\n    width: 300px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: flex-end;\r\n    border-radius: var(--border-soft);\r\n    background: #EFF2FA;\r\n    font-weight: 700;\r\n    font-size: 1.1rem;\r\n    color: #4E5983;\r\n}\r\n\r\n.films-item-img {\r\n    position: relative;\r\n    margin: 0 auto;\r\n    margin-top: 15px;\r\n    width: 280px;\r\n    height: 400px;\r\n}\r\n\r\n.films-item-img img {\r\n    width: 100%;\r\n    height: 100%;\r\n}\r\n\r\n/* Properties */\r\n.films-item .title {\r\n    display: block;\r\n    border-bottom: 1px solid #552ec2ec;\r\n    text-align: center;\r\n    font-size: 1.8rem;\r\n}\r\n\r\n.films-item .age {\r\n    position: absolute;\r\n    top: 10px;\r\n    right: 10px;\r\n    width: 40px;\r\n    height: 40px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background: #ffffff;\r\n    border-radius: var(--border-circle);\r\n    font-size: 1.2rem;\r\n    font-weight: 700;\r\n    color: #000000;\r\n}\r\n\r\n/* Controls */\r\n.films-item-controls {\r\n    margin-top: 20px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: flex-end;\r\n}\r\n\r\n.films-item-controls-descr,\r\n.films-item-controls-delete {\r\n    margin: 0 40px;\r\n    width: 50px;\r\n    height: 50px;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n    color: #ffffff;\r\n\r\n}\r\n\r\n.films-item-controls-descr {\r\n    background: #623fc2;\r\n}\r\n\r\n.films-item-controls-descr:hover {\r\n    background: #4c1bd3;\r\n}\r\n\r\n.films-item-controls-delete {\r\n    background-color: #f44336ce;\r\n}\r\n\r\n.films-item-controls-delete:hover {\r\n    background-color: #f43636;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -99,7 +939,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsList/FilmsList.css"],"names":[],"mappings":"AAAA;IACI,cAAc;IACd,aAAa;IACb,eAAe;AACnB","sourcesContent":[".films-list {\r\n    margin: 0 auto;\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".films-list {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsList/FilmsList.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,eAAe;IACf,uBAAuB;AAC3B","sourcesContent":[".films-list {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -151,7 +991,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    max-width: 400px;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    background: #6d4cc9ec;\r\n    border-radius: 25px;\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 1%;\r\n    font-size: 2.3rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    width: 350px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}", "",{"version":3,"sources":["webpack://./components/Modal/Modal.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,gBAAgB;IAChB,iBAAiB;IACjB,iBAAiB;IACjB,qBAAqB;IACrB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,OAAO;IACP,iBAAiB;IACjB,eAAe;AACnB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,2BAA2B;IAC3B,cAAc;IACd,mBAAmB;IACnB,eAAe;AACnB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB","sourcesContent":[".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    max-width: 400px;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    background: #6d4cc9ec;\r\n    border-radius: 25px;\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 1%;\r\n    font-size: 2.3rem;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    width: 350px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}\r\n\r\n.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    min-height: 530px;\r\n    height: 80vh;\r\n    background: #6d4cc9ec;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/Modal/Modal.css"],"names":[],"mappings":"AAAA;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,iBAAiB;IACjB,gBAAgB;IAChB,iBAAiB;IACjB,YAAY;IACZ,qBAAqB;IACrB,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,OAAO;IACP,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,2BAA2B;IAC3B,cAAc;IACd,mBAAmB;IACnB,eAAe;AACnB","sourcesContent":[".modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    margin: 60px auto;\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    min-height: 530px;\r\n    height: 80vh;\r\n    background: #6d4cc9ec;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}\r\n\r\n.form button {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -329,6 +1169,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_FilmsControls_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./components/FilmsItemDescr/FilmsItemDescr.css":
+/*!******************************************************!*\
+  !*** ./components/FilmsItemDescr/FilmsItemDescr.css ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./FilmsItemDescr.css */ "../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
@@ -724,694 +1593,6 @@ module.exports = function (list, options) {
   };
 };
 
-/***/ }),
-
-/***/ "./components/App/App.js":
-/*!*******************************!*\
-  !*** ./components/App/App.js ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Films */ "./components/Films/index.js");
-/* harmony import */ var _FilmsContols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsContols */ "./components/FilmsContols/index.js");
-/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
-/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Modal */ "./components/Modal/index.js");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
-/* harmony import */ var _Films_Films_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../Films/Films.css */ "./components/Films/Films.css");
-/* harmony import */ var _FilmsContols_FilmsControls_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../FilmsContols/FilmsControls.css */ "./components/FilmsContols/FilmsControls.css");
-/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
-/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
-/* harmony import */ var _Modal_Modal_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../Modal/Modal.css */ "./components/Modal/Modal.css");
-
-
-
-
-
-// styles
-
-
-
-
-
-
-
-
-
-class App {
-    render() {
-        _Films__WEBPACK_IMPORTED_MODULE_0__.default.render();
-        _Modal__WEBPACK_IMPORTED_MODULE_3__.default.render();
-    }
-
-    addEventListeners() {
-        _FilmsContols__WEBPACK_IMPORTED_MODULE_1__.default.addEventListeners();
-        _FilmsList__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
-        _Modal__WEBPACK_IMPORTED_MODULE_3__.default.addEventListeners();
-    }
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new App());
-
-/***/ }),
-
-/***/ "./components/App/index.js":
-/*!*********************************!*\
-  !*** ./components/App/index.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App */ "./components/App/App.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_App__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/FilmsContols/FilmsControls.js":
-/*!**************************************************!*\
-  !*** ./components/FilmsContols/FilmsControls.js ***!
-  \**************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Modal */ "./components/Modal/index.js");
-
-
-class FilmsControls {
-
-    render() {
-        return (
-            `
-           <ul class="films-controls">
-                <li>
-                    <button id="films-controls-add" class="films-controls-add"></ button>
-                </li>
-            </ul>
-           `
-        )
-    }
-
-    addEventListeners() {
-        document.querySelector('.films-controls-add')
-            .addEventListener('click', () => _Modal__WEBPACK_IMPORTED_MODULE_0__.default.toggleModal());
-    }
-
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new FilmsControls());
-
-/***/ }),
-
-/***/ "./components/FilmsContols/index.js":
-/*!******************************************!*\
-  !*** ./components/FilmsContols/index.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FilmsControls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsControls */ "./components/FilmsContols/FilmsControls.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/FilmsItem/FilmsItem.js":
-/*!*******************************************!*\
-  !*** ./components/FilmsItem/FilmsItem.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
-
-
-class FilmsItem {
-    constructor(
-        title = '',
-        country = '',
-        genre = '',
-        director = '',
-        script = '',
-        producer = '',
-        operator = '',
-        composer = '',
-        budget = '',
-        income = '',
-        age = '',
-        duration = '',
-        release = '',
-        img = '',
-        id = (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)()
-    ) {
-        this.title = title
-        this.country = country
-        this.genre = genre
-        this.director = director
-        this.script = script
-        this.producer = producer
-        this.operator = operator
-        this.composer = composer
-        this.budget = budget
-        this.income = income
-        this.age = age
-        this.duration = duration
-        this.release = release
-        this.img = img
-        this.id = id;
-    }
-
-    render() {
-        return (
-            `
-            <li data-card-id='${this.id}' class="films-item">
-                <div>
-                    <span class="title">
-                        ${this.title}
-                    </span>
-                   
-                </div>
-                <hr>
-                <div class="films-item-img">
-                    <span class="age">
-                    ${this.age}
-                    </span>
-                    <img src="${this.img}" alt="" >
-                </div>        
-                <div class="films-item-controls">
-                    <button class="films-item-delete" data-films-item-id="${this.id}" >
-                        &times;
-                    </button>
-
-                    <button class="films-item-turn">
-                        <i class="fas fa-undo"></i>
-                    </button>
-                </div>
-            </li>
-            `
-        )
-    }
-
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsItem);
-
-/* <li data-card-id='${this.id}' class="films-item">
-<span class="title">
-    Название: ${this.title}
-</span>
-<span class="country">
-    Страна: ${this.country}
-</span>
-<span class="genre">
-    Жанр: ${this.genre}
-</span>
-<span class="director">
-    Режисер: ${this.director}
-</span>
-<span class="script">
-    Сценарий: ${this.script}
-</span>
-<span class="producer">
-    Продюсер: ${this.producer}
-</span>
-<span class="operator">
-    Оператор: ${this.operator}
-</span>
-<span class="composer">
-    Композитор: ${this.composer}
-</span>
-<span class="budget">
-    Бюджет: ${this.budget}
-</span>
-<span class="income">
-    Сборы: ${this.income}
-</span>
-<span class="age">
-    Возрастное ограничение: ${this.age}
-</span>
-<span class="duration">
-    Продолжительность: ${this.duration}
-</span>
-<span class="release">
-    Дата выхода: ${this.release}
-</span>
-<button class="films-item-delete" data-film-item-id="${this.id}" >Удалить</button>
-</li> */
-
-/***/ }),
-
-/***/ "./components/FilmsItem/index.js":
-/*!***************************************!*\
-  !*** ./components/FilmsItem/index.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsItem */ "./components/FilmsItem/FilmsItem.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsItem__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/FilmsList/FilmsList.js":
-/*!*******************************************!*\
-  !*** ./components/FilmsList/FilmsList.js ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _constants_DATA__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/DATA */ "./constants/DATA.js");
-/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
-/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Films */ "./components/Films/index.js");
-/* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
-
-
-
-
-
-
-class FilmsList {
-    constructor(DATA) {
-        this.DATA = DATA;
-    }
-
-    render() {
-
-        const FilmsItems = this.DATA.map(({
-            title,
-            country,
-            genre,
-            director,
-            script,
-            producer,
-            operator,
-            composer,
-            budget,
-            income,
-            age,
-            duration,
-            release,
-            img,
-            id }) => {
-            return new _FilmsItem__WEBPACK_IMPORTED_MODULE_3__.default(
-                title,
-                country,
-                genre,
-                director,
-                script,
-                producer,
-                operator,
-                composer,
-                budget,
-                income,
-                age,
-                duration,
-                release,
-                img,
-                id
-            ).render();
-        })
-
-        return (
-            `
-            <ul class="films-list">
-                ${FilmsItems.join('')}
-            </ul>
-            `
-        )
-    }
-
-    removeFilmsItem(id) {
-        this.DATA = this.DATA.filter(item => item.id !== id);
-
-        _Films__WEBPACK_IMPORTED_MODULE_2__.default.render();
-        _Films__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
-
-    }
-
-    addFilmsItem(form) {
-        let formDataObj = {};
-
-        const formFields = [...form.elements].map(input => input.id);
-        const formData = [...form.elements].map(input => input.value);
-
-        form.reset();
-
-        formFields.forEach((field, i) => {
-            formDataObj[field] = formData[i];
-        })
-        formDataObj['id'] = (0,_services_nextId__WEBPACK_IMPORTED_MODULE_1__.default)();
-
-        this.DATA.push(formDataObj);
-
-        _Films__WEBPACK_IMPORTED_MODULE_2__.default.render();
-        _Films__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
-    }
-
-    addEventListeners() {
-        document.querySelectorAll('.films-item-delete')
-            .forEach(element => {
-                element.addEventListener('click', () => {
-                    let id = +element.getAttribute('data-films-item-id');
-                    this.removeFilmsItem(id);
-                })
-            })
-    }
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new FilmsList(_constants_DATA__WEBPACK_IMPORTED_MODULE_0__.default));
-
-/***/ }),
-
-/***/ "./components/FilmsList/index.js":
-/*!***************************************!*\
-  !*** ./components/FilmsList/index.js ***!
-  \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsList */ "./components/FilmsList/FilmsList.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsList__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/Films/Films.js":
-/*!***********************************!*\
-  !*** ./components/Films/Films.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
-/* harmony import */ var _FilmsContols_FilmsControls__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsContols/FilmsControls */ "./components/FilmsContols/FilmsControls.js");
-/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
-
-
-
-
-class Films {
-    render() {
-        _constants_root__WEBPACK_IMPORTED_MODULE_0__.FILMS.innerHTML = `
-            <div class="container">
-                ${_FilmsContols_FilmsControls__WEBPACK_IMPORTED_MODULE_1__.default.render()}
-                ${_FilmsList__WEBPACK_IMPORTED_MODULE_2__.default.render()}
-            </div>
-        `
-    }
-
-    addEventListeners() {
-        _FilmsContols_FilmsControls__WEBPACK_IMPORTED_MODULE_1__.default.addEventListeners();
-        _FilmsList__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners();
-    }
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Films());
-
-/***/ }),
-
-/***/ "./components/Films/index.js":
-/*!***********************************!*\
-  !*** ./components/Films/index.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Films__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Films */ "./components/Films/Films.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Films__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/Modal/Modal.js":
-/*!***********************************!*\
-  !*** ./components/Modal/Modal.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
-/* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
-
-
-
-class Modal {
-    constructor(params) {
-        this.modal = null;
-        this.form = null
-    }
-
-    render() {
-        _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL.innerHTML = `
-        <div class="modal">
-            <div class="modal-content">
-                <span class="modal-close">&times;</span>
-                <form id="form" class="form">
-                    <input type="text" name="title" id="title" placeholder="Название">
-                    <input type="text" name="country" id="country" placeholder="Страна">
-                    <input type="text" name="genre" id="genre" placeholder="Жанр">
-                    <input type="text" name="director" id="director" placeholder="Режисер">
-                    <input type="text" name="script" id="script" placeholder="Сценарий">
-                    <input type="text" name="producer" id="producer" placeholder="Продюсер">
-                    <input type="text" name="operator" id="operator" placeholder="Оператор">
-                    <input type="text" name="composer" id="composer" placeholder="Композитор">
-                    <input type="text" name="budget" id="budget" placeholder="Бюджет">
-                    <input type="text" name="income" id="income" placeholder="Сборы">
-                    <input type="text" name="age" id="age" placeholder="Возрастное ограничение">
-                    <input type="text" name="duration" id="duration" placeholder="Продолжительность">
-                    <input type="text" name="release" id="release" placeholder="Дата выхода">
-                    <input type="text" name="img", id="img" placeholder="Ссылка на постер">
-                    <button id="form-btn-submit" type="submit">Добавить</button>
-                </form>
-            </div>
-        </div>
-        `
-        this.modal = document.querySelector('.modal');
-        this.form = document.querySelector('#form');
-    }
-
-    toggleModal() {
-        this.modal.classList.toggle('active');
-    }
-
-    addEventListeners() {
-        this.form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            this.toggleModal();
-            _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default.addFilmsItem(this.form);
-        })
-        this.modal.addEventListener('click', (e) => {
-            if (e.target.classList.contains('modal-close') || e.target.classList.contains('modal')) {
-                this.toggleModal();
-            }
-        })
-    }
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new Modal());
-
-/***/ }),
-
-/***/ "./components/Modal/index.js":
-/*!***********************************!*\
-  !*** ./components/Modal/index.js ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _Modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Modal */ "./components/Modal/Modal.js");
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_Modal__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./constants/DATA.js":
-/*!***************************!*\
-  !*** ./constants/DATA.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/nextId */ "./services/nextId.js");
-
-
-let DATA = [
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин.',
-        release: '23 февраля 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450'
-    },
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Пара из будущего',
-        country: 'Россия',
-        genre: 'комедия, фантастика, мелодрама',
-        director: 'Алексей Нужный',
-        script: 'Недалекое будущее, 2040 год. Евгений и Александра 20 лет в браке, их отношения похожи на высохший урюк. Развестись у них тоже не получается, поскольку в будущем расторжение брака – очень дорогая услуга. Но судьба дает им шанс: Евгений и Александра попадают в прошлое, в тот самый день 20 лет назад, когда влюбленный и юный Женя сделал предложение прелестной Саше. Теперь пара из будущего хочет разлучить самих себя в молодости, но это будет непросто. Молодые будут сражаться за свою любовь.',
-        producer: 'Леонид Верещагин, Антон Златопольский',
-        operator: 'Юрий Коробейников',
-        composer: 'Кирилл Бородулев, Евгений Бархатов',
-        budget: '',
-        income: '$2 173 864',
-        age: '12+',
-        duration: '104 мин.',
-        release: '4 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450'
-    },
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
-    },
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
-    },
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
-    },
-    {
-        id: (0,_services_nextId__WEBPACK_IMPORTED_MODULE_0__.default)(),
-        title: 'Батя',
-        country: 'Россия',
-        genre: 'Комедия',
-        director: ' Антон Зайцев, Артем Логинов',
-        script: 'История о путешествии взрослого героя к своему Бате, суровому русскому мужику, который стал отцом на заре девяностых и воспитывал своего сына так, как это делали все советские люди.',
-        producer: 'Дмитрий Ефимович',
-        operator: 'Александр Тананов',
-        composer: 'Алексей Кестнер',
-        budget: '10 000 000',
-        income: '$5 015 023',
-        age: '16+',
-        duration: '75мин./01:15',
-        release: '23 февраля 2021'
-    }
-]
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (DATA);
-
-/***/ }),
-
-/***/ "./constants/root.js":
-/*!***************************!*\
-  !*** ./constants/root.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "FILMS": () => (/* binding */ FILMS),
-/* harmony export */   "MODAL": () => (/* binding */ MODAL)
-/* harmony export */ });
-const FILMS = document.getElementById('films');
-const MODAL = document.getElementById('modal');
-
-/***/ }),
-
-/***/ "./services/nextId.js":
-/*!****************************!*\
-  !*** ./services/nextId.js ***!
-  \****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-let ID = 1;
-const nextId = () => {
-    return ID++;
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (nextId);
-
 /***/ })
 
 /******/ 	});
@@ -1491,11 +1672,8 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/App */ "./components/App/index.js");
 
-
 _components_App__WEBPACK_IMPORTED_MODULE_0__.default.render();
 _components_App__WEBPACK_IMPORTED_MODULE_0__.default.addEventListeners();
-
-
 })();
 
 /******/ })()

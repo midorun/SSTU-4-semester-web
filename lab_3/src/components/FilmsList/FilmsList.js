@@ -1,49 +1,18 @@
-import DATA from '../../constants/DATA';
-import nextId from '../../services/nextId';
-import Films from '../Films';
+import getFormDataObj from '../../services/getFormDataObj';
 import FilmsItem from '../FilmsItem';
+import FilmsItemDescr from '../FilmsItemDescr/FilmsItemDescr';
 
 
 class FilmsList {
-    constructor(DATA) {
-        this.DATA = DATA;
+    constructor(Films, data) {
+        this.Films = Films;
+        this.data = data;
     }
 
     render() {
 
-        const FilmsItems = this.DATA.map(({
-            title,
-            country,
-            genre,
-            director,
-            script,
-            producer,
-            operator,
-            composer,
-            budget,
-            income,
-            age,
-            duration,
-            release,
-            img,
-            id }) => {
-            return new FilmsItem(
-                title,
-                country,
-                genre,
-                director,
-                script,
-                producer,
-                operator,
-                composer,
-                budget,
-                income,
-                age,
-                duration,
-                release,
-                img,
-                id
-            ).render();
+        const FilmsItems = this.data.map((props) => {
+            return new FilmsItem(props).render();
         })
 
         return (
@@ -56,41 +25,38 @@ class FilmsList {
     }
 
     removeFilmsItem(id) {
-        this.DATA = this.DATA.filter(item => item.id !== id);
+        this.data = this.data.filter(item => item.id !== id);
 
-        Films.render();
-        Films.addEventListeners();
+        localStorage.setItem('data', JSON.stringify(this.data));
 
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
     addFilmsItem(form) {
-        let formDataObj = {};
+        this.data.push(getFormDataObj(form));
 
-        const formFields = [...form.elements].map(input => input.id);
-        const formData = [...form.elements].map(input => input.value);
+        localStorage.setItem('data', JSON.stringify(this.data));
 
-        form.reset();
-
-        formFields.forEach((field, i) => {
-            formDataObj[field] = formData[i];
-        })
-        formDataObj['id'] = nextId();
-
-        this.DATA.push(formDataObj);
-
-        Films.render();
-        Films.addEventListeners();
+        this.Films.render();
+        this.Films.addEventListeners();
     }
 
     addEventListeners() {
-        document.querySelectorAll('.films-item-delete')
-            .forEach(element => {
-                element.addEventListener('click', () => {
-                    let id = +element.getAttribute('data-films-item-id');
-                    this.removeFilmsItem(id);
-                })
-            })
+        document.querySelectorAll('.films-item')
+            .forEach(filmsItem => {
+                const id = +filmsItem.getAttribute('data-id');
+                filmsItem.querySelector('.films-item-controls-delete')
+                    .addEventListener('click', () => {
+                        this.removeFilmsItem(id);
+                    })
+                filmsItem.querySelector('.films-item-controls-descr')
+                    .addEventListener('click', () => {
+                        const [filmsItemData] = this.data.filter(film => film.id === id);
+                        return new FilmsItemDescr(filmsItemData).render();
+                    })
+            });
     }
 }
 
-export default new FilmsList(DATA);
+export default FilmsList;
