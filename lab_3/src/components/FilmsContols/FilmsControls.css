@@ -11,7 +11,7 @@
     height: 50px;
     background: #30ee3ace;
     border: none;
-    border-radius: 50%;
+    border-radius: var(--border-circle);
     outline: none;
     color: #ffffff;
     cursor: pointer;

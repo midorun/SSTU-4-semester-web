@@ -3,6 +3,7 @@ class FilmsControls {
     constructor(Modal) {
         this.Modal = Modal;
     }
+
     render() {
 
         return (
@@ -22,7 +23,6 @@ class FilmsControls {
         document.querySelector('#films-controls-add')
             .addEventListener('click', () => this.Modal.toggleModal());
     }
-
 }
 
 export default FilmsControls;

@@ -39,26 +39,37 @@ class FilmsItemDescr {
     render() {
         let htmlContent = `
         <div class="films-item-descr">
-            <div className="films-item-descr-img">Img</div>
-            <div className="films-item-descr-text">
-                <span class="title">Название: ${this.title}</span>
-                <span class="country">Страна: ${this.country}</span>
-                <span class="genre">Жанр: ${this.genre}</span>
-                <span class="director">Режисер: ${this.director}</span>
-                <span class="script">Сценарий: ${this.script}</span>
-                <span class="producer">Продюсер: ${this.producer}</span>
-                <span class="operator">Оператор: ${this.operator}</span>
-                <span class="composer">Композитор: ${this.composer}</span>
-                <span class="budget">Бюджет: ${this.budget}</span>
-                <span class="income">Сборы: ${this.income}</span>
-                <span class="age">Возрастное ограничение: ${this.age}</span>
-                <span class="duration">Продолжительность: ${this.duration}</span>
-                <span class="release">Дата выхода: ${this.release}</span>
+            <div class="films-item-descr-content">
+                <div class="films-item-descr-img">
+                    <img src="${this.img}"
+                        alt="poster" />
+                </div>
+                <div class="films-item-descr-text">
+                    <span class="title">${this.title}</span>
+                    <span class="country">Страна: ${this.genre}</span>
+                    <span class="genre">Жанр: ${this.genre}</span>
+                    <span class="director">Режисер: ${this.director}</span>
+                    <span class="producer">Продюсер: ${this.producer}</span>
+                    <span class="operator">Оператор: ${this.operator}</span>
+                    <span class="composer">Композитор: ${this.composer}</span>
+                    <span class="budget">Бюджет: ${this.budget}</span>
+                    <span class="income">Сборы: ${this.income}</span>
+                    <span class="age">Возрастное ограничение: ${this.age}</span>
+                    <span class="duration">Продолжительность: ${this.release}</span>
+                    <span class="release">Дата выхода: ${this.release}</span>
+                    <span class="script">Сценарий: ${this.script} </span>
+                </div>
+                <div class="films-item-descr-close">
+                    <i class="fas fa-times"></i>
+                </div>
             </div>
         </div>
         `
 
         DESCR.innerHTML = htmlContent;
+
+        document.querySelector('.films-item-descr-close')
+            .addEventListener('click', () => DESCR.innerHTML = '');
     }
 }
 

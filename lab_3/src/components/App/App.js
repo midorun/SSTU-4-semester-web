@@ -11,6 +11,7 @@ import '../FilmsContols/FilmsControls.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
 import '../Modal/Modal.css';
+import '../FilmsItemDescr/FilmsItemDescr.css';
 import './App.css';
 
 class App {
@@ -36,6 +37,7 @@ class App {
 
         this.Films.render();
         this.Modal.render();
+
     }
 
     updateState(data) {

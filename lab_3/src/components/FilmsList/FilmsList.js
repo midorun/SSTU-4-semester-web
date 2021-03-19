@@ -10,6 +10,7 @@ class FilmsList {
     }
 
     render() {
+
         const FilmsItems = this.data.map((props) => {
             return new FilmsItem(props).render();
         })

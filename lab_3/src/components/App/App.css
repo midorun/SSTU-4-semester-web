@@ -1,3 +1,9 @@
+:root {
+    --main-color: #552ec2ec;
+    --border-circle: 50%;
+    --border-soft: 25px;
+}
+
 * {
     box-sizing: border-box;
 }
