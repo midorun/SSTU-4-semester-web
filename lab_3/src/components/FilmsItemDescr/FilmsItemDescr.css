@@ -1,12 +1,5 @@
 .films-item-descr {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1050;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, .5)
+    display: block;
 }
 
 .films-item-descr-content {
@@ -19,9 +12,6 @@
     border-radius: var(--border-soft);
     background: #9b8dc0ec;
 }
-
-.films-item-descr-img {}
-
 
 .films-item-descr-close {
     position: absolute;

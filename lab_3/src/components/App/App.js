@@ -1,18 +1,19 @@
 import Films from '../Films';
 import FilmsControls from '../FilmsContols';
 import FilmsList from '../FilmsList';
-import Modal from '../Modal';
+import Modal from '../ModalAddFilm';
 import DATA from '../../constants/DATA';
 
-// styles
 
+// styles
+import './App.css';
 import '../Films/Films.css';
 import '../FilmsContols/FilmsControls.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
-import '../Modal/Modal.css';
+import '../ModalAddFilm/ModalAddFilm.css';
 import '../FilmsItemDescr/FilmsItemDescr.css';
-import './App.css';
+import '../ModalAddComment/ModalAddComment.css';
 
 class App {
     constructor(Films, Modal, DATA) {

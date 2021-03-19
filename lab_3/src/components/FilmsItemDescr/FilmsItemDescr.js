@@ -1,4 +1,4 @@
-import { DESCR } from '../../constants/root';
+import { MODAL_SHOW_FILM_DESCR } from '../../constants/root';
 import nextId from '../../services/nextId';
 
 class FilmsItemDescr {
@@ -37,8 +37,8 @@ class FilmsItemDescr {
         this.id = id;
     }
     render() {
-        let htmlContent = `
-        <div class="films-item-descr">
+        MODAL_SHOW_FILM_DESCR.innerHTML = `
+        <div class="modal films-item-descr">
             <div class="films-item-descr-content">
                 <div class="films-item-descr-img">
                     <img src="${this.img}"
@@ -59,17 +59,21 @@ class FilmsItemDescr {
                     <span class="release">Дата выхода: ${this.release}</span>
                     <span class="script">Сценарий: ${this.script} </span>
                 </div>
-                <div class="films-item-descr-close">
+                <button class="films-item-descr-close">
                     <i class="fas fa-times"></i>
-                </div>
+                </button>
             </div>
         </div>
         `
 
-        DESCR.innerHTML = htmlContent;
-
-        document.querySelector('.films-item-descr-close')
-            .addEventListener('click', () => DESCR.innerHTML = '');
+        document.querySelector('.films-item-descr')
+            .addEventListener('click', (e) => {
+                if (e.target.classList.contains('films-item-descr') ||
+                    e.target.classList.contains('films-item-descr-close') ||
+                    e.target.classList.contains('fa-times')) {
+                    MODAL_SHOW_FILM_DESCR.innerHTML = ''
+                }
+            });
     }
 }
 
