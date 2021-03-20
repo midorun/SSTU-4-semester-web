@@ -8,6 +8,7 @@ class FilmsList {
     constructor(Films, data) {
         this.Films = Films;
         this.data = data;
+        this.addFilmsItemComment = this.addFilmsItemComment.bind(this);
     }
 
     render() {
@@ -43,14 +44,24 @@ class FilmsList {
         this.Films.addEventListeners();
     }
 
-    addFilmsComment(commentContent, filmId) {
-        console.log('add comment');
+    addFilmsItemComment(commentContent, filmId) {
+        commentContent['id'] = filmId;
+
+        this.data.map(item => {
+            if (item.id === filmId) {
+                item.comments.push(commentContent);
+            }
+        });
+
+        localStorage.setItem('data', JSON.stringify(this.data));
+
+        console.log(this.data);
     }
 
     addEventListeners() {
         document.querySelectorAll('.films-item')
             .forEach(filmsItem => {
-                const id = +filmsItem.getAttribute('data-id');
+                const id = filmsItem.getAttribute('data-id');
                 filmsItem.querySelector('.films-item-controls-delete')
                     .addEventListener('click', () => {
                         this.removeFilmsItem(id);
@@ -58,12 +69,14 @@ class FilmsList {
                 filmsItem.querySelector('.films-item-controls-descr')
                     .addEventListener('click', () => {
                         const [filmsItemData] = this.data.filter(film => film.id === id);
-                        return new ModalShowFilmDescr(filmsItemData).render();
+                        return new ModalShowFilmDescr(filmsItemData)
+                            .render();
                     })
                 filmsItem.querySelector('.films-item-controls-comment')
                     .addEventListener('click', () => {
-                        ModalAddComment.toggle();
-                        // return new ModalAddComment().render();
+                        return new ModalAddComment(this.addFilmsItemComment, id)
+                            .render()
+                            .addEventListeners();
                     })
             });
     }

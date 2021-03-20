@@ -1,6 +1,6 @@
 import nextId from './nextId';
 
-const getFormDataObj = (form, filmId = nextId()) => {
+const getFormDataObj = (form) => {
     let formDataObj = {};
 
     const formFields = [...form.elements].map(input => input.id);
@@ -11,7 +11,8 @@ const getFormDataObj = (form, filmId = nextId()) => {
     formFields.forEach((field, i) => {
         formDataObj[field] = formData[i];
     })
-    formDataObj['id'] = filmId;
+
+    formDataObj['id'] = nextId();
 
     return formDataObj;
 }

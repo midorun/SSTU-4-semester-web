@@ -18,10 +18,9 @@ import '../ModalAddComment/ModalAddComment.css';
 
 
 class App {
-    constructor(Films, ModalAddFilm, ModalAddComment, DATA) {
+    constructor(Films, ModalAddFilm, DATA) {
         this.Films = Films;
         this.ModalAddFilm = ModalAddFilm;
-        this.ModalAddComment = ModalAddComment;
         this.data = DATA;
     }
 
@@ -38,12 +37,9 @@ class App {
         this.Films.FilmsList.Films = this.Films;
         this.Films.FilmsControls.ModalAddFilm = this.ModalAddFilm;
         this.ModalAddFilm.FilmsList = this.Films.FilmsList;
-        this.ModalAddComment.FilmsList = this.Films.FilmsList;
 
         this.Films.render();
         this.ModalAddFilm.render();
-        this.ModalAddComment.render();
-        console.log(this);
     }
 
     updateState(data) {
@@ -56,4 +52,4 @@ class App {
     }
 }
 
-export default new App(new Films(new FilmsControls(), new FilmsList()), new ModalAddFilm(), new ModalAddComment(), DATA);
+export default new App(new Films(new FilmsControls(), new FilmsList()), new ModalAddFilm(), DATA);
