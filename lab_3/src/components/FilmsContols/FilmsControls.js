@@ -1,7 +1,7 @@
 
 class FilmsControls {
-    constructor(Modal) {
-        this.Modal = Modal;
+    constructor(ModalAddFilm) {
+        this.ModalAddFilm = ModalAddFilm;
     }
 
     render() {
@@ -21,7 +21,7 @@ class FilmsControls {
 
     addEventListeners() {
         document.querySelector('#films-controls-add')
-            .addEventListener('click', () => this.Modal.toggleModal());
+            .addEventListener('click', () => this.ModalAddFilm.toggleModal());
     }
 }
 

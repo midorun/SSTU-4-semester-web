@@ -11,6 +11,7 @@ const getFormDataObj = (form) => {
     formFields.forEach((field, i) => {
         formDataObj[field] = formData[i];
     })
+
     formDataObj['id'] = nextId();
 
     return formDataObj;

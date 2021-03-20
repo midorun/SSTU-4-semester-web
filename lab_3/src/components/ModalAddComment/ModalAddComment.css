@@ -1,0 +1,14 @@
+.modal-add-comment .modal-content {
+    height: 350px;
+    background: var(--color-yellow);
+}
+
+#form-add-comment-submit {
+    padding: 7px 15px;
+    margin-top: 10px;
+    min-height: 30px;
+    border: none;
+    border-radius: 15px;
+    background: var(--color-main);
+    cursor: pointer;
+}

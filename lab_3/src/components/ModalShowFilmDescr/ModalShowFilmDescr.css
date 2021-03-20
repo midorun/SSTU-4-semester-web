@@ -1,0 +1,70 @@
+.films-item-descr {
+    display: block;
+}
+
+.films-item-descr-wrapper {
+    position: relative;
+    margin: 120px auto;
+    padding: 40px 20px 20px;
+    width: 70%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-soft);
+    background: #9b8dc0ec;
+    overflow: auto;
+}
+
+.films-item-descr-about {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-main);
+}
+
+.films-item-descr-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.films-item-descr-text {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.films-item-descr-text .title {
+    font-size: 2rem;
+}
+
+.films-item-descr-comments {
+    padding-top: 20px;
+}
+
+.films-item-descr-comments-title {
+    font-size: 2rem;
+}
+
+.films-item-descr-comments-content {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+
+.films-item-descr-comments-item {
+    margin-top: 25px;
+}
+
+.films-item-descr-comments-item-profile {
+    display: flex;
+}
+
+.films-item-descr-comments-item-name {}
+
+.films-item-descr-comments-item-profession {}
+
+.films-item-descr-comments-item-text {}
+
+.films-item-descr-comments-item-rate {}

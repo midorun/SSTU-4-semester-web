@@ -1,7 +1,10 @@
 :root {
-    --main-color: #552ec2ec;
+    --color-main: #552ec2ec;
+    --color-yellow: #e0de5c;
     --border-circle: 50%;
     --border-soft: 25px;
+
+
 }
 
 * {
@@ -24,15 +27,77 @@ ul {
     padding-inline-start: 0;
 }
 
+button {
+    border: none;
+    outline: none;
+    background: none;
+    color: #ffffff;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1110px;
 }
 
-.active {
+.modal.active {
     display: block;
 }
 
 .hide {
     display: none;
+}
+
+/* modals */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .5)
+}
+
+.modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 20px;
+    max-width: 400px;
+    height: 80vh;
+    border-radius: var(--border-soft);
+}
+
+.modal-close {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    border: none;
+    outline: none;
+    background: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.form {
+    margin: 0 auto;
+    padding: 15px 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form input {
+    padding-left: 5px;
+    width: 300px;
+    height: 25px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
 }

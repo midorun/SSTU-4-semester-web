@@ -50,17 +50,15 @@ class FilmsItem {
                 </div>
                      
                 <div class="films-item-controls">
-                    <button 
-                        class="films-item-controls-delete" 
-                        data-films-item-id="${this.id}" 
-                    >
+                    <button class="films-item-controls-delete">
                         <i class="fas fa-times"></i>
                     </button>
 
-                    <button 
-                        class="films-item-controls-descr" 
-                        data-films-item-id="${this.id}"
-                    >
+                    <button class="films-item-controls-comment">
+                        <i class="fas fa-comment-alt"></i>
+                    </button>
+                    
+                    <button class="films-item-controls-descr">
                         <i class="fas fa-info"></i>
                     </button>
                 </div>

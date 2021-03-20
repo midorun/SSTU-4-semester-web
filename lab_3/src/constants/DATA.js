@@ -16,7 +16,16 @@ let DATA = [
         age: '16+',
         duration: '75мин.',
         release: '23 февраля 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/bf609987-9456-46e5-8def-f9f7b62c96a4/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     },
     {
         id: nextId(),
@@ -33,7 +42,16 @@ let DATA = [
         age: '12+',
         duration: '104 мин.',
         release: '4 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/3d742f2a-842b-42b2-8952-5168c642fa95/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     },
     {
         id: nextId(),
@@ -50,7 +68,16 @@ let DATA = [
         age: '18+',
         duration: '92 мин',
         release: '18 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ba79433c-84c0-4ce7-b4a4-bfcfe89ca3bf/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     },
     {
         id: nextId(),
@@ -67,7 +94,16 @@ let DATA = [
         age: '6+',
         duration: '107 мин.',
         release: '3 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/579c4f99-246d-4c3e-b401-419cda21a507/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     },
     {
         id: nextId(),
@@ -84,7 +120,16 @@ let DATA = [
         age: '6+',
         duration: '84 мин.',
         release: '3 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1629390/8218e593-11fb-4f8f-8e94-d8cc68f0bf16/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     },
     {
         id: nextId(),
@@ -101,7 +146,16 @@ let DATA = [
         age: '18+',
         duration: '100 мин.',
         release: '5 марта 2021',
-        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450'
+        img: 'https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/b9d9e755-465d-4ab5-8dac-a24eb82aaefc/300x450',
+        comments: [
+            {
+                id: 1,
+                name: 'Dmitriy',
+                profession: 'Programer',
+                text: 'Хороший фильм!',
+                rate: '8'
+            }
+        ]
     }
 ]
 

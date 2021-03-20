@@ -1,23 +1,26 @@
 import Films from '../Films';
 import FilmsControls from '../FilmsContols';
 import FilmsList from '../FilmsList';
-import Modal from '../Modal';
+import ModalAddFilm from '../ModalAddFilm';
+import ModalAddComment from '../ModalAddComment';
 import DATA from '../../constants/DATA';
 
-// styles
 
+// styles
+import './App.css';
 import '../Films/Films.css';
 import '../FilmsContols/FilmsControls.css';
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
-import '../Modal/Modal.css';
-import '../FilmsItemDescr/FilmsItemDescr.css';
-import './App.css';
+import '../ModalAddFilm/ModalAddFilm.css';
+import '../ModalShowFilmDescr/ModalShowFilmDescr.css'
+import '../ModalAddComment/ModalAddComment.css';
+
 
 class App {
-    constructor(Films, Modal, DATA) {
+    constructor(Films, ModalAddFilm, DATA) {
         this.Films = Films;
-        this.Modal = Modal;
+        this.ModalAddFilm = ModalAddFilm;
         this.data = DATA;
     }
 
@@ -32,12 +35,11 @@ class App {
 
         this.Films.FilmsList.data = this.data;
         this.Films.FilmsList.Films = this.Films;
-        this.Films.FilmsControls.Modal = this.Modal;
-        this.Modal.FilmsList = this.Films.FilmsList;
+        this.Films.FilmsControls.ModalAddFilm = this.ModalAddFilm;
+        this.ModalAddFilm.FilmsList = this.Films.FilmsList;
 
         this.Films.render();
-        this.Modal.render();
-
+        this.ModalAddFilm.render();
     }
 
     updateState(data) {
@@ -46,8 +48,8 @@ class App {
 
     addEventListeners() {
         this.Films.addEventListeners()
-        this.Modal.addEventListeners();
+        this.ModalAddFilm.addEventListeners();
     }
 }
 
-export default new App(new Films(new FilmsControls(), new FilmsList()), new Modal(), DATA);
+export default new App(new Films(new FilmsControls(), new FilmsList()), new ModalAddFilm(), DATA);

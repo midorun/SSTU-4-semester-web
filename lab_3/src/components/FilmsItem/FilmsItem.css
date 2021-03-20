@@ -58,13 +58,13 @@
 .films-item-controls {
     margin-top: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-end;
 }
 
 .films-item-controls-descr,
-.films-item-controls-delete {
-    margin: 0 40px;
+.films-item-controls-delete,
+.films-item-controls-comment {
     width: 50px;
     height: 50px;
     border: none;
@@ -90,4 +90,12 @@
 
 .films-item-controls-delete:hover {
     background-color: #f43636;
+}
+
+.films-item-controls-comment {
+    background-color: #e0de5c;
+}
+
+.films-item-controls-comment:hover {
+    background-color: #e9e516;
 }

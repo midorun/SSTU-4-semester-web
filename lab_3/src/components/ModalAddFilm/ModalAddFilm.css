@@ -1,0 +1,21 @@
+#modal-add-film .modal-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    min-height: 530px;
+    transform: translate(-50%, -50%);
+    background: #6d4cc9ec;
+}
+
+#form-add-film-submit {
+    margin: 0 auto;
+    margin-top: 20px;
+    height: 30px;
+    width: 200px;
+    border: none;
+    border-radius: 15px;
+    background-color: #30ee3ace;
+    color: #ffffff;
+    transition: all .3s;
+    cursor: pointer;
+}
