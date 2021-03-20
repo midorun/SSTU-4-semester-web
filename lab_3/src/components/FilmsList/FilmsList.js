@@ -1,6 +1,7 @@
 import getFormDataObj from '../../services/getFormDataObj';
 import FilmsItem from '../FilmsItem';
-import FilmsItemDescr from '../FilmsItemDescr/FilmsItemDescr';
+import ModalShowFilmDescr from '../ModalShowFilmDescr/ModalShowFilmDescr';
+import ModalAddComment from '../ModalAddComment';
 
 
 class FilmsList {
@@ -57,11 +58,12 @@ class FilmsList {
                 filmsItem.querySelector('.films-item-controls-descr')
                     .addEventListener('click', () => {
                         const [filmsItemData] = this.data.filter(film => film.id === id);
-                        return new FilmsItemDescr(filmsItemData).render();
+                        return new ModalShowFilmDescr(filmsItemData).render();
                     })
                 filmsItem.querySelector('.films-item-controls-comment')
                     .addEventListener('click', () => {
-                        console.log('comment');
+                        ModalAddComment.toggle();
+                        // return new ModalAddComment().render();
                     })
             });
     }

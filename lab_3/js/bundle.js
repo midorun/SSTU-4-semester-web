@@ -16,20 +16,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilmsContols__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsContols */ "./components/FilmsContols/index.js");
 /* harmony import */ var _FilmsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsList */ "./components/FilmsList/index.js");
 /* harmony import */ var _ModalAddFilm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ModalAddFilm */ "./components/ModalAddFilm/index.js");
-/* harmony import */ var _constants_DATA__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants/DATA */ "./constants/DATA.js");
-/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
-/* harmony import */ var _Films_Films_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Films/Films.css */ "./components/Films/Films.css");
-/* harmony import */ var _FilmsContols_FilmsControls_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../FilmsContols/FilmsControls.css */ "./components/FilmsContols/FilmsControls.css");
-/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
-/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
-/* harmony import */ var _ModalAddFilm_ModalAddFilm_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../ModalAddFilm/ModalAddFilm.css */ "./components/ModalAddFilm/ModalAddFilm.css");
-/* harmony import */ var _FilmsItemDescr_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../FilmsItemDescr/FilmsItemDescr.css */ "./components/FilmsItemDescr/FilmsItemDescr.css");
-/* harmony import */ var _ModalAddComment_ModalAddComment_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../ModalAddComment/ModalAddComment.css */ "./components/ModalAddComment/ModalAddComment.css");
+/* harmony import */ var _ModalAddComment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../ModalAddComment */ "./components/ModalAddComment/index.js");
+/* harmony import */ var _constants_DATA__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../constants/DATA */ "./constants/DATA.js");
+/* harmony import */ var _App_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./App.css */ "./components/App/App.css");
+/* harmony import */ var _Films_Films_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../Films/Films.css */ "./components/Films/Films.css");
+/* harmony import */ var _FilmsContols_FilmsControls_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../FilmsContols/FilmsControls.css */ "./components/FilmsContols/FilmsControls.css");
+/* harmony import */ var _FilmsList_FilmsList_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../FilmsList/FilmsList.css */ "./components/FilmsList/FilmsList.css");
+/* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
+/* harmony import */ var _ModalAddFilm_ModalAddFilm_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../ModalAddFilm/ModalAddFilm.css */ "./components/ModalAddFilm/ModalAddFilm.css");
+/* harmony import */ var _ModalShowFilmDescr_ModalShowFilmDescr_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../ModalShowFilmDescr/ModalShowFilmDescr.css */ "./components/ModalShowFilmDescr/ModalShowFilmDescr.css");
+/* harmony import */ var _ModalAddComment_ModalAddComment_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../ModalAddComment/ModalAddComment.css */ "./components/ModalAddComment/ModalAddComment.css");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -47,11 +49,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 var App = /*#__PURE__*/function () {
-  function App(Films, Modal, DATA) {
+  function App(Films, ModalAddFilm, ModalAddComment, DATA) {
     _classCallCheck(this, App);
 
     this.Films = Films;
-    this.Modal = Modal;
+    this.ModalAddFilm = ModalAddFilm;
+    this.ModalAddComment = ModalAddComment;
     this.data = DATA;
   }
 
@@ -68,10 +71,13 @@ var App = /*#__PURE__*/function () {
 
       this.Films.FilmsList.data = this.data;
       this.Films.FilmsList.Films = this.Films;
-      this.Films.FilmsControls.Modal = this.Modal;
-      this.Modal.FilmsList = this.Films.FilmsList;
+      this.Films.FilmsControls.ModalAddFilm = this.ModalAddFilm;
+      this.ModalAddFilm.FilmsList = this.Films.FilmsList;
+      this.ModalAddComment.FilmsList = this.Films.FilmsList;
       this.Films.render();
-      this.Modal.render();
+      this.ModalAddFilm.render();
+      this.ModalAddComment.render();
+      console.log(this);
     }
   }, {
     key: "updateState",
@@ -82,14 +88,14 @@ var App = /*#__PURE__*/function () {
     key: "addEventListeners",
     value: function addEventListeners() {
       this.Films.addEventListeners();
-      this.Modal.addEventListeners();
+      this.ModalAddFilm.addEventListeners();
     }
   }]);
 
   return App;
 }();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new App(new _Films__WEBPACK_IMPORTED_MODULE_0__.default(new _FilmsContols__WEBPACK_IMPORTED_MODULE_1__.default(), new _FilmsList__WEBPACK_IMPORTED_MODULE_2__.default()), new _ModalAddFilm__WEBPACK_IMPORTED_MODULE_3__.default(), _constants_DATA__WEBPACK_IMPORTED_MODULE_4__.default));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (new App(new _Films__WEBPACK_IMPORTED_MODULE_0__.default(new _FilmsContols__WEBPACK_IMPORTED_MODULE_1__.default(), new _FilmsList__WEBPACK_IMPORTED_MODULE_2__.default()), new _ModalAddFilm__WEBPACK_IMPORTED_MODULE_3__.default(), new _ModalAddComment__WEBPACK_IMPORTED_MODULE_4__.default(), _constants_DATA__WEBPACK_IMPORTED_MODULE_5__.default));
 
 /***/ }),
 
@@ -126,10 +132,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 var FilmsControls = /*#__PURE__*/function () {
-  function FilmsControls(Modal) {
+  function FilmsControls(ModalAddFilm) {
     _classCallCheck(this, FilmsControls);
 
-    this.Modal = Modal;
+    this.ModalAddFilm = ModalAddFilm;
   }
 
   _createClass(FilmsControls, [{
@@ -143,7 +149,7 @@ var FilmsControls = /*#__PURE__*/function () {
       var _this = this;
 
       document.querySelector('#films-controls-add').addEventListener('click', function () {
-        return _this.Modal.toggleModal();
+        return _this.ModalAddFilm.toggleModal();
       });
     }
   }]);
@@ -168,98 +174,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilmsControls__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FilmsControls */ "./components/FilmsContols/FilmsControls.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default);
-
-/***/ }),
-
-/***/ "./components/FilmsItemDescr/FilmsItemDescr.js":
-/*!*****************************************************!*\
-  !*** ./components/FilmsItemDescr/FilmsItemDescr.js ***!
-  \*****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
-/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-var FilmsItemDescr = /*#__PURE__*/function () {
-  function FilmsItemDescr(_ref) {
-    var _ref$title = _ref.title,
-        title = _ref$title === void 0 ? '' : _ref$title,
-        _ref$country = _ref.country,
-        country = _ref$country === void 0 ? '' : _ref$country,
-        _ref$genre = _ref.genre,
-        genre = _ref$genre === void 0 ? '' : _ref$genre,
-        _ref$director = _ref.director,
-        director = _ref$director === void 0 ? '' : _ref$director,
-        _ref$script = _ref.script,
-        script = _ref$script === void 0 ? '' : _ref$script,
-        _ref$producer = _ref.producer,
-        producer = _ref$producer === void 0 ? '' : _ref$producer,
-        _ref$operator = _ref.operator,
-        operator = _ref$operator === void 0 ? '' : _ref$operator,
-        _ref$composer = _ref.composer,
-        composer = _ref$composer === void 0 ? '' : _ref$composer,
-        _ref$budget = _ref.budget,
-        budget = _ref$budget === void 0 ? '' : _ref$budget,
-        _ref$income = _ref.income,
-        income = _ref$income === void 0 ? '' : _ref$income,
-        _ref$age = _ref.age,
-        age = _ref$age === void 0 ? '' : _ref$age,
-        _ref$duration = _ref.duration,
-        duration = _ref$duration === void 0 ? '' : _ref$duration,
-        _ref$release = _ref.release,
-        release = _ref$release === void 0 ? '' : _ref$release,
-        _ref$img = _ref.img,
-        img = _ref$img === void 0 ? '' : _ref$img,
-        _ref$id = _ref.id,
-        id = _ref$id === void 0 ? (0,_services_nextId__WEBPACK_IMPORTED_MODULE_1__.default)() : _ref$id;
-
-    _classCallCheck(this, FilmsItemDescr);
-
-    this.title = title;
-    this.country = country;
-    this.genre = genre;
-    this.director = director;
-    this.script = script;
-    this.producer = producer;
-    this.operator = operator;
-    this.composer = composer;
-    this.budget = budget;
-    this.income = income;
-    this.age = age;
-    this.duration = duration;
-    this.release = release;
-    this.img = img;
-    this.id = id;
-  }
-
-  _createClass(FilmsItemDescr, [{
-    key: "render",
-    value: function render() {
-      _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_SHOW_FILM_DESCR.innerHTML = "\n        <div class=\"modal films-item-descr\">\n            <div class=\"films-item-descr-content\">\n                <div class=\"films-item-descr-img\">\n                    <img src=\"".concat(this.img, "\"\n                        alt=\"poster\" />\n                </div>\n                <div class=\"films-item-descr-text\">\n                    <span class=\"title\">").concat(this.title, "</span>\n                    <span class=\"country\">\u0421\u0442\u0440\u0430\u043D\u0430: ").concat(this.genre, "</span>\n                    <span class=\"genre\">\u0416\u0430\u043D\u0440: ").concat(this.genre, "</span>\n                    <span class=\"director\">\u0420\u0435\u0436\u0438\u0441\u0435\u0440: ").concat(this.director, "</span>\n                    <span class=\"producer\">\u041F\u0440\u043E\u0434\u044E\u0441\u0435\u0440: ").concat(this.producer, "</span>\n                    <span class=\"operator\">\u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440: ").concat(this.operator, "</span>\n                    <span class=\"composer\">\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440: ").concat(this.composer, "</span>\n                    <span class=\"budget\">\u0411\u044E\u0434\u0436\u0435\u0442: ").concat(this.budget, "</span>\n                    <span class=\"income\">\u0421\u0431\u043E\u0440\u044B: ").concat(this.income, "</span>\n                    <span class=\"age\">\u0412\u043E\u0437\u0440\u0430\u0441\u0442\u043D\u043E\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435: ").concat(this.age, "</span>\n                    <span class=\"duration\">\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C: ").concat(this.release, "</span>\n                    <span class=\"release\">\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430: ").concat(this.release, "</span>\n                    <span class=\"script\">\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439: ").concat(this.script, " </span>\n                </div>\n                <button class=\"films-item-descr-close\">\n                    <i class=\"fas fa-times\"></i>\n                </button>\n            </div>\n        </div>\n        ");
-      document.querySelector('.films-item-descr').addEventListener('click', function (e) {
-        if (e.target.classList.contains('films-item-descr') || e.target.classList.contains('films-item-descr-close') || e.target.classList.contains('fa-times')) {
-          _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_SHOW_FILM_DESCR.innerHTML = '';
-        }
-      });
-    }
-  }]);
-
-  return FilmsItemDescr;
-}();
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsItemDescr);
 
 /***/ }),
 
@@ -376,7 +290,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _services_getFormDataObj__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../services/getFormDataObj */ "./services/getFormDataObj.js");
 /* harmony import */ var _FilmsItem__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsItem */ "./components/FilmsItem/index.js");
-/* harmony import */ var _FilmsItemDescr_FilmsItemDescr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../FilmsItemDescr/FilmsItemDescr */ "./components/FilmsItemDescr/FilmsItemDescr.js");
+/* harmony import */ var _ModalShowFilmDescr_ModalShowFilmDescr__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../ModalShowFilmDescr/ModalShowFilmDescr */ "./components/ModalShowFilmDescr/ModalShowFilmDescr.js");
+/* harmony import */ var _ModalAddComment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../ModalAddComment */ "./components/ModalAddComment/index.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -394,6 +309,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 
 
 
@@ -455,10 +371,10 @@ var FilmsList = /*#__PURE__*/function () {
               _this$data$filter2 = _slicedToArray(_this$data$filter, 1),
               filmsItemData = _this$data$filter2[0];
 
-          return new _FilmsItemDescr_FilmsItemDescr__WEBPACK_IMPORTED_MODULE_2__.default(filmsItemData).render();
+          return new _ModalShowFilmDescr_ModalShowFilmDescr__WEBPACK_IMPORTED_MODULE_2__.default(filmsItemData).render();
         });
         filmsItem.querySelector('.films-item-controls-comment').addEventListener('click', function () {
-          console.log('comment');
+          _ModalAddComment__WEBPACK_IMPORTED_MODULE_3__.default.toggle(); // return new ModalAddComment().render();
         });
       });
     }
@@ -550,6 +466,81 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./components/ModalAddComment/ModalAddComment.js":
+/*!*******************************************************!*\
+  !*** ./components/ModalAddComment/ModalAddComment.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
+/* harmony import */ var _FilmsList_FilmsList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../FilmsList/FilmsList */ "./components/FilmsList/FilmsList.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var ModalAddComment = /*#__PURE__*/function () {
+  function ModalAddComment(FilmsList) {
+    _classCallCheck(this, ModalAddComment);
+
+    this.FilmsList = FilmsList;
+  }
+
+  _createClass(ModalAddComment, [{
+    key: "render",
+    value: function render() {
+      var _this = this;
+
+      _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_ADD_COMMENT.innerHTML = "\n        <div class=\"modal modal-add-comment\">\n            <div class=\"modal-content\">\n                <button class=\"modal-close\"><i class=\"fas fa-times\"></i></button>\n                <form id=\"form-add-comment\" class=\"form form-add-comment\">\n                    <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                    <input type=\"text\" name=\"profession\" id=\"profession\" placeholder=\"\u0412\u0430\u0448 \u0440\u043E\u0434 \u0434\u0435\u044F\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u0438\">\n                    <input type=\"text\" name=\"text\" id=\"text\" placeholder=\"\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u0432\u0430\u0448 \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439 \u0437\u0434\u0435\u0441\u044C\">\n                    <input type=\"text\" name=\"rate\" id=\"rate\" placeholder=\"\u041F\u043E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u043E\u0446\u0435\u043D\u043A\u0443 \u0444\u0438\u043B\u044C\u043C\u0443\">\n                    <button id=\"form-add-comment-submit\" type=\"submit\">\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0439</button>\n                </form>\n            </div>\n        </div>\n        ";
+      document.querySelector('.modal-add-comment').addEventListener('click', function (e) {
+        if (e.target.classList.contains('modal-add-comment') || e.target.classList.contains('modal-add-comment-close') || e.target.classList.contains('fa-times')) {
+          document.querySelector('.modal-add-comment').classList.toggle('active');
+        } else if (e.target.getAttribute('id') === 'form-add-comment-submit') {
+          e.preventDefault();
+          ModalAddComment.toggle();
+
+          _this.FilmsList.addFilmsComment();
+        }
+      });
+    }
+  }], [{
+    key: "toggle",
+    value: function toggle() {
+      document.querySelector('.modal-add-comment').classList.toggle('active');
+    }
+  }]);
+
+  return ModalAddComment;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ModalAddComment);
+
+/***/ }),
+
+/***/ "./components/ModalAddComment/index.js":
+/*!*********************************************!*\
+  !*** ./components/ModalAddComment/index.js ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _ModalAddComment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalAddComment */ "./components/ModalAddComment/ModalAddComment.js");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ModalAddComment__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
 /***/ "./components/ModalAddFilm/ModalAddFilm.js":
 /*!*************************************************!*\
   !*** ./components/ModalAddFilm/ModalAddFilm.js ***!
@@ -569,15 +560,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-var Modal = /*#__PURE__*/function () {
-  function Modal(FilmsList) {
-    _classCallCheck(this, Modal);
+var ModalAddFilm = /*#__PURE__*/function () {
+  function ModalAddFilm(FilmsList) {
+    _classCallCheck(this, ModalAddFilm);
 
     this.FilmsList = FilmsList;
     this.modal = null;
   }
 
-  _createClass(Modal, [{
+  _createClass(ModalAddFilm, [{
     key: "render",
     value: function render() {
       _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_ADD_FILM.innerHTML = "\n        <div class=\"modal\">\n            <div class=\"modal-content\">\n                <button class=\"modal-close\"><i class=\"fas fa-times\"></i></button>\n                <form id=\"form-add-film\" class=\"form\">\n                    <input type=\"text\" name=\"title\" id=\"title\" placeholder=\"\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\">\n                    <input type=\"text\" name=\"country\" id=\"country\" placeholder=\"\u0421\u0442\u0440\u0430\u043D\u0430\">\n                    <input type=\"text\" name=\"genre\" id=\"genre\" placeholder=\"\u0416\u0430\u043D\u0440\">\n                    <input type=\"text\" name=\"director\" id=\"director\" placeholder=\"\u0420\u0435\u0436\u0438\u0441\u0435\u0440\">\n                    <input type=\"text\" name=\"script\" id=\"script\" placeholder=\"\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439\">\n                    <input type=\"text\" name=\"producer\" id=\"producer\" placeholder=\"\u041F\u0440\u043E\u0434\u044E\u0441\u0435\u0440\">\n                    <input type=\"text\" name=\"operator\" id=\"operator\" placeholder=\"\u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\">\n                    <input type=\"text\" name=\"composer\" id=\"composer\" placeholder=\"\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440\">\n                    <input type=\"text\" name=\"budget\" id=\"budget\" placeholder=\"\u0411\u044E\u0434\u0436\u0435\u0442\">\n                    <input type=\"text\" name=\"income\" id=\"income\" placeholder=\"\u0421\u0431\u043E\u0440\u044B\">\n                    <input type=\"text\" name=\"age\" id=\"age\" placeholder=\"\u0412\u043E\u0437\u0440\u0430\u0441\u0442\u043D\u043E\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435\">\n                    <input type=\"text\" name=\"duration\" id=\"duration\" placeholder=\"\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C\">\n                    <input type=\"text\" name=\"release\" id=\"release\" placeholder=\"\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430\">\n                    <input type=\"text\" name=\"img\", id=\"img\" placeholder=\"\u0421\u0441\u044B\u043B\u043A\u0430 \u043D\u0430 \u043F\u043E\u0441\u0442\u0435\u0440\">\n                    <button id=\"form-add-film-submit\" type=\"submit\">\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C</button>\n                </form>\n            </div>\n        </div>\n        ";
@@ -598,7 +589,7 @@ var Modal = /*#__PURE__*/function () {
 
         _this.toggleModal();
 
-        _this.FilmsList.addFilmsItem(document.querySelector('#form'));
+        _this.FilmsList.addFilmsItem(document.querySelector('#form-add-film'));
       });
       this.modal.addEventListener('click', function (e) {
         if (e.target === _this.modal || e.target.classList.contains('modal-close') || e.target.classList.contains('fa-times')) {
@@ -608,10 +599,10 @@ var Modal = /*#__PURE__*/function () {
     }
   }]);
 
-  return Modal;
+  return ModalAddFilm;
 }();
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Modal);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ModalAddFilm);
 
 /***/ }),
 
@@ -628,6 +619,98 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ModalAddFilm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalAddFilm */ "./components/ModalAddFilm/ModalAddFilm.js");
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_ModalAddFilm__WEBPACK_IMPORTED_MODULE_0__.default);
+
+/***/ }),
+
+/***/ "./components/ModalShowFilmDescr/ModalShowFilmDescr.js":
+/*!*************************************************************!*\
+  !*** ./components/ModalShowFilmDescr/ModalShowFilmDescr.js ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
+/* harmony import */ var _services_nextId__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/nextId */ "./services/nextId.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var FilmsItemDescr = /*#__PURE__*/function () {
+  function FilmsItemDescr(_ref) {
+    var _ref$title = _ref.title,
+        title = _ref$title === void 0 ? '' : _ref$title,
+        _ref$country = _ref.country,
+        country = _ref$country === void 0 ? '' : _ref$country,
+        _ref$genre = _ref.genre,
+        genre = _ref$genre === void 0 ? '' : _ref$genre,
+        _ref$director = _ref.director,
+        director = _ref$director === void 0 ? '' : _ref$director,
+        _ref$script = _ref.script,
+        script = _ref$script === void 0 ? '' : _ref$script,
+        _ref$producer = _ref.producer,
+        producer = _ref$producer === void 0 ? '' : _ref$producer,
+        _ref$operator = _ref.operator,
+        operator = _ref$operator === void 0 ? '' : _ref$operator,
+        _ref$composer = _ref.composer,
+        composer = _ref$composer === void 0 ? '' : _ref$composer,
+        _ref$budget = _ref.budget,
+        budget = _ref$budget === void 0 ? '' : _ref$budget,
+        _ref$income = _ref.income,
+        income = _ref$income === void 0 ? '' : _ref$income,
+        _ref$age = _ref.age,
+        age = _ref$age === void 0 ? '' : _ref$age,
+        _ref$duration = _ref.duration,
+        duration = _ref$duration === void 0 ? '' : _ref$duration,
+        _ref$release = _ref.release,
+        release = _ref$release === void 0 ? '' : _ref$release,
+        _ref$img = _ref.img,
+        img = _ref$img === void 0 ? '' : _ref$img,
+        _ref$id = _ref.id,
+        id = _ref$id === void 0 ? (0,_services_nextId__WEBPACK_IMPORTED_MODULE_1__.default)() : _ref$id;
+
+    _classCallCheck(this, FilmsItemDescr);
+
+    this.title = title;
+    this.country = country;
+    this.genre = genre;
+    this.director = director;
+    this.script = script;
+    this.producer = producer;
+    this.operator = operator;
+    this.composer = composer;
+    this.budget = budget;
+    this.income = income;
+    this.age = age;
+    this.duration = duration;
+    this.release = release;
+    this.img = img;
+    this.id = id;
+  }
+
+  _createClass(FilmsItemDescr, [{
+    key: "render",
+    value: function render() {
+      _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_SHOW_FILM_DESCR.innerHTML = "\n        <div class=\"modal films-item-descr\">\n            <div class=\"films-item-descr-content\">\n                <div class=\"films-item-descr-img\">\n                    <img src=\"".concat(this.img, "\"\n                        alt=\"poster\" />\n                </div>\n                <div class=\"films-item-descr-text\">\n                    <span class=\"title\">").concat(this.title, "</span>\n                    <span class=\"country\">\u0421\u0442\u0440\u0430\u043D\u0430: ").concat(this.genre, "</span>\n                    <span class=\"genre\">\u0416\u0430\u043D\u0440: ").concat(this.genre, "</span>\n                    <span class=\"director\">\u0420\u0435\u0436\u0438\u0441\u0435\u0440: ").concat(this.director, "</span>\n                    <span class=\"producer\">\u041F\u0440\u043E\u0434\u044E\u0441\u0435\u0440: ").concat(this.producer, "</span>\n                    <span class=\"operator\">\u041E\u043F\u0435\u0440\u0430\u0442\u043E\u0440: ").concat(this.operator, "</span>\n                    <span class=\"composer\">\u041A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440: ").concat(this.composer, "</span>\n                    <span class=\"budget\">\u0411\u044E\u0434\u0436\u0435\u0442: ").concat(this.budget, "</span>\n                    <span class=\"income\">\u0421\u0431\u043E\u0440\u044B: ").concat(this.income, "</span>\n                    <span class=\"age\">\u0412\u043E\u0437\u0440\u0430\u0441\u0442\u043D\u043E\u0435 \u043E\u0433\u0440\u0430\u043D\u0438\u0447\u0435\u043D\u0438\u0435: ").concat(this.age, "</span>\n                    <span class=\"duration\">\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0441\u0442\u044C: ").concat(this.release, "</span>\n                    <span class=\"release\">\u0414\u0430\u0442\u0430 \u0432\u044B\u0445\u043E\u0434\u0430: ").concat(this.release, "</span>\n                    <span class=\"script\">\u0421\u0446\u0435\u043D\u0430\u0440\u0438\u0439: ").concat(this.script, " </span>\n                </div>\n                <button class=\"films-item-descr-close\">\n                    <i class=\"fas fa-times\"></i>\n                </button>\n            </div>\n        </div>\n        ");
+      document.querySelector('.films-item-descr').addEventListener('click', function (e) {
+        if (e.target.classList.contains('films-item-descr') || e.target.classList.contains('films-item-descr-close') || e.target.classList.contains('fa-times')) {
+          _constants_root__WEBPACK_IMPORTED_MODULE_0__.MODAL_SHOW_FILM_DESCR.innerHTML = '';
+        }
+      });
+    }
+  }]);
+
+  return FilmsItemDescr;
+}();
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FilmsItemDescr);
 
 /***/ }),
 
@@ -832,6 +915,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 var getFormDataObj = function getFormDataObj(form) {
+  var filmId = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : (0,_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
   var formDataObj = {};
 
   var formFields = _toConsumableArray(form.elements).map(function (input) {
@@ -846,7 +930,7 @@ var getFormDataObj = function getFormDataObj(form) {
   formFields.forEach(function (field, i) {
     formDataObj[field] = formData[i];
   });
-  formDataObj['id'] = (0,_nextId__WEBPACK_IMPORTED_MODULE_0__.default)();
+  formDataObj['id'] = filmId;
   return formDataObj;
 };
 
@@ -893,7 +977,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --main-color: #552ec2ec;\r\n    --color-yellow: #e0de5c;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n\r\n\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.modal.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}\r\n\r\n/* modals */\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    min-height: 530px;\r\n    height: 80vh;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}", "",{"version":3,"sources":["webpack://./components/App/App.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;IACvB,uBAAuB;IACvB,oBAAoB;IACpB,mBAAmB;;;AAGvB;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;AAClB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,SAAS;IACT,gBAAgB;IAChB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB;;AAEA,WAAW;;AAEX;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,iBAAiB;IACjB,gBAAgB;IAChB,iBAAiB;IACjB,YAAY;IACZ,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,OAAO;IACP,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,kBAAkB;AACtB","sourcesContent":[":root {\r\n    --main-color: #552ec2ec;\r\n    --color-yellow: #e0de5c;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n\r\n\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.modal.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}\r\n\r\n/* modals */\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    min-height: 530px;\r\n    height: 80vh;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --color-main: #552ec2ec;\r\n    --color-yellow: #e0de5c;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n\r\n\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.modal.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}\r\n\r\n/* modals */\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    height: 80vh;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}", "",{"version":3,"sources":["webpack://./components/App/App.css"],"names":[],"mappings":"AAAA;IACI,uBAAuB;IACvB,uBAAuB;IACvB,oBAAoB;IACpB,mBAAmB;;;AAGvB;;AAEA;IACI,sBAAsB;AAC1B;;AAEA;IACI,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;AAClB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,SAAS;IACT,gBAAgB;IAChB,uBAAuB;AAC3B;;AAEA;IACI,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,cAAc;AAClB;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,aAAa;AACjB;;AAEA,WAAW;;AAEX;IACI,eAAe;IACf,MAAM;IACN,OAAO;IACP,aAAa;IACb,aAAa;IACb,WAAW;IACX,YAAY;IACZ,gBAAgB;IAChB;AACJ;;AAEA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,iBAAiB;IACjB,gBAAgB;IAChB,YAAY;IACZ,iCAAiC;AACrC;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,OAAO;IACP,YAAY;IACZ,aAAa;IACb,gBAAgB;IAChB,cAAc;IACd,eAAe;AACnB;;AAEA;IACI,cAAc;IACd,eAAe;IACf,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,8BAA8B;IAC9B,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,YAAY;IACZ,YAAY;IACZ,gBAAgB;IAChB,YAAY;IACZ,kBAAkB;AACtB","sourcesContent":[":root {\r\n    --color-main: #552ec2ec;\r\n    --color-yellow: #e0de5c;\r\n    --border-circle: 50%;\r\n    --border-soft: 25px;\r\n\r\n\r\n}\r\n\r\n* {\r\n    box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n    font-family: Roboto;\r\n    background: #552ec2ec;\r\n    color: #ffffff;\r\n}\r\n\r\ni {\r\n    font-size: 1.3rem;\r\n}\r\n\r\nul {\r\n    margin: 0;\r\n    list-style: none;\r\n    padding-inline-start: 0;\r\n}\r\n\r\nbutton {\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n}\r\n\r\n.container {\r\n    margin: 0 auto;\r\n    max-width: 1110px;\r\n}\r\n\r\n.modal.active {\r\n    display: block;\r\n}\r\n\r\n.hide {\r\n    display: none;\r\n}\r\n\r\n/* modals */\r\n\r\n.modal {\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    z-index: 1050;\r\n    display: none;\r\n    width: 100%;\r\n    height: 100%;\r\n    overflow: hidden;\r\n    background-color: rgba(0, 0, 0, .5)\r\n}\r\n\r\n.modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    padding-top: 20px;\r\n    max-width: 400px;\r\n    height: 80vh;\r\n    border-radius: var(--border-soft);\r\n}\r\n\r\n.modal-close {\r\n    position: absolute;\r\n    right: 5%;\r\n    top: 3%;\r\n    border: none;\r\n    outline: none;\r\n    background: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}\r\n\r\n.form {\r\n    margin: 0 auto;\r\n    padding: 15px 0;\r\n    height: 100%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n}\r\n\r\n.form input {\r\n    padding-left: 5px;\r\n    width: 300px;\r\n    height: 25px;\r\n    margin-top: 10px;\r\n    border: none;\r\n    border-radius: 5px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -920,32 +1004,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".films-controls {\r\n    margin-top: 20px;\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsContols/FilmsControls.css"],"names":[],"mappings":"AAAA;IACI,gBAAgB;IAChB,YAAY;IACZ,aAAa;IACb,yBAAyB;AAC7B;;AAEA;IACI,kBAAkB;IAClB,WAAW;IACX,YAAY;IACZ,qBAAqB;IACrB,YAAY;IACZ,mCAAmC;IACnC,aAAa;IACb,cAAc;IACd,eAAe;AACnB","sourcesContent":[".films-controls {\r\n    margin-top: 20px;\r\n    height: 50px;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.films-controls-add {\r\n    position: relative;\r\n    width: 50px;\r\n    height: 50px;\r\n    background: #30ee3ace;\r\n    border: none;\r\n    border-radius: var(--border-circle);\r\n    outline: none;\r\n    color: #ffffff;\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css":
-/*!*********************************************************************************************!*\
-  !*** ../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css ***!
-  \*********************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films-item-descr {\r\n    display: block;\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}", "",{"version":3,"sources":["webpack://./components/FilmsItemDescr/FilmsItemDescr.css"],"names":[],"mappings":"AAAA;IACI,cAAc;AAClB;;AAEA;IACI,kBAAkB;IAClB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,aAAa;IACb,aAAa;IACb,iCAAiC;IACjC,qBAAqB;AACzB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,eAAe;AACnB","sourcesContent":[".films-item-descr {\r\n    display: block;\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1049,7 +1107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal-add-comment {\r\n    background: var(--color-yellow);\r\n}\r\n\r\n.modal {}\r\n\r\n.active {}\r\n\r\n.modal-content {}\r\n\r\n.modal-close {}", "",{"version":3,"sources":["webpack://./components/ModalAddComment/ModalAddComment.css"],"names":[],"mappings":"AAAA;IACI,+BAA+B;AACnC;;AAEA,QAAQ;;AAER,SAAS;;AAET,gBAAgB;;AAEhB,cAAc","sourcesContent":[".modal-add-comment {\r\n    background: var(--color-yellow);\r\n}\r\n\r\n.modal {}\r\n\r\n.active {}\r\n\r\n.modal-content {}\r\n\r\n.modal-close {}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".modal-add-comment .modal-content {\r\n    height: 350px;\r\n    background: var(--color-yellow);\r\n}\r\n\r\n#form-add-comment-submit {\r\n    padding: 7px 15px;\r\n    margin-top: 10px;\r\n    min-height: 30px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background: var(--color-main);\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/ModalAddComment/ModalAddComment.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,+BAA+B;AACnC;;AAEA;IACI,iBAAiB;IACjB,gBAAgB;IAChB,gBAAgB;IAChB,YAAY;IACZ,mBAAmB;IACnB,6BAA6B;IAC7B,eAAe;AACnB","sourcesContent":[".modal-add-comment .modal-content {\r\n    height: 350px;\r\n    background: var(--color-yellow);\r\n}\r\n\r\n#form-add-comment-submit {\r\n    padding: 7px 15px;\r\n    margin-top: 10px;\r\n    min-height: 30px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background: var(--color-main);\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1075,7 +1133,33 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#modal-add-film .modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #6d4cc9ec;\r\n}\r\n\r\n#form-add-film-submit {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/ModalAddFilm/ModalAddFilm.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,gCAAgC;IAChC,qBAAqB;AACzB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,2BAA2B;IAC3B,cAAc;IACd,mBAAmB;IACnB,eAAe;AACnB","sourcesContent":["#modal-add-film .modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    transform: translate(-50%, -50%);\r\n    background: #6d4cc9ec;\r\n}\r\n\r\n#form-add-film-submit {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#modal-add-film .modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    min-height: 530px;\r\n    transform: translate(-50%, -50%);\r\n    background: #6d4cc9ec;\r\n}\r\n\r\n#form-add-film-submit {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}", "",{"version":3,"sources":["webpack://./components/ModalAddFilm/ModalAddFilm.css"],"names":[],"mappings":"AAAA;IACI,kBAAkB;IAClB,QAAQ;IACR,SAAS;IACT,iBAAiB;IACjB,gCAAgC;IAChC,qBAAqB;AACzB;;AAEA;IACI,cAAc;IACd,gBAAgB;IAChB,YAAY;IACZ,YAAY;IACZ,YAAY;IACZ,mBAAmB;IACnB,2BAA2B;IAC3B,cAAc;IACd,mBAAmB;IACnB,eAAe;AACnB","sourcesContent":["#modal-add-film .modal-content {\r\n    position: relative;\r\n    top: 50%;\r\n    left: 50%;\r\n    min-height: 530px;\r\n    transform: translate(-50%, -50%);\r\n    background: #6d4cc9ec;\r\n}\r\n\r\n#form-add-film-submit {\r\n    margin: 0 auto;\r\n    margin-top: 20px;\r\n    height: 30px;\r\n    width: 200px;\r\n    border: none;\r\n    border-radius: 15px;\r\n    background-color: #30ee3ace;\r\n    color: #ffffff;\r\n    transition: all .3s;\r\n    cursor: pointer;\r\n}"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "../node_modules/css-loader/dist/cjs.js!./components/ModalShowFilmDescr/ModalShowFilmDescr.css":
+/*!*****************************************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!./components/ModalShowFilmDescr/ModalShowFilmDescr.css ***!
+  \*****************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "../node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".films-item-descr {\r\n    display: block;\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}", "",{"version":3,"sources":["webpack://./components/ModalShowFilmDescr/ModalShowFilmDescr.css"],"names":[],"mappings":"AAAA;IACI,cAAc;AAClB;;AAEA;IACI,kBAAkB;IAClB,kBAAkB;IAClB,uBAAuB;IACvB,UAAU;IACV,aAAa;IACb,aAAa;IACb,iCAAiC;IACjC,qBAAqB;AACzB;;AAEA;IACI,kBAAkB;IAClB,SAAS;IACT,WAAW;IACX,eAAe;AACnB;;AAEA;IACI,eAAe;IACf,aAAa;IACb,sBAAsB;IACtB,8BAA8B;AAClC;;AAEA;IACI,eAAe;AACnB","sourcesContent":[".films-item-descr {\r\n    display: block;\r\n}\r\n\r\n.films-item-descr-content {\r\n    position: relative;\r\n    margin: 120px auto;\r\n    padding: 40px 20px 20px;\r\n    width: 70%;\r\n    height: 500px;\r\n    display: flex;\r\n    border-radius: var(--border-soft);\r\n    background: #9b8dc0ec;\r\n}\r\n\r\n.films-item-descr-close {\r\n    position: absolute;\r\n    top: 15px;\r\n    right: 20px;\r\n    cursor: pointer;\r\n}\r\n\r\n.films-item-descr-text {\r\n    padding: 0 20px;\r\n    display: flex;\r\n    flex-direction: column;\r\n    justify-content: space-between;\r\n}\r\n\r\n.films-item-descr-text .title {\r\n    font-size: 2rem;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1256,35 +1340,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./components/FilmsItemDescr/FilmsItemDescr.css":
-/*!******************************************************!*\
-  !*** ./components/FilmsItemDescr/FilmsItemDescr.css ***!
-  \******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./FilmsItemDescr.css */ "../node_modules/css-loader/dist/cjs.js!./components/FilmsItemDescr/FilmsItemDescr.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_FilmsItemDescr_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
 /***/ "./components/FilmsItem/FilmsItem.css":
 /*!********************************************!*\
   !*** ./components/FilmsItem/FilmsItem.css ***!
@@ -1427,6 +1482,35 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ModalAddFilm_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
+
+/***/ }),
+
+/***/ "./components/ModalShowFilmDescr/ModalShowFilmDescr.css":
+/*!**************************************************************!*\
+  !*** ./components/ModalShowFilmDescr/ModalShowFilmDescr.css ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ModalShowFilmDescr_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./ModalShowFilmDescr.css */ "../node_modules/css-loader/dist/cjs.js!./components/ModalShowFilmDescr/ModalShowFilmDescr.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ModalShowFilmDescr_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ModalShowFilmDescr_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 

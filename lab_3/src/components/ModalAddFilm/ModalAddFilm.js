@@ -1,6 +1,6 @@
 import { MODAL_ADD_FILM } from '../../constants/root';
 
-class Modal {
+class ModalAddFilm {
     constructor(FilmsList) {
         this.FilmsList = FilmsList;
         this.modal = null;
@@ -31,6 +31,7 @@ class Modal {
             </div>
         </div>
         `
+
         this.modal = document.querySelector('.modal');
     }
 
@@ -43,7 +44,7 @@ class Modal {
             .addEventListener('submit', (e) => {
                 e.preventDefault();
                 this.toggleModal();
-                this.FilmsList.addFilmsItem(document.querySelector('#form'));
+                this.FilmsList.addFilmsItem(document.querySelector('#form-add-film'));
             })
         this.modal
             .addEventListener('click', (e) => {
@@ -56,4 +57,4 @@ class Modal {
     }
 }
 
-export default Modal;
+export default ModalAddFilm;

@@ -1,5 +1,5 @@
 :root {
-    --main-color: #552ec2ec;
+    --color-main: #552ec2ec;
     --color-yellow: #e0de5c;
     --border-circle: 50%;
     --border-soft: 25px;
@@ -68,7 +68,6 @@ button {
     transform: translate(-50%, -50%);
     padding-top: 20px;
     max-width: 400px;
-    min-height: 530px;
     height: 80vh;
     border-radius: var(--border-soft);
 }
