@@ -1,9 +1,10 @@
-import { MODAL_SHOW_FILM_DESCR } from '../../constants/root';
+import {MODAL_SHOW_FILM_DESCR} from '../../constants/root';
 import nextId from '../../services/nextId';
 
 class FilmsItemDescr {
     constructor(
-        { title = '',
+        {
+            title = '',
             country = '',
             genre = '',
             director = '',
@@ -36,11 +37,13 @@ class FilmsItemDescr {
         this.release = release
         this.img = img
         this.comments = comments
-        this.id = id;
+        this.id = id
     }
+
     render() {
         let commentsItemsHtml = '';
-        this.comments.forEach(({ name, profession, text, rate }) => {
+
+        this.comments.forEach(({name, profession, text, rate}) => {
             commentsItemsHtml += `
             <div class="films-item-descr-comments-item">
                 <div class="films-item-descr-comments-item-person">
@@ -69,7 +72,7 @@ class FilmsItemDescr {
                         </div>
                         <div class="films-item-descr-text">
                             <span class="title">${this.title}</span>
-                            <span class="country">Страна: ${this.genre}</span>
+                            <span class="country">Страна: ${this.country}</span>
                             <span class="genre">Жанр: ${this.genre}</span>
                             <span class="director">Режисер: ${this.director}</span>
                             <span class="producer">Продюсер: ${this.producer}</span>
@@ -78,14 +81,15 @@ class FilmsItemDescr {
                             <span class="budget">Бюджет: ${this.budget}</span>
                             <span class="income">Сборы: ${this.income}</span>
                             <span class="age">Возрастное ограничение: ${this.age}</span>
-                            <span class="duration">Продолжительность: ${this.release}</span>
+                            <span class="duration">Продолжительность: ${this.duration}</span>
                             <span class="release">Дата выхода: ${this.release}</span>
                             <span class="script">Сценарий: ${this.script} </span>
+                            
                         </div>
                     </div>
                     <div class="films-item-descr-comments">
                         <div class="films-item-descr-comments-title">
-                            Отзывы:
+                                Отзывы:
                         </div>
                         <div class="films-item-descr-comments-content">
                             ${commentsItemsHtml}

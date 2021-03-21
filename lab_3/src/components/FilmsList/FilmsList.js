@@ -54,8 +54,6 @@ class FilmsList {
         });
 
         localStorage.setItem('data', JSON.stringify(this.data));
-
-        console.log(this.data);
     }
 
     addEventListeners() {

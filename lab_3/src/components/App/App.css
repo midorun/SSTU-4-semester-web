@@ -34,6 +34,14 @@ button {
     color: #ffffff;
 }
 
+select {
+    padding-left: 8px;
+    width: 150px;
+    height: 30px;
+    border-radius: var(--border-soft);
+    cursor: pointer;
+}
+
 .container {
     margin: 0 auto;
     max-width: 1110px;
@@ -46,6 +54,7 @@ button {
 .hide {
     display: none;
 }
+
 
 /* modals */
 

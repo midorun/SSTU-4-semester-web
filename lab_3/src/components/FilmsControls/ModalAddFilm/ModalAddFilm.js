@@ -1,4 +1,4 @@
-import { MODAL_ADD_FILM } from '../../constants/root';
+import { MODAL_ADD_FILM } from '../../../constants/root';
 
 class ModalAddFilm {
     constructor(FilmsList) {

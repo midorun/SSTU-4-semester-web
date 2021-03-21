@@ -1,18 +1,17 @@
 import Films from '../Films';
-import FilmsControls from '../FilmsContols';
+import FilmsControls from '../FilmsControls';
 import FilmsList from '../FilmsList';
-import ModalAddFilm from '../ModalAddFilm';
-import ModalAddComment from '../ModalAddComment';
+import ModalAddFilm from '../FilmsControls/ModalAddFilm';
 import DATA from '../../constants/DATA';
 
 
 // styles
 import './App.css';
 import '../Films/Films.css';
-import '../FilmsContols/FilmsControls.css';
+import '../FilmsControls/FilmsControls.css';
+import '../FilmsControls/ModalAddFilm/ModalAddFilm.css'
 import '../FilmsList/FilmsList.css';
 import '../FilmsItem/FilmsItem.css'
-import '../ModalAddFilm/ModalAddFilm.css';
 import '../ModalShowFilmDescr/ModalShowFilmDescr.css'
 import '../ModalAddComment/ModalAddComment.css';
 
@@ -35,15 +34,15 @@ class App {
 
         this.Films.FilmsList.data = this.data;
         this.Films.FilmsList.Films = this.Films;
+
         this.Films.FilmsControls.ModalAddFilm = this.ModalAddFilm;
+        this.Films.FilmsControls.data = this.data;
+
+
         this.ModalAddFilm.FilmsList = this.Films.FilmsList;
 
         this.Films.render();
         this.ModalAddFilm.render();
-    }
-
-    updateState(data) {
-        localStorage.setItem('data', JSON.stringify(data));
     }
 
     addEventListeners() {
