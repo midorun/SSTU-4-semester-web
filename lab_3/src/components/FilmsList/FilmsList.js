@@ -56,6 +56,14 @@ class FilmsList {
         localStorage.setItem('data', JSON.stringify(this.data));
     }
 
+    filterFilms(filterArg) {
+        this.data = this.data.filter(film => film.country.find(filterArg))
+        console.log(this.data);
+
+        this.Films.render();
+        this.Films.addEventListeners();
+    }
+
     addEventListeners() {
         document.querySelectorAll('.films-item')
             .forEach(filmsItem => {

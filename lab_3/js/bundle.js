@@ -136,13 +136,10 @@ var FilmsControls = /*#__PURE__*/function () {
     key: "render",
     value: function render() {
       return "\n            <ul class=\"films-controls\">\n                <li class=\"films-controls-item\">\n                    ".concat(new _FilmsFilter__WEBPACK_IMPORTED_MODULE_0__.default().render('country', 'country', this.data), "   \n                </li>\n              \n                <li class=\"films-controls-item\">\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n            ");
-    } //     <li class="films-controls-item">
-    //     ${new FilmsFilter().render()}   
-    // </li>
-    // <li class="films-controls-item">
-    //     ${new FilmsFilter().render()}   
-    // </li>
-
+    }
+  }, {
+    key: "filter",
+    value: function filter() {}
   }, {
     key: "addEventListeners",
     value: function addEventListeners() {
@@ -150,6 +147,10 @@ var FilmsControls = /*#__PURE__*/function () {
 
       document.querySelector('#films-controls-add').addEventListener('click', function () {
         return _this.ModalAddFilm.toggleModal();
+      });
+      document.querySelector('#country').addEventListener('change', function (e) {
+        console.log('select');
+        console.log(e.target.value);
       });
     }
   }]);
@@ -519,6 +520,16 @@ var FilmsList = /*#__PURE__*/function () {
         }
       });
       localStorage.setItem('data', JSON.stringify(this.data));
+    }
+  }, {
+    key: "filterFilms",
+    value: function filterFilms(filterArg) {
+      this.data = this.data.filter(function (film) {
+        return film.country.find(filterArg);
+      });
+      console.log(this.data);
+      this.Films.render();
+      this.Films.addEventListeners();
     }
   }, {
     key: "addEventListeners",

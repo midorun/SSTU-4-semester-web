@@ -23,15 +23,19 @@ class FilmsControls {
             `
         )
     }
-    //     <li class="films-controls-item">
-    //     ${new FilmsFilter().render()}   
-    // </li>
-    // <li class="films-controls-item">
-    //     ${new FilmsFilter().render()}   
-    // </li>
+
+    filter() {
+
+    }
+
     addEventListeners() {
         document.querySelector('#films-controls-add')
             .addEventListener('click', () => this.ModalAddFilm.toggleModal());
+        document.querySelector('#country')
+            .addEventListener('change', (e) => {
+                console.log('select');
+                console.log(e.target.value);
+            })
 
     }
 }
