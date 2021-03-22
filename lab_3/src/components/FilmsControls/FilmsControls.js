@@ -1,8 +1,10 @@
 import FilmsFilter from './FilmsFilter';
+import ModalAddFilm from './ModalAddFilm';
 
 class FilmsControls {
-    constructor(data) {
+    constructor(data, filterSettings) {
         this.data = data;
+        this.filterSettings = filterSettings;
     }
 
     render() {
@@ -10,7 +12,7 @@ class FilmsControls {
             `
             <ul class="films-controls">
                 <li class="films-controls-item">
-                    ${new FilmsFilter().render('country', 'country', this.data)}   
+                    ${new FilmsFilter().render('country', this.data, this.filterSettings['country'])}   
                 </li>
               
                 <li class="films-controls-item">
@@ -23,13 +25,21 @@ class FilmsControls {
         )
     }
 
-    addEventListeners() {
-        document.querySelector('#films-controls-add')
-            .addEventListener('click', () => this.ModalAddFilm.toggleModal());
+    static addEventListeners(MODAL_ROOT, addFilmsItem, filterFilms) {
+        document.querySelector('.films-controls-add')
+            .addEventListener('click', () => {
+                return new ModalAddFilm(addFilmsItem)
+                    .render(MODAL_ROOT)
+                    .addEventListeners();
+            });
         document.querySelector('#country')
             .addEventListener('change', (e) => {
-                console.log('select');
-                console.log(e.target.value);
+                let field = e.target.getAttribute('id');
+                let value = e.target.value;
+                let filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
+                filterSettings[field] = value;
+                localStorage.setItem('filterSettings', JSON.stringify(filterSettings));
+                filterFilms();
             })
 
     }

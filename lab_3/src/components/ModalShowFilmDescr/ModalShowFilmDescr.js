@@ -41,7 +41,6 @@ class FilmsItemDescr {
     }
 
     render(MODAL_ROOT) {
-        console.log(this);
         let commentsItemsHtml = '';
 
         this.comments.forEach(({ name, profession, text, rate }) => {

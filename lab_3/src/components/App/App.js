@@ -1,12 +1,9 @@
 import FilmsControls from '../FilmsControls';
 import FilmsList from '../FilmsList';
-import ModalAddFilm from '../FilmsControls/ModalAddFilm';
-import ModalAddComment from '../ModalAddComment';
-import ModalShowFilmDescr from '../ModalShowFilmDescr';
+import FilmsItem from '../FilmsItem';
 import DATA from '../../constants/DATA';
-
 import getFormDataObj from '../../services/getFormDataObj';
-
+import { ROOT } from '../../constants/root';
 
 // styles
 import './App.css';
@@ -17,21 +14,27 @@ import '../FilmsItem/FilmsItem.css'
 import '../ModalShowFilmDescr/ModalShowFilmDescr.css'
 import '../ModalAddComment/ModalAddComment.css';
 
-import { ROOT, MODAL } from '../../constants/root';
+
+
 
 
 class App {
     constructor(DATA) {
         this.data = DATA;
+        this.filterSettings = {
+            country: 'all',
+            genre: 'all',
+            duration: 'none'
+        }
+        this.removeFilmsItem = this.removeFilmsItem.bind(this);
         this.addFilmsItem = this.addFilmsItem.bind(this);
         this.addFilmsItemComment = this.addFilmsItemComment.bind(this);
+        this.filterFilms = this.filterFilms.bind(this);
     }
 
     removeFilmsItem(id) {
         this.data = this.data.filter(item => item.id !== id);
-
         localStorage.setItem('data', JSON.stringify(this.data));
-
         this.render();
     }
 
@@ -47,7 +50,6 @@ class App {
 
         this.data.map(item => {
             if (item.id === filmId) {
-                console.log(item);
                 item.comments.push(commentContentObj);
             }
         });
@@ -56,23 +58,47 @@ class App {
         this.render();
     }
 
-    filterFilms(filterArg) {
-        this.data = this.data.filter(film => film.country.find(filterArg))
+    filterFilms() {
+        this.filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
+
+        if (this.filterSettings['country'] === 'all' &&
+            this.filterSettings['genre'] === 'all') {
+            this.data = JSON.parse(localStorage.getItem('data'));
+            this.render();
+            return;
+        }
+
+        this.data = this.data.filter(film => film['country'].find(item => item === this.filterSettings['country']))
+
+        this.render();
     }
 
-    render() {
-
+    setInitialData() {
         const data = localStorage.getItem('data');
         if (data) {
             this.data = JSON.parse(data);
         } else {
             localStorage.setItem('data', JSON.stringify(this.data));
         }
+    }
+
+    setInitialFilterSettings() {
+        const filterSettings = localStorage.getItem('filterSettings');
+        if (filterSettings) {
+            this.filterSettings = JSON.parse(filterSettings);
+        } else {
+            localStorage.setItem('filterSettings', JSON.stringify(this.filterSettings));
+        }
+    }
+
+    render() {
+        this.setInitialData()
+        this.setInitialFilterSettings()
 
         ROOT.innerHTML = `
             <div class="films">
                 <div class="container">
-                    ${new FilmsControls(this.data).render()}
+                    ${new FilmsControls(this.data, this.filterSettings).render()}
                     ${new FilmsList(this.data).render()}
                     <div id="modal"></div>
                 </div>
@@ -80,38 +106,8 @@ class App {
         `;
 
         const MODAL_ROOT = document.getElementById('modal');
-
-        document.querySelector('.films-controls-add')
-            .addEventListener('click', () => {
-                return new ModalAddFilm(this.addFilmsItem)
-                    .render(MODAL_ROOT)
-                    .addEventListeners();
-            });
-
-        document.querySelectorAll('.films-item')
-            .forEach(filmsItem => {
-                const id = filmsItem.getAttribute('data-id');
-                filmsItem.querySelector('.films-item-controls-delete')
-                    .addEventListener('click', () => {
-                        this.removeFilmsItem(id);
-                    })
-                filmsItem.querySelector('.films-item-controls-descr')
-                    .addEventListener('click', () => {
-                        const [filmsItemData] = this.data.filter(film => film.id === id);
-                        console.log(filmsItemData);
-                        return new ModalShowFilmDescr(filmsItemData)
-                            .render(MODAL_ROOT)
-                            .addEventListeners();
-                    })
-                filmsItem.querySelector('.films-item-controls-comment')
-                    .addEventListener('click', () => {
-                        return new ModalAddComment(this.addFilmsItemComment, id)
-                            .render(MODAL_ROOT)
-                            .addEventListeners();
-                    })
-            });
-
-        // console.log(this);
+        FilmsControls.addEventListeners(MODAL_ROOT, this.addFilmsItem, this.filterFilms);
+        FilmsItem.addEventListeners(MODAL_ROOT, this.data, this.removeFilmsItem, this.addFilmsItemComment)
     }
 }
 
