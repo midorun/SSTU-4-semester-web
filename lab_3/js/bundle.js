@@ -25,6 +25,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FilmsItem_FilmsItem_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../FilmsItem/FilmsItem.css */ "./components/FilmsItem/FilmsItem.css");
 /* harmony import */ var _ModalShowFilmDescr_ModalShowFilmDescr_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../ModalShowFilmDescr/ModalShowFilmDescr.css */ "./components/ModalShowFilmDescr/ModalShowFilmDescr.css");
 /* harmony import */ var _ModalAddComment_ModalAddComment_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../ModalAddComment/ModalAddComment.css */ "./components/ModalAddComment/ModalAddComment.css");
+/* harmony import */ var _constants_root__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../constants/root */ "./constants/root.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -36,6 +37,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
  // styles
+
 
 
 
@@ -73,6 +75,7 @@ var App = /*#__PURE__*/function () {
       this.ModalAddFilm.FilmsList = this.Films.FilmsList;
       this.Films.render();
       this.ModalAddFilm.render();
+      _constants_root__WEBPACK_IMPORTED_MODULE_13__.ROOT.innerHTML = "\n            <div class=\"films\">\n                <div class=\"container\">\n                    <div class=\"films-controls\"></div>\n                    <div class=\"films-list\"></div>\n                    <div class=\"modal\"></div>\n                </div>\n            </div>        \n        ";
     }
   }, {
     key: "addEventListeners",
@@ -137,9 +140,6 @@ var FilmsControls = /*#__PURE__*/function () {
     value: function render() {
       return "\n            <ul class=\"films-controls\">\n                <li class=\"films-controls-item\">\n                    ".concat(new _FilmsFilter__WEBPACK_IMPORTED_MODULE_0__.default().render('country', 'country', this.data), "   \n                </li>\n              \n                <li class=\"films-controls-item\">\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n            ");
     }
-  }, {
-    key: "filter",
-    value: function filter() {}
   }, {
     key: "addEventListeners",
     value: function addEventListeners() {
@@ -992,12 +992,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "FILMS": () => (/* binding */ FILMS),
 /* harmony export */   "MODAL_ADD_FILM": () => (/* binding */ MODAL_ADD_FILM),
 /* harmony export */   "MODAL_ADD_COMMENT": () => (/* binding */ MODAL_ADD_COMMENT),
-/* harmony export */   "MODAL_SHOW_FILM_DESCR": () => (/* binding */ MODAL_SHOW_FILM_DESCR)
+/* harmony export */   "MODAL_SHOW_FILM_DESCR": () => (/* binding */ MODAL_SHOW_FILM_DESCR),
+/* harmony export */   "ROOT": () => (/* binding */ ROOT)
 /* harmony export */ });
 var FILMS = document.getElementById('films');
 var MODAL_ADD_FILM = document.getElementById('modal-add-film');
 var MODAL_ADD_COMMENT = document.getElementById('modal-add-comment');
 var MODAL_SHOW_FILM_DESCR = document.getElementById('modal-show-film-descr');
+var ROOT = document.getElementById('root');
 
 /***/ }),
 
@@ -1222,7 +1224,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".films {\r\n    margin-top: 100px;\r\n}", "",{"version":3,"sources":["webpack://./components/Films/Films.css"],"names":[],"mappings":"AAAA;IACI,iBAAiB;AACrB","sourcesContent":[".films {\r\n    margin-top: 100px;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

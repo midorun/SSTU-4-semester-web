@@ -15,6 +15,8 @@ import '../FilmsItem/FilmsItem.css'
 import '../ModalShowFilmDescr/ModalShowFilmDescr.css'
 import '../ModalAddComment/ModalAddComment.css';
 
+import { ROOT } from '../../constants/root';
+
 
 class App {
     constructor(Films, ModalAddFilm, DATA) {
@@ -43,6 +45,16 @@ class App {
 
         this.Films.render();
         this.ModalAddFilm.render();
+
+        ROOT.innerHTML = `
+            <div class="films">
+                <div class="container">
+                    <div class="films-controls"></div>
+                    <div class="films-list"></div>
+                    <div class="modal"></div>
+                </div>
+            </div>        
+        `
     }
 
     addEventListeners() {

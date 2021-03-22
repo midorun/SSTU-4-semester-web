@@ -24,10 +24,6 @@ class FilmsControls {
         )
     }
 
-    filter() {
-
-    }
-
     addEventListeners() {
         document.querySelector('#films-controls-add')
             .addEventListener('click', () => this.ModalAddFilm.toggleModal());
