@@ -2,21 +2,23 @@ import nextId from "../../services/nextId";
 
 class FilmsItem {
     constructor(
-        { title = '',
-            country = '',
-            genre = '',
-            director = '',
-            script = '',
-            producer = '',
-            operator = '',
-            composer = '',
-            budget = '',
-            income = '',
+        {
             age = '',
+            budget = '',
+            composer = '',
+            country = [],
+            comments = [],
+            director = '',
             duration = '',
-            release = '',
+            genre = [],
             img = '',
-            id = nextId()
+            id = nextId(),
+            income = '',
+            operator = '',
+            producer = '',
+            release = '',
+            script = '',
+            title = '',
         }
     ) {
         this.title = title
@@ -33,7 +35,9 @@ class FilmsItem {
         this.duration = duration
         this.release = release
         this.img = img
-        this.id = id;
+        this.comments = comments
+        this.id = id
+
     }
 
     render() {
@@ -66,6 +70,5 @@ class FilmsItem {
             `
         )
     }
-
 }
 export default FilmsItem;

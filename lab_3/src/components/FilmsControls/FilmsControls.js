@@ -1,8 +1,7 @@
 import FilmsFilter from './FilmsFilter';
 
 class FilmsControls {
-    constructor(ModalAddFilm, data) {
-        this.ModalAddFilm = ModalAddFilm;
+    constructor(data) {
         this.data = data;
     }
 

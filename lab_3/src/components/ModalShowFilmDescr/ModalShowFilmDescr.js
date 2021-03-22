@@ -1,12 +1,13 @@
-import {MODAL_SHOW_FILM_DESCR} from '../../constants/root';
 import nextId from '../../services/nextId';
+import FilmsItem from '../FilmsItem';
 
 class FilmsItemDescr {
     constructor(
         {
             title = '',
-            country = '',
-            genre = '',
+            country = [],
+            comments = [],
+            genre = [],
             director = '',
             script = '',
             producer = '',
@@ -18,8 +19,7 @@ class FilmsItemDescr {
             duration = '',
             release = '',
             img = '',
-            comments = '',
-            id = nextId()
+            id = nextId(),
         }
     ) {
         this.title = title
@@ -36,14 +36,15 @@ class FilmsItemDescr {
         this.duration = duration
         this.release = release
         this.img = img
-        this.comments = comments
         this.id = id
+        this.comments = comments
     }
 
-    render() {
+    render(MODAL_ROOT) {
+        console.log(this);
         let commentsItemsHtml = '';
 
-        this.comments.forEach(({name, profession, text, rate}) => {
+        this.comments.forEach(({ name, profession, text, rate }) => {
             commentsItemsHtml += `
             <div class="films-item-descr-comments-item">
                 <div class="films-item-descr-comments-item-person">
@@ -59,7 +60,7 @@ class FilmsItemDescr {
             `
         })
 
-        MODAL_SHOW_FILM_DESCR.innerHTML = `
+        MODAL_ROOT.innerHTML = `
         <div class="modal films-item-descr">
             <div class="films-item-descr-wrapper">
                 <button class="films-item-descr-close">
@@ -98,14 +99,18 @@ class FilmsItemDescr {
                 </div>
             </div>
         </div>
-        `
+        `;
 
+        return this;
+    }
+
+    addEventListeners() {
         document.querySelector('.films-item-descr')
             .addEventListener('click', (e) => {
                 if (e.target.classList.contains('films-item-descr') ||
                     e.target.classList.contains('films-item-descr-close') ||
                     e.target.classList.contains('fa-times')) {
-                    MODAL_SHOW_FILM_DESCR.innerHTML = ''
+                    document.getElementById('modal').innerHTML = '';
                 }
             });
     }
