@@ -27,7 +27,7 @@ export default class FilmsFilter {
         });
         return (
             `
-            <select name="${selectValue}" id="${selectValue}">
+            <select id="${selectValue}" name="${selectValue}" class="filter">
                 <option value="all">Все</option>
                 ${optionsHtml}
             </select>

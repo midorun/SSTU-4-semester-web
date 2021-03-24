@@ -30,6 +30,7 @@ class App {
         this.addFilmsItem = this.addFilmsItem.bind(this);
         this.addFilmsItemComment = this.addFilmsItemComment.bind(this);
         this.filterFilms = this.filterFilms.bind(this);
+        this.render = this.render.bind(this);
     }
 
     removeFilmsItem(id) {
@@ -59,18 +60,27 @@ class App {
     }
 
     filterFilms() {
-        this.filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
 
-        if (this.filterSettings['country'] === 'all' &&
-            this.filterSettings['genre'] === 'all') {
-            this.data = JSON.parse(localStorage.getItem('data'));
-            this.render();
-            return;
-        }
+        this.data = this.data.filter(film => {
+            if (this.filterSettings['country'] === 'all') {
+                return film;
+            } else {
+                return film['country'].find(item => item === this.filterSettings['country'])
+            }
+        });
 
-        this.data = this.data.filter(film => film['country'].find(item => item === this.filterSettings['country']))
+        console.log(this.data);
 
-        this.render();
+        this.data = this.data.filter(film => {
+            if (this.filterSettings['genre'] === 'all') {
+                return film;
+            } else {
+                return film['genre'].find(item => item === this.filterSettings['genre'])
+            }
+        });
+
+        console.log(this.data);
+
     }
 
     setInitialData() {
@@ -95,10 +105,14 @@ class App {
         this.setInitialData()
         this.setInitialFilterSettings()
 
+        this.filterFilms()
+
+        const LSData = JSON.parse(localStorage.getItem('data'));
+
         ROOT.innerHTML = `
             <div class="films">
                 <div class="container">
-                    ${new FilmsControls(this.data, this.filterSettings).render()}
+                    ${new FilmsControls(LSData, this.filterSettings).render()}
                     ${new FilmsList(this.data).render()}
                     <div id="modal"></div>
                 </div>
@@ -106,7 +120,7 @@ class App {
         `;
 
         const MODAL_ROOT = document.getElementById('modal');
-        FilmsControls.addEventListeners(MODAL_ROOT, this.addFilmsItem, this.filterFilms);
+        FilmsControls.addEventListeners(MODAL_ROOT, this.addFilmsItem, this.filterFilms, this.render);
         FilmsItem.addEventListeners(MODAL_ROOT, this.data, this.removeFilmsItem, this.addFilmsItemComment)
     }
 }

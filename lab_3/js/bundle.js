@@ -60,6 +60,7 @@ var App = /*#__PURE__*/function () {
     this.addFilmsItem = this.addFilmsItem.bind(this);
     this.addFilmsItemComment = this.addFilmsItemComment.bind(this);
     this.filterFilms = this.filterFilms.bind(this);
+    this.render = this.render.bind(this);
   }
 
   _createClass(App, [{
@@ -96,20 +97,26 @@ var App = /*#__PURE__*/function () {
     value: function filterFilms() {
       var _this = this;
 
-      this.filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
-
-      if (this.filterSettings['country'] === 'all' && this.filterSettings['genre'] === 'all') {
-        this.data = JSON.parse(localStorage.getItem('data'));
-        this.render();
-        return;
-      }
-
       this.data = this.data.filter(function (film) {
-        return film['country'].find(function (item) {
-          return item === _this.filterSettings['country'];
-        });
+        if (_this.filterSettings['country'] === 'all') {
+          return film;
+        } else {
+          return film['country'].find(function (item) {
+            return item === _this.filterSettings['country'];
+          });
+        }
       });
-      this.render();
+      console.log(this.data);
+      this.data = this.data.filter(function (film) {
+        if (_this.filterSettings['genre'] === 'all') {
+          return film;
+        } else {
+          return film['genre'].find(function (item) {
+            return item === _this.filterSettings['genre'];
+          });
+        }
+      });
+      console.log(this.data);
     }
   }, {
     key: "setInitialData",
@@ -138,9 +145,11 @@ var App = /*#__PURE__*/function () {
     value: function render() {
       this.setInitialData();
       this.setInitialFilterSettings();
-      _constants_root__WEBPACK_IMPORTED_MODULE_5__.ROOT.innerHTML = "\n            <div class=\"films\">\n                <div class=\"container\">\n                    ".concat(new _FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default(this.data, this.filterSettings).render(), "\n                    ").concat(new _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default(this.data).render(), "\n                    <div id=\"modal\"></div>\n                </div>\n            </div>        \n        ");
+      this.filterFilms();
+      var LSData = JSON.parse(localStorage.getItem('data'));
+      _constants_root__WEBPACK_IMPORTED_MODULE_5__.ROOT.innerHTML = "\n            <div class=\"films\">\n                <div class=\"container\">\n                    ".concat(new _FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default(LSData, this.filterSettings).render(), "\n                    ").concat(new _FilmsList__WEBPACK_IMPORTED_MODULE_1__.default(this.data).render(), "\n                    <div id=\"modal\"></div>\n                </div>\n            </div>        \n        ");
       var MODAL_ROOT = document.getElementById('modal');
-      _FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default.addEventListeners(MODAL_ROOT, this.addFilmsItem, this.filterFilms);
+      _FilmsControls__WEBPACK_IMPORTED_MODULE_0__.default.addEventListeners(MODAL_ROOT, this.addFilmsItem, this.filterFilms, this.render);
       _FilmsItem__WEBPACK_IMPORTED_MODULE_2__.default.addEventListeners(MODAL_ROOT, this.data, this.removeFilmsItem, this.addFilmsItemComment);
     }
   }]);
@@ -200,21 +209,23 @@ var FilmsControls = /*#__PURE__*/function () {
   _createClass(FilmsControls, [{
     key: "render",
     value: function render() {
-      return "\n            <ul class=\"films-controls\">\n                <li class=\"films-controls-item\">\n                    ".concat(new _FilmsFilter__WEBPACK_IMPORTED_MODULE_0__.default().render('country', this.data, this.filterSettings['country']), "   \n                </li>\n              \n                <li class=\"films-controls-item\">\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n            ");
+      return "\n            <ul class=\"films-controls\">\n                <li class=\"films-controls-item\">\n                    ".concat(new _FilmsFilter__WEBPACK_IMPORTED_MODULE_0__.default().render('genre', this.data, this.filterSettings['genre']), "   \n                </li>\n                <li class=\"films-controls-item\">\n                    ").concat(new _FilmsFilter__WEBPACK_IMPORTED_MODULE_0__.default().render('country', this.data, this.filterSettings['country']), "   \n                </li>\n              \n                <li class=\"films-controls-item\">\n                    <button id=\"films-controls-add\" class=\"films-controls-add\">\n                        <i class=\"fas fa-plus\"></i>\n                    </button>\n                </li>\n            </ul>\n            ");
     }
   }], [{
     key: "addEventListeners",
-    value: function addEventListeners(MODAL_ROOT, addFilmsItem, filterFilms) {
+    value: function addEventListeners(MODAL_ROOT, addFilmsItem, filterFilms, render) {
       document.querySelector('.films-controls-add').addEventListener('click', function () {
         return new _ModalAddFilm__WEBPACK_IMPORTED_MODULE_1__.default(addFilmsItem).render(MODAL_ROOT).addEventListeners();
       });
-      document.querySelector('#country').addEventListener('change', function (e) {
-        var field = e.target.getAttribute('id');
-        var value = e.target.value;
-        var filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
-        filterSettings[field] = value;
-        localStorage.setItem('filterSettings', JSON.stringify(filterSettings));
-        filterFilms();
+      document.querySelectorAll('.filter').forEach(function (filter) {
+        filter.addEventListener('change', function (e) {
+          var field = e.target.getAttribute('id');
+          var value = e.target.value;
+          var filterSettings = JSON.parse(localStorage.getItem('filterSettings'));
+          filterSettings[field] = value;
+          localStorage.setItem('filterSettings', JSON.stringify(filterSettings));
+          render();
+        });
       });
     }
   }]);
@@ -281,7 +292,7 @@ var FilmsFilter = /*#__PURE__*/function () {
           optionsHtml += "\n                    <option value=\"".concat(option, "\">").concat(option, "</option>\n                ");
         }
       });
-      return "\n            <select name=\"".concat(selectValue, "\" id=\"").concat(selectValue, "\">\n                <option value=\"all\">\u0412\u0441\u0435</option>\n                ").concat(optionsHtml, "\n            </select>\n            ");
+      return "\n            <select id=\"".concat(selectValue, "\" name=\"").concat(selectValue, "\" class=\"filter\">\n                <option value=\"all\">\u0412\u0441\u0435</option>\n                ").concat(optionsHtml, "\n            </select>\n            ");
     }
   }]);
 
