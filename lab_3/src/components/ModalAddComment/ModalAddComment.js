@@ -1,4 +1,3 @@
-import { MODAL_ADD_COMMENT } from "../../constants/root";
 import getFormDataObj from "../../services/getFormDataObj";
 
 class ModalAddComment {
@@ -7,8 +6,8 @@ class ModalAddComment {
         this.filmsItemId = filmsItemId;
     }
 
-    render() {
-        MODAL_ADD_COMMENT.innerHTML = `
+    render(MODAL_ROOT) {
+        MODAL_ROOT.innerHTML = `
         <div class="modal active modal-add-comment">
             <div class="modal-content">
                 <button class="modal-close"><i class="fas fa-times"></i></button>
@@ -27,18 +26,20 @@ class ModalAddComment {
 
     addEventListeners() {
         const modal = document.querySelector('.modal-add-comment');
-        const form = document.querySelector('#form-add-comment');
+        const modalForm = document.querySelector('#form-add-comment');
+
         modal.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal-add-comment') ||
                 e.target.classList.contains('modal-add-comment-close') ||
                 e.target.classList.contains('fa-times')) {
-                document.querySelector('.modal-add-comment').classList.toggle('active');
+                document.getElementById('modal').innerHTML = '';
             }
         });
-        form.addEventListener('submit', (e) => {
+
+        modalForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            this.addFilmsItemComment(getFormDataObj(form), this.filmsItemId);
-            MODAL_ADD_COMMENT.innerHTML = '';
+            this.addFilmsItemComment(modalForm, this.filmsItemId);
+            document.getElementById('modal').innerHTML = '';
         })
     }
 }

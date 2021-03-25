@@ -3,6 +3,7 @@
     height: 50px;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
 
 .films-controls-add {
@@ -15,4 +16,8 @@
     outline: none;
     color: #ffffff;
     cursor: pointer;
+}
+
+.films-controls-item:not(:last-child) {
+    margin-right: 25px;
 }

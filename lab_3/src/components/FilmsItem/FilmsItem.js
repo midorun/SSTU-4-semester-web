@@ -1,22 +1,27 @@
+import ModalAddFilm from '../FilmsControls/ModalAddFilm';
+import ModalAddComment from '../ModalAddComment';
+import ModalShowFilmDescr from '../ModalShowFilmDescr';
 import nextId from "../../services/nextId";
 
 class FilmsItem {
     constructor(
-        { title = '',
-            country = '',
-            genre = '',
-            director = '',
-            script = '',
-            producer = '',
-            operator = '',
-            composer = '',
-            budget = '',
-            income = '',
+        {
             age = '',
+            budget = '',
+            composer = '',
+            country = [],
+            comments = [],
+            director = '',
             duration = '',
-            release = '',
+            genre = [],
             img = '',
-            id = nextId()
+            id = nextId(),
+            income = '',
+            operator = '',
+            producer = '',
+            release = '',
+            script = '',
+            title = '',
         }
     ) {
         this.title = title
@@ -33,7 +38,9 @@ class FilmsItem {
         this.duration = duration
         this.release = release
         this.img = img
-        this.id = id;
+        this.comments = comments
+        this.id = id
+
     }
 
     render() {
@@ -67,5 +74,29 @@ class FilmsItem {
         )
     }
 
+    static addEventListeners(MODAL_ROOT, data, removeFilmsItem, addFilmsItemComment) {
+        document.querySelectorAll('.films-item')
+            .forEach(filmsItem => {
+                const id = filmsItem.getAttribute('data-id');
+                filmsItem.querySelector('.films-item-controls-delete')
+                    .addEventListener('click', () => {
+                        removeFilmsItem(id);
+                    })
+                filmsItem.querySelector('.films-item-controls-comment')
+                    .addEventListener('click', () => {
+                        return new ModalAddComment(addFilmsItemComment, id)
+                            .render(MODAL_ROOT)
+                            .addEventListeners();
+                    })
+                filmsItem.querySelector('.films-item-controls-descr')
+                    .addEventListener('click', () => {
+                        const [filmsItemData] = data.filter(film => film.id === id);
+                        return new ModalShowFilmDescr(filmsItemData)
+                            .render(MODAL_ROOT)
+                            .addEventListeners();
+                    })
+
+            });
+    }
 }
 export default FilmsItem;

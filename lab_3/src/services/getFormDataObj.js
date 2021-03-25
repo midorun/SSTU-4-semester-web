@@ -9,10 +9,19 @@ const getFormDataObj = (form) => {
     form.reset();
 
     formFields.forEach((field, i) => {
-        formDataObj[field] = formData[i];
+        if (field === 'country') {
+            formDataObj[field] = formData[i].replaceAll(',', '').split(' ');
+        }
+        else if (field === 'genre') {
+            formDataObj[field] = formData[i].replaceAll(',', '').split(' ');
+        }
+        else {
+            formDataObj[field] = formData[i];
+        }
     })
 
     formDataObj['id'] = nextId();
+    formDataObj['comments'] = [];
 
     return formDataObj;
 }

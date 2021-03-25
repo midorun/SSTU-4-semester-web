@@ -1,14 +1,12 @@
-import { MODAL_ADD_FILM } from '../../constants/root';
 
-class ModalAddFilm {
-    constructor(FilmsList) {
-        this.FilmsList = FilmsList;
-        this.modal = null;
+export default class ModalAddFilm {
+    constructor(addFilmsItem) {
+        this.addFilmsItem = addFilmsItem;
     }
 
-    render() {
-        MODAL_ADD_FILM.innerHTML = `
-        <div class="modal">
+    render(MODAL_ROOT) {
+        MODAL_ROOT.innerHTML = `
+        <div id="modal-add-film" class="modal active">
             <div class="modal-content">
                 <button class="modal-close"><i class="fas fa-times"></i></button>
                 <form id="form-add-film" class="form">
@@ -30,31 +28,30 @@ class ModalAddFilm {
                 </form>
             </div>
         </div>
-        `
+        `;
 
-        this.modal = document.querySelector('.modal');
-    }
-
-    toggleModal() {
-        this.modal.classList.toggle('active');
+        return this;
     }
 
     addEventListeners() {
-        document.querySelector('#form-add-film')
-            .addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.toggleModal();
-                this.FilmsList.addFilmsItem(document.querySelector('#form-add-film'));
-            })
-        this.modal
-            .addEventListener('click', (e) => {
-                if (e.target === this.modal ||
-                    e.target.classList.contains('modal-close') ||
-                    e.target.classList.contains('fa-times')) {
-                    this.toggleModal();
-                }
-            })
+
+        const modal = document.querySelector('#modal-add-film');
+        const modalForm = document.querySelector('#form-add-film');
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal ||
+                e.target.classList.contains('modal-close') ||
+                e.target.classList.contains('fa-times')) {
+                document.getElementById('modal').innerHTML = '';
+            }
+        })
+
+        modalForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            this.addFilmsItem(modalForm);
+            document.getElementById('modal').innerHTML = '';
+        })
+
+
     }
 }
-
-export default ModalAddFilm;
